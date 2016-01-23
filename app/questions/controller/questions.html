@@ -1,20 +1,17 @@
-﻿<div layout="column">
-    <div flex>
-        <wt-question ng-model="questions"></wt-question>
-    </div>
-    <div flex>
-        <md-toolbar>
-      <div class="md-toolbar-tools">
-        <md-button class="md-icon-button" aria-label="previous">
-          <md-icon md-svg-icon="app/img/icons/previous.svg"  ng-click="vm.previous()"></md-icon>
-        </md-button>
-        <h2 flex style="text-align: center;">
-          <span>{{vm.index+1}} of {{vm.data.length}}</span>
-        </h2>
-        <md-button class="md-icon-button" aria-label="next">
-          <md-icon md-svg-icon="app/img/icons/next.svg" ng-click="vm.next()"></md-icon>
-        </md-button>
-      </div>
-    </md-toolbar>
-    </div>
+﻿<md-toolbar>
+  <div class="md-toolbar-tools">
+    <h2><span ng-show="vm.score>0">{{vm.score}}%</span></h2>
+    <h2 flex style="text-align: center;">
+      <span>{{vm.index+1}} of {{vm.data.length}}</span>
+    </h2>
+  </div>
+</md-toolbar>
+<div layout="row" layout-padding>
+  <div flex >
+    <p>{{vm.current.stem}}</p>
+    <md-radio-group ng-model="vm.current.selected">
+      <md-radio-button ng-repeat="selection in vm.current.selections" value="{{$index}}" 
+         class="md-primary" ng-click="vm.selected($index)">{{selection.text}}</md-radio-button>
+    </md-radio-group>
+  </div>
 </div>

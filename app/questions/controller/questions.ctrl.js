@@ -2,7 +2,9 @@
     'use strict';
     var 
     BASE_PATH = window.location.hostname === 'localhost' ? '' : '/wine-trivia',
-    TEMPLATE_BASE_URL = '/app/questions/controller/';
+    TEMPLATE_BASE_URL = '/app/questions/controller/',
+    QUESTION_FILE_NAME = 'wset3',
+    NO_QUESTIONS = 3;
 
     angular.module('wt.questions.controller', [
             'ui.router',
@@ -42,7 +44,7 @@
      */
     QuestionControllerResolver.$inject = ['questionService'];
     function QuestionControllerResolver(questionService) {
-        return questionService.getQuestions('wset3',10);
+        return questionService.getQuestions(QUESTION_FILE_NAME, NO_QUESTIONS);
     }
 
 
@@ -58,23 +60,22 @@
             return data;
         }
 
-        function next(){
-            vm.index = vm.index===data.length-1 ? 0 : vm.index +1;
+        function selected(selectedIndex){
+            vm.current.selected = selectedIndex;
+            vm.index +=1;
+            if(vm.index >= vm.data.length){
+                vm.showResults = true;
+                vm.index = 0;
+            }
             vm.current = vm.data[vm.index];
         }
-        
-        function previous(){
-            vm.index = vm.index===0 ? data.length-1 : vm.index -1;
-            vm.current = vm.data[vm.index];
-        }
-
         // controller activation
         (function () {
             vm.data = dataErrorCheck(data);
             vm.index = 0;
             vm.current = vm.data[vm.index];
-            vm.next = next;
-            vm.previous = previous;
+            vm.showResults = false;
+            vm.selected = selected;
             window.foo = vm;
         })();
     }
