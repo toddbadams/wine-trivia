@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    var TEMPLATE_BASE_URL = '/app/questions/controller/';
+    var TEMPLATE_BASE_URL = '/wine-trivia/app/questions/controller/';
 
     angular.module('wt.questions.controller', [
             'ui.router',
