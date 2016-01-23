@@ -11,7 +11,7 @@
                 name: 'questions',
                 state: {
                     url: '/questions',
-                    templateUrl: '/app/questions/controller/questions.html',
+                    templateUrl: TEMPLATE_BASE_URL + 'questions.html',
                     controller: 'wtQuestions',
                     controllerAs: "vm" ,
                     resolve:
