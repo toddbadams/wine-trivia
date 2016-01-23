@@ -11,7 +11,7 @@
             };
 
         function getQuestions(name) {
-            var questions = getQuestionsFromJsonFile('wset3')
+            return getQuestionsFromJsonFile('wset3')
                 .then(function (data) {
                     return createQuestions(data);
                 });

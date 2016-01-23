@@ -41,7 +41,8 @@
      */
     QuestionControllerResolver.$inject = ['questionService'];
     function QuestionControllerResolver(questionService) {
-        return questionService.getQuestions();
+        var f =  questionService.getQuestions();
+        return f;
     }
 
 
@@ -52,9 +53,14 @@
     function QuestionController(data) {
         var vm = this;
 
+        function dataErrorCheck(data){
+            // todo
+            return data;
+        }
         // controller activation
         (function () {
-            vm.data = data;
+            vm.data = dataErrorCheck(data);
+            vm.current = vm.data[0];
             window.foo = vm;
         })();
     }

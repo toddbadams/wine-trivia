@@ -13,11 +13,10 @@
         }
 
         function buildTemplate() {
-            return ' <p>Selected Value: <span class="radioValue">{{ data.group1 }}</span> </p>' +
-                '<md-radio-group ng-model="data.group1">' +
-                '<md-radio-button value="Apple" class="md-primary">Apple</md-radio-button>' +
-                '<md-radio-button value="Banana"> Banana </md-radio-button>' +
-                '<md-radio-button value="Mango">Mango</md-radio-button>' +
+            return ' <p>{{vm.current.stem}}</p>' +
+                '<md-radio-group ng-model="vm.current.selected">' +
+                '<md-radio-button ng-repeat="selection in vm.current.selections" value="{{$index}}" ' +
+                '   class="md-primary">{{selection.text}}</md-radio-button>' +
                 '</md-radio-group>';
         }
     }
