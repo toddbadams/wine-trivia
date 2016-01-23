@@ -1,6 +1,8 @@
 ﻿(function () {
     'use strict';
-    var TEMPLATE_BASE_URL = '/wine-trivia/app/questions/controller/';
+    var 
+    BASE_PATH = window.location.hostname === 'localhost' ? '' : '/wine-trivia',
+    TEMPLATE_BASE_URL = '/app/questions/controller/';
 
     angular.module('wt.questions.controller', [
             'ui.router',
@@ -11,7 +13,7 @@
                 name: 'questions',
                 state: {
                     url: '/questions',
-                    templateUrl: TEMPLATE_BASE_URL + 'questions.html',
+                    templateUrl: BASE_PATH + TEMPLATE_BASE_URL + 'questions.html',
                     controller: 'wtQuestions',
                     controllerAs: "vm" ,
                     resolve:
@@ -28,10 +30,9 @@
     /**
      * Module configuration
      */
-    moduleConfig.$inject = ['$stateProvider', '$urlRouterProvider', 'wt.questions.controller.config'];
-    function moduleConfig($stateProvider, $urlRouterProvider, config) {
-        // For any unmatched url, send to /route1
-        $urlRouterProvider.otherwise("/route1");
+    moduleConfig.$inject = ['$stateProvider',  'wt.questions.controller.config'];
+    function moduleConfig($stateProvider,  config) {
+
         $stateProvider.state(config.route.name, config.route.state);
     }
 

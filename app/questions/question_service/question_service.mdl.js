@@ -1,5 +1,8 @@
 ﻿(function (angular) {
 
+    BASE_PATH = window.location.hostname === 'localhost' ? '' : '/wine-trivia',
+    JSON_BASE_URL = '/app/questions/question_service/';
+
     angular.module('wt.questions.service', [])
         .factory('questionService', questionService);
 
@@ -25,7 +28,7 @@
         }
 
         function buildFilename(name) {
-            return '/wine-trivia/app/questions/question_service/' + name + '.json';
+            return BASE_PATH + JSON_BASE_URL + name + '.json';
         }
 
         return publicApi;
