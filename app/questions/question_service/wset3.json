@@ -1,0 +1,26 @@
+[
+    {
+        "stem": "Which one of the AOCs in the Côte Chalonnaise subregion of Burgundy produce Aligoté-based wines?",
+        "alternatives": [
+            "Brouilly",
+            "Rully",
+            "Mercurey",
+            "Givry",
+            "Montagny"
+        ],
+        "correct": "Bouzeron",
+        "certifications": [ "wset3" ]
+    },
+    {
+        "stem": "Which one of the AOCs in the Côte Chalonnaise subregion of Burgundy produce Aligoté-based wines?",
+        "alternatives": [
+            "Brouilly",
+            "Rully",
+            "Mercurey",
+            "Givry",
+            "Montagny"
+        ],
+        "correct": "Bouzeron",
+        "certifications": [ "wset3" ]
+    }
+]
