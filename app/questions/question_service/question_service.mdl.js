@@ -25,7 +25,7 @@
         }
 
         function buildFilename(name) {
-            return '/app/questions/question_service/' + name + '.json';
+            return '/wine-trivia/app/questions/question_service/' + name + '.json';
         }
 
         return publicApi;
