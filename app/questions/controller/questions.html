@@ -1,8 +1,20 @@
 ﻿<div layout="column">
     <div flex>
-        <wt-question ng-model="questions">b</wt-question>
+        <wt-question ng-model="questions"></wt-question>
     </div>
     <div flex>
-        <wt-question-nav ng-model="questions">nav</wt-question-nav>
+        <md-toolbar>
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="previous">
+          <md-icon md-svg-icon="app/img/icons/previous.svg"  ng-click="vm.previous()"></md-icon>
+        </md-button>
+        <h2 flex style="text-align: center;">
+          <span>{{vm.index+1}} of {{vm.data.length}}</span>
+        </h2>
+        <md-button class="md-icon-button" aria-label="next">
+          <md-icon md-svg-icon="app/img/icons/next.svg" ng-click="vm.next()"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
     </div>
 </div>

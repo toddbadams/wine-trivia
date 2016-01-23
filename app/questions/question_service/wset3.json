@@ -1,26 +1,109 @@
 [
-    {
-        "stem": "Which one of the AOCs in the Côte Chalonnaise subregion of Burgundy produce Aligoté-based wines?",
-        "alternatives": [
-            "Brouilly",
-            "Rully",
-            "Mercurey",
-            "Givry",
-            "Montagny"
-        ],
-        "correct": "Bouzeron",
-        "certifications": [ "wset3" ]
-    },
-    {
-        "stem": "Which one of the AOCs in the Côte Chalonnaise subregion of Burgundy produce Aligoté-based wines?",
-        "alternatives": [
-            "Brouilly",
-            "Rully",
-            "Mercurey",
-            "Givry",
-            "Montagny"
-        ],
-        "correct": "Bouzeron",
-        "certifications": [ "wset3" ]
-    }
+{
+    "stem": "Which one of the AOCs in the Côte Chalonnaise subregion of Burgundy produce Aligoté-based wines?",
+    "alternatives": [
+        "Brouilly","Rully","Mercurey","Givry","Montagny"
+    ],
+    "correct": "Bouzeron",
+    "certifications": ["wset3"]
+},
+{
+    "stem": "Which one of the following is a subregion of Haut-Médoc AOC?",
+    "alternatives": [
+        "Pomerol","Saint Emillion","Souternes","Barsac","Graves","Pessac-Léognan",
+        "Cérons","Sauternes","Barsac"
+    ],
+    "correct": ["Margaux","Listrac-Médoc","Moulis-en-Médoc","Saint-Julien","Pauillac","Saint-Estèphe"],
+    "certifications": ["wset3"]
+},
+{
+    "stem": "Which one of the following is a subregion of Sauternes AOC?",
+    "alternatives": [
+        "Pomerol","Saint Emillion","Souternes","Barsac","Graves","Pessac-Léognan",
+        "Cérons","Margaux","Listrac-Médoc","Moulis-en-Médoc","Saint-Julien","Pauillac","Saint-Estèphe"
+    ],
+    "correct": "Barsac",
+    "certifications": ["wset3"]
+},
+{
+    "stem": "Which one of the following is an AOC within the left bank of Bordeaux wine region?",
+    "alternatives": ["Pomerol","Saint Emillion","Souternes","Barsac","Graves","Pessac-Léognan","Cérons"],
+    "correct": ["Margaux","Listrac-Médoc","Moulis-en-Médoc","Saint-Julien","Pauillac","Saint-Estèphe","Haut-Médoc","Médoc"],
+    "certifications": ["wset3"]
+},
+{
+    "stem": "Which one of the following is an AOC within the right bank of Bordeaux wine region?",
+    "alternatives": ["Margaux","Listrac-Médoc","Moulis-en-Médoc","Saint-Julien","Pauillac","Saint-Estèphe","Haut-Médoc","Médoc"],
+    "correct": ["Pomerol","Saint Emillion","Souternes","Barsac","Graves","Pessac-Léognan","Cérons"],
+    "certifications": ["wset3"]
+},
+{
+    "stem": "Which one of the following Bordeaux AOC is known for its botrytized dessert wines?",
+    "alternatives": ["Pomerol","Saint Emillion","Graves","Pessac-Léognan","Cérons","Margaux",
+        "Listrac-Médoc","Moulis-en-Médoc","Saint-Julien","Pauillac","Saint-Estèphe","Haut-Médoc","Médoc"],
+    "correct": ["Souternes","Barsac"],
+    "certifications": ["wset3"]
+},
+{
+    "stem": "Which one of the following grape varieties is found in red Bordeaux?",
+    "alternatives": ["Syrah", "Grenache", "Cinsault", "Mourvèdre","Gamay","Pinot Noir"],
+    "correct": ["Cabernet Sauvignon", "Merlot", "Cabernet Franc", "Malbec", "Petit Verdot"],
+    "certifications": ["wset3"]
+},
+{
+    "stem": "Which one of the following grape varieties is found in white Bordeaux?",
+    "alternatives": ["Syrah", "Grenache", "Cinsault", "Mourvèdre","Gamay","Pinot Noir"],
+    "correct": ["Sauvignon blanc", "Sémillon", "Muscadelle"],
+    "certifications": ["wset3"]
+},
+{
+    "stem": "Compared to Bordeaux AOC, the Bordeaux Supèrieur AOC has?",
+    "alternatives": ["a lower level of alcohol","less restrictive appellation rules","greater total wine production","slightly shorter aging requirements"],
+    "correct": ["stricter appellation rules","a higher level of alcohol","lower total wine production","slightly longer aging requirements"],
+    "certifications": ["wset3"]
+},
+{
+    "stem": "Which one of the following grape varieties is found in Bordeaux Rosé AOC?",
+    "alternatives": ["Syrah", "Grenache", "Cinsault", "Mourvèdre","Gamay","Pinot Noir","Malbec","Petit Verdot"],
+    "correct": ["Cabernet Sauvignon", "Merlot", "Cabernet Franc"],
+    "certifications": ["wset3"]
+},
+{
+    "stem": "Compared to Bordeaux Rosé AOC, the Bordeaux Clairet AOC has _____.",
+    "alternatives": ["lower level of alcohol","slightly shorter aging requirements",
+        "a shorter maceration time.","a lighter colour","a lighter body"],
+    "correct": ["the same grape varieties","a longer maceration (between 24 and 48 hours).",
+        "a deeper colour","a fuller body"],
+    "certifications": ["wset3"]
+},
+{
+    "stem": "At thier best red Bordeaux AOC and Bordeaux Supèrieur AOC are _____ wines.?",
+    "alternatives": ["often long aged","light body","full body"],
+    "correct": ["early drinking","medium body"],
+    "certifications": ["wset3"]
+},
+{
+    "stem": "The soil in the Médoc AOC is predominately _____.?",
+    "alternatives": ["basalt","flint","granite","gypsum","limestone","shale","slate","volcanic"],
+    "correct": "clay",
+    "certifications": ["wset3"]
+},
+{
+    "stem": "The wines of Haut-Médoc AOC have a high percentage of?",
+    "alternatives": ["Syrah", "Grenache", "Cinsault", "Mourvèdre","Gamay","Pinot Noir","Malbec","Petit Verdot", "Merlot", "Cabernet Franc"],
+    "correct": ["Cabernet Sauvignon"],
+    "certifications": ["wset3"]
+},
+{
+    "stem": "The wines of Haut-Médoc AOC generally display primary aromas an flavours of ____.",
+    "alternatives": ["green apple", "grapefruit", "lemon", "green bell pepper","redcurrant","raspberry","strawberry","red plum", "peach"],
+    "correct": ["blackcurrant fruit"],
+    "certifications": ["wset3"]
+},
+{
+    "stem": "The wines of Haut-Médoc AOC generally display primary aromas an flavours  ____.",
+    "alternatives": ["vanilla", "cloves", "nutmeg", "coconut","butterscotch","toast","charred wood","smoke","chocolate","coffee"],
+    "correct": ["cedar"],
+    "certifications": ["wset3"]
+}
 ]

@@ -13,10 +13,11 @@
                 getQuestions: getQuestions
             };
 
-        function getQuestions(name) {
-            return getQuestionsFromJsonFile('wset3')
+        function getQuestions(name, qnty) {
+            return getQuestionsFromJsonFile(name)
                 .then(function (data) {
-                    return createQuestions(data);
+                    var q = (qnty) ? data.slice(0, qnty) : data;
+                    return createQuestions(shuffle(q));
                 });
         }
 
@@ -52,11 +53,12 @@
                 answerIndex = Math.floor(Math.random() * length),
                 i,
                 j = 0,
-                selections = [];
+                selections = [],
+                correct = angular.isArray(d.correct) ? shuffle(d.correct)[0] : d.correct;
 
             for (i = 0; i < length; i += 1) {
                 if (i === answerIndex) {
-                    selections.push(new QuestionSelection(d.correct, true));
+                    selections.push(new QuestionSelection(correct, true));
                 } else {
                     selections.push(new QuestionSelection(alts[j++], false));
                 }
@@ -64,24 +66,6 @@
             return selections;
         }
 
-        function shuffle(array) {
-            var currentIndex = array.length, temporaryValue, randomIndex;
-
-            // While there remain elements to shuffle...
-            while (0 !== currentIndex) {
-
-                // Pick a remaining element...
-                randomIndex = Math.floor(Math.random() * currentIndex);
-                currentIndex -= 1;
-
-                // And swap it with the current element.
-                temporaryValue = array[currentIndex];
-                array[currentIndex] = array[randomIndex];
-                array[randomIndex] = temporaryValue;
-            }
-
-            return array;
-        }
 
         return q;
     })();
@@ -101,5 +85,23 @@
     }
 
 
+        function shuffle(array) {
+            var currentIndex = array.length, temporaryValue, randomIndex;
+
+            // While there remain elements to shuffle...
+            while (0 !== currentIndex) {
+
+                // Pick a remaining element...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+
+                // And swap it with the current element.
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+
+            return array;
+        }
 
 })(angular);

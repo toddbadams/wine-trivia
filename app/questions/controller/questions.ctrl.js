@@ -42,8 +42,7 @@
      */
     QuestionControllerResolver.$inject = ['questionService'];
     function QuestionControllerResolver(questionService) {
-        var f =  questionService.getQuestions();
-        return f;
+        return questionService.getQuestions('wset3',10);
     }
 
 
@@ -58,10 +57,24 @@
             // todo
             return data;
         }
+
+        function next(){
+            vm.index = vm.index===data.length-1 ? 0 : vm.index +1;
+            vm.current = vm.data[vm.index];
+        }
+        
+        function previous(){
+            vm.index = vm.index===0 ? data.length-1 : vm.index -1;
+            vm.current = vm.data[vm.index];
+        }
+
         // controller activation
         (function () {
             vm.data = dataErrorCheck(data);
-            vm.current = vm.data[0];
+            vm.index = 0;
+            vm.current = vm.data[vm.index];
+            vm.next = next;
+            vm.previous = previous;
             window.foo = vm;
         })();
     }
