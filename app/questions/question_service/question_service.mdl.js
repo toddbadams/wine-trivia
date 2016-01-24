@@ -16,8 +16,8 @@
         function getQuestions(name, qnty) {
             return getQuestionsFromJsonFile(name)
                 .then(function (data) {
-                    var q = (qnty) ? data.slice(0, qnty) : data;
-                    return createQuestions(shuffle(q));
+                    var q = (qnty) ? data.questions.slice(0, qnty) : data.questions;
+                    return createQuestions(shuffle(q),data.alternates);
                 });
         }
 
@@ -37,19 +37,20 @@
 
 
     var Question = (function () {
-        var q = function (data) {
+        var q = function (data, alternates) {
             this.stem = data.stem;
-            this.selections = createSelections(data, 4);
+            this.selections = createSelections(data, 4, alternates);
             this.selected = -1;
         },
-            QuestionSelection = function (text, isAnswer) {
-                this.text = text;
+            QuestionSelection = function (alternate, isAnswer) {
+                this.text = alternate.text;
+                this.description = alternate.description;
                 this.isAnswer = isAnswer;
             };
 
 
-        function createSelections(d, length) {
-            var alts = shuffle(d.alternatives),
+        function createSelections(d, length, alternates) {
+            var alts = shuffle(d.alternates),
                 answerIndex = Math.floor(Math.random() * length),
                 i,
                 j = 0,
@@ -58,9 +59,12 @@
 
             for (i = 0; i < length; i += 1) {
                 if (i === answerIndex) {
-                    selections.push(new QuestionSelection(correct, true));
+                    selections.push(new QuestionSelection({
+                        text: correct,
+                        description: ''
+                        }, true));
                 } else {
-                    selections.push(new QuestionSelection(alts[j++], false));
+                    selections.push(new QuestionSelection(alternates[alts[j++]], false));
                 }
             }
             return selections;
@@ -75,11 +79,11 @@
 
 
     // PRIVATE METHODS
-    function createQuestions(data) {
+    function createQuestions(data, alternates) {
         if (!data || !angular.isArray(data) || data.length === 0) return;
         var arr = [];
         data.forEach(function(q) {
-            arr.push(new Question(q));
+            arr.push(new Question(q, alternates));
         });
         return arr;
     }

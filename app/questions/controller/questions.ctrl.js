@@ -3,12 +3,13 @@
     var 
     BASE_PATH = window.location.hostname === 'localhost' ? '' : '/wine-trivia',
     TEMPLATE_BASE_URL = '/app/questions/controller/',
-    QUESTION_FILE_NAME = 'wset3',
+    QUESTION_FILE_NAME = 'wset3a',
     NO_QUESTIONS = 3;
 
     angular.module('wt.questions.controller', [
             'ui.router',
-            'wt.questions.service'
+            'wt.questions.service',
+            'ngMaterial'
     ])
         .constant('wt.questions.controller.config', {
             route: {
@@ -61,20 +62,43 @@
         }
 
         function selected(selectedIndex){
-            vm.current.selected = selectedIndex;
-            vm.index +=1;
-            if(vm.index >= vm.data.length){
-                vm.showResults = true;
-                vm.index = 0;
-            }
-            vm.current = vm.data[vm.index];
+            vm.current.isWrong = !vm.current.selections[selectedIndex].isAnswer;
+            vm.current.description = vm.current.isWrong ?
+                vm.current.selections[selectedIndex].description :
+                '';
         }
+
+        function previous(){
+            if(vm.index > 0) {
+                vm.index -= 1;
+                showPrevNextButtons(); 
+            }         
+        }
+
+        function next(){
+            if(vm.index < vm.data.length - 1) {
+                vm.index += 1;
+                showPrevNextButtons();
+            }          
+        }
+
+        function showPrevNextButtons(){
+            vm.current = vm.data[vm.index]; 
+            vm.showPrevious = vm.index > 0; 
+            vm.showNext = vm.index < vm.data.length - 1; 
+        }
+
+
         // controller activation
         (function () {
             vm.data = dataErrorCheck(data);
             vm.index = 0;
             vm.current = vm.data[vm.index];
             vm.showResults = false;
+            vm.showPrevious = false;
+            vm.previous = previous;
+            vm.showNext = true;
+            vm.next = next;
             vm.selected = selected;
             window.foo = vm;
         })();

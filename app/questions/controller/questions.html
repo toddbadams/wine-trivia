@@ -1,9 +1,14 @@
 ﻿<md-toolbar>
   <div class="md-toolbar-tools">
-    <h2><span ng-show="vm.score>0">{{vm.score}}%</span></h2>
+    <md-button class="md-icon-button" aria-label="Previous" ng-click="vm.previous()" ng-show="vm.showPrevious">
+        <md-icon md-svg-icon="app/img/icons/previous.svg"></md-icon>
+    </md-button>
     <h2 flex style="text-align: center;">
       <span>{{vm.index+1}} of {{vm.data.length}}</span>
     </h2>
+    <md-button class="md-icon-button" aria-label="Next" ng-click="vm.next()" ng-show="vm.showNext">
+        <md-icon md-svg-icon="app/img/icons/next.svg"></md-icon>
+    </md-button>
   </div>
 </md-toolbar>
 <div layout="row" layout-padding>
@@ -11,7 +16,11 @@
     <p>{{vm.current.stem}}</p>
     <md-radio-group ng-model="vm.current.selected">
       <md-radio-button ng-repeat="selection in vm.current.selections" value="{{$index}}" 
-         class="md-primary" ng-click="vm.selected($index)">{{selection.text}}</md-radio-button>
+         ng-click="vm.selected($index)"
+         ng-class="{'md-accent': selection.isAnswer}">{{selection.text}}</md-radio-button>
     </md-radio-group>
+    <div ng-show="vm.current.isWrong">
+      <span>{{vm.current.description}}</span>
+    </div>
   </div>
 </div>
