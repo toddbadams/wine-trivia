@@ -32,10 +32,8 @@
         }
 
         function selected(selectedIndex){
-            vm.current.isWrong = !vm.current.selections[selectedIndex].isAnswer;
-            vm.current.description = vm.current.isWrong ?
-                vm.current.selections[selectedIndex].description :
-                '';
+            vm.current.selections[selectedIndex].isWrong = !vm.current.selections[selectedIndex].isAnswer;
+            vm.current.description = vm.current.selections[selectedIndex].description;
         }
 
         function previous(){
@@ -58,6 +56,11 @@
             vm.showNext = vm.index < vm.data.length - 1; 
         }
 
+        function isWrong(index){
+            var w = vm.current.selected === index &&
+                !vm.current.selections[index].isAnswer;
+                return w;
+        }
 
         // controller activation
         (function () {
@@ -70,6 +73,7 @@
             vm.showNext = true;
             vm.next = next;
             vm.selected = selected;
+            vm.isWrong = isWrong;
             window.foo = vm;
         })();
     }
