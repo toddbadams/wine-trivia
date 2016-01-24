@@ -74,6 +74,8 @@
             vm.next = next;
             vm.selected = selected;
             vm.isWrong = isWrong;
+            vm.tags = ['France','Bordeaux'];
+            vm.tagsReadonly = true;
             window.foo = vm;
         })();
     }
