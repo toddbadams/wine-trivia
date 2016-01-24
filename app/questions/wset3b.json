@@ -1,0 +1,170 @@
+[
+  {
+    "id": 1001,
+    "stem": "Which one of the Appellation d'origine contrôlée (AOC) regions in the Côte Chalonnaise subregion of Burgundy produce Aligoté-based wines?",
+    "alternates": [
+      {
+        "id": 1,
+        "text": "Brouilly",
+        "description": "The largest Cru in Beaujolais, situated around Mont Brouilly and contains within its boundaries the sub-district of Côte de Brouilly. Whites from the region, which make up only 1% of its production, are made mostly with Chardonnay grapes though Aligoté is also permitted until 2024 (on condition the vines were planted before 2004)"
+      },
+      {
+        "id": 2,
+        "text": "Rully",
+        "description": "The Appellation d'origine contrôlée (AOC) Rully is produced in the communes of Rully and Chagny in the Côte Chalonnaise subregion of Burgundy. Rully may be used for red and white wine with respectively Pinot noir and Chardonnay as the main grape variety."
+      },
+      {
+        "id": 3,
+        "text": "Mercurey",
+        "description": "The Appellation d'origine contrôlée (AOC) Mercurey is produced in the communes of Mercurey and Saint-Martin-sous-Montaigu in the Côte Chalonnaise subregion of Burgundy. Mercurey may be used for red and white wine with respectively Pinot noir and Chardonnay."
+      },
+      {
+        "id": 4,
+        "text": "Givry",
+        "description": "The Appellation d'origine contrôlée (AOC) Givry is produced in the communes of Givry, Dracy-le-Fort and Jambles in the Côte Chalonnaise subregion of Burgundy. Givry may be used for red and white wine with respectively Pinot noir and Chardonnay as the main grape variety."
+      },
+      {
+        "id": 5,
+        "text": "Montagny",
+        "description": "The Appellation d'origine contrôlée (AOC) Montagny is produced in the communes of Montagny-lès-Buxy, Buxy, Saint-Vallerin and Jully-lès-Buxy in the Côte Chalonnaise subregion of Burgundy. Montagny may be used for white wine with Chardonnay as the main grape variety."
+      }
+    ],
+    "correct": {
+      "id": 6,
+      "text": "Bouzeron",
+      "description": "Bouzeron is an appellation d'origine contrôlée (AOC) for white wine produced in the French communes of Bouzeron and Chassey-le-Camp in the Côte Chalonnaise subregion of Burgundy.[1] Bouzeron wine is produced from the grape variety Aligoté, and Bouzeron AOC is therefore the only communal-level Burgundy appellation for Aligoté-based wines."
+    },
+    "tags": [
+      "France",
+      "Burgundy"
+    ],
+    "certifications": [
+      "wset3"
+    ]
+  },
+  {
+    "id": 1002,
+    "stem": "Which one of the following is a subregion of Haut-Médoc AOC?",
+    "alternates": [
+      {
+        "id": 1,
+        "text": "Pomerol",
+        "description": "Pomerol is a French wine growing commune and Appellation d'origine contrôlée (AOC) within the Libournais (Right Bank) in Bordeaux."
+      },
+      {
+        "id": 2,
+        "text": "Saint Emillion",
+        "description": "Saint-Émilion is an Appellation d'origine contrôlée (AOC) for wine in the Bordeaux wine region of France, where it is situated in the Libourne subregion on the right bank of the Dordogne."
+      },
+      {
+        "id": 3,
+        "text": "Souternes",
+        "description": "Sauternes is an Appellation d'origine contrôlée (AOC) of Graves known for its intensely sweet, white, dessert wines."
+      },
+      {
+        "id": 4,
+        "text": "Barsac",
+        "description": "Wines produced in the commune of Barsac, are allowed to be labeled either with the commune name (as Barsac AOC) or with Sauternes. "
+      },
+      {
+        "id": 5,
+        "text": "Graves",
+        "description": "Graves AOC is the basic appellation of the Graves subregion of the Bordeaux wine region."
+      },
+      {
+        "id": 6,
+        "text": "Pessac-Léognan",
+        "description": "Pessac-Léognan is a wine growing area and Appellation d'Origine Contrôlée, in the northern part of the Graves region of Bordeaux."
+      },
+      {
+        "id": 7,
+        "text": "Cérons",
+        "description": "Cérons AOC is an appellation for sweet white wines of similar style as Sauternes. These wines are considered superior to those of Graves Supérieures AOC of which Cérons effectively is an enclave."
+      }
+    ],
+    "correct": [
+      {
+        "id": 8,
+        "text": "Margaux",
+        "description": "Haut-Médoc is an Appellation d'Origine Contrôlée (AOC) for wine in the Bordeaux wine region of southwestern France, on the Left Bank of the Gironde estuary.  It enclaves six appellations (Margaux AOC, Listrac-Médoc AOC, Moulis-en-Médoc AOC, Saint-Julien AOC, Pauillac AOC and Saint-Estèphe AOC). Haut-Médoc is a sub-appellation of the Médoc AOC."
+      },
+      {
+        "id": 9,
+        "text": "Listrac-Médoc",
+        "description": "Haut-Médoc is an Appellation d'Origine Contrôlée (AOC) for wine in the Bordeaux wine region of southwestern France, on the Left Bank of the Gironde estuary.  It enclaves six appellations (Margaux AOC, Listrac-Médoc AOC, Moulis-en-Médoc AOC, Saint-Julien AOC, Pauillac AOC and Saint-Estèphe AOC). Haut-Médoc is a sub-appellation of the Médoc AOC."
+      },
+      {
+        "id": 10,
+        "text": "Moulis-en-Médoc",
+        "description": "Haut-Médoc is an Appellation d'Origine Contrôlée (AOC) for wine in the Bordeaux wine region of southwestern France, on the Left Bank of the Gironde estuary.  It enclaves six appellations (Margaux AOC, Listrac-Médoc AOC, Moulis-en-Médoc AOC, Saint-Julien AOC, Pauillac AOC and Saint-Estèphe AOC). Haut-Médoc is a sub-appellation of the Médoc AOC."
+      },
+      {
+        "id": 11,
+        "text": "Saint-Julien",
+        "description": "Haut-Médoc is an Appellation d'Origine Contrôlée (AOC) for wine in the Bordeaux wine region of southwestern France, on the Left Bank of the Gironde estuary.  It enclaves six appellations (Margaux AOC, Listrac-Médoc AOC, Moulis-en-Médoc AOC, Saint-Julien AOC, Pauillac AOC and Saint-Estèphe AOC). Haut-Médoc is a sub-appellation of the Médoc AOC."
+      },
+      {
+        "id": 12,
+        "text": "Pauillac",
+        "description": "Haut-Médoc is an Appellation d'Origine Contrôlée (AOC) for wine in the Bordeaux wine region of southwestern France, on the Left Bank of the Gironde estuary.  It enclaves six appellations (Margaux AOC, Listrac-Médoc AOC, Moulis-en-Médoc AOC, Saint-Julien AOC, Pauillac AOC and Saint-Estèphe AOC). Haut-Médoc is a sub-appellation of the Médoc AOC."
+      },
+      {
+        "id": 13,
+        "text": "Saint-Estèphe",
+        "description": "Haut-Médoc is an Appellation d'Origine Contrôlée (AOC) for wine in the Bordeaux wine region of southwestern France, on the Left Bank of the Gironde estuary.  It enclaves six appellations (Margaux AOC, Listrac-Médoc AOC, Moulis-en-Médoc AOC, Saint-Julien AOC, Pauillac AOC and Saint-Estèphe AOC). Haut-Médoc is a sub-appellation of the Médoc AOC."
+      }
+    ],
+    "tags": [
+      "France",
+      "Bordeaux"
+    ],
+    "certifications": [
+      "wset3"
+    ]
+  },
+  {
+    "id": 1003,
+    "stem": "Which one of the following is a subregion of Sauternes AOC?",
+    "alternates": [
+     
+      {
+        "id": 1,
+        "text": "Pomerol",
+        "description": "Pomerol is a French wine growing commune and Appellation d'origine contrôlée (AOC) within the Libournais (Right Bank) in Bordeaux."
+      },
+      {
+        "id": 2,
+        "text": "Saint Emillion",
+        "description": "Saint-Émilion is an Appellation d'origine contrôlée (AOC) for wine in the Bordeaux wine region of France, where it is situated in the Libourne subregion on the right bank of the Dordogne."
+      },
+      {
+        "id": 5,
+        "text": "Graves",
+        "description": "Graves AOC is the basic appellation of the Graves subregion of the Bordeaux wine region."
+      },
+      {
+        "id": 6,
+        "text": "Pessac-Léognan",
+        "description": "Pessac-Léognan is a wine growing area and Appellation d'Origine Contrôlée, in the northern part of the Graves region of Bordeaux."
+      },
+      {
+        "id": 7,
+        "text": "Cérons",
+        "description": "Cérons AOC is an appellation for sweet white wines of similar style as Sauternes. These wines are considered superior to those of Graves Supérieures AOC of which Cérons effectively is an enclave."
+      }
+    ],
+    "correct": 
+    {
+        "id": 8,
+        "text": "Barsac",
+        "description": "Wines produced in the commune of Barsac, are allowed to be labeled either with the commune name (as Barsac AOC) or with Sauternes. "
+      },
+    "tags": [
+      "France",
+      "Bordeaux"
+    ],
+    "certifications": [
+      "wset3"
+    ]
+  }
+]
