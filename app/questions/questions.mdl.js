@@ -5,10 +5,11 @@
     TEMPLATE_URL = BASE_PATH + '/app/questions/';
 
 	angular.module('wt.questions', [
-	        'wt.questions.controller'
+	        'wt.questions.controller',
+            'wt.questions.editor.controller'
 	])
 	.constant('wt.questions.config', {
-	            route: {
+	            routes: [{
 	                name: 'questions',
 	                state: {
 	                    url: '/questions',
@@ -21,6 +22,15 @@
 	                    }
 	                }
 	            },
+	            {
+	                name: 'editor',
+	                state: {
+	                    url: '/editor',
+	                    templateUrl: TEMPLATE_URL + 'editor/editor.html',
+	                    controller: 'wtQuestionsEditor',
+	                    controllerAs: "vm"
+	                }
+	            }],
 	            dataUrl: BASE_PATH + '/app/questions/',
 	 			questionsFileName: 'wset3b',
 	    		numberQuestions: 3,
@@ -33,8 +43,10 @@
      * Module configuration
      */
     moduleConfig.$inject = ['$stateProvider',  'wt.questions.config'];
-    function moduleConfig($stateProvider,  config) {
-        $stateProvider.state(config.route.name, config.route.state);
+    function moduleConfig($stateProvider, config) {
+        config.routes.forEach(function (route) {
+            $stateProvider.state(route.name, route.state);
+        });
     }
 
 })();
