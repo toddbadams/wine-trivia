@@ -1,3 +1,4 @@
 ﻿angular.module('wt', [
-'wt.questions'
+'wt.questions',
+'wt.variety'
 ]);
