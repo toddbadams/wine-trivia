@@ -76,6 +76,11 @@
             vm.isWrong = isWrong;
             vm.tags = ['France','Bordeaux'];
             vm.tagsReadonly = true;
+            vm.level = {
+                filename: 'wset3',
+                name: 'WSET 3'
+            }
+            vm.tags = 'France'
             window.foo = vm;
         })();
     }
