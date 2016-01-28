@@ -22,8 +22,8 @@
 	                }
 	            },
 	            dataUrl: BASE_PATH + '/app/questions/',
-	 			questionsFileName: 'wset3b',
-	    		numberQuestions: 3,
+	 			questionsFileName: 'wset3',
+	    		numberQuestions: 4,
 	    		numberQuestionSelections: 4
 	        })
 	        .config(moduleConfig);
