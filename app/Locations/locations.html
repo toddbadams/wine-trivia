@@ -1,31 +1,30 @@
 ﻿<md-toolbar>
-  <div class="md-toolbar-tools">
-    <md-button class="md-icon-button" aria-label="Previous" ng-click="vm.previous()" ng-show="vm.showPrevious">
-        <md-icon md-svg-icon="app/img/icons/previous.svg"></md-icon>
-    </md-button>
-    <h1 class="md-display-1" flex style="text-align: center;">
-      <span>{{vm.index+1}} of {{vm.data.length}}</span>
+  <h1 class="md-subhead" flex style="text-align: center;">
+      wine producing countries and regions
     </h1>
-    <md-button class="md-icon-button" aria-label="Next" ng-click="vm.next()" ng-show="vm.showNext">
-        <md-icon md-svg-icon="app/img/icons/next.svg"></md-icon>
-    </md-button>
-  </div>
 </md-toolbar>
 
 <md-content class="md-padding md-whiteframe-1dp" layout="row" layout-align="center center">
-  <strong class="md-body-1" >{{vm.tags}}</strong>
-  <div flex></div>
-  <strong class="md-body-1" >{{vm.level.name}}</strong>
+  <md-input-container flex>
+        <label>Country</label>
+        <md-select ng-model="vm.country">
+          <md-option ng-repeat="item in vm.data.countries" value="{{item.key}}">
+            {{item.value}}
+          </md-option>
+        </md-select>
+  </md-input-container>
+  <md-input-container flex>
+        <label>Region</label>
+        <md-select ng-model="vm.region">
+          <md-option ng-repeat="item in vm.data.regions[vm.data.country]" value="{{item.key}}">
+            {{item.value}}
+          </md-option>
+        </md-select>
+  </md-input-container>
 </md-content>
 
 <div layout="row" layout-padding>
   <div flex >
-    <p class="md-body-1">{{vm.current.stem}}</p>
-    <md-radio-group ng-model="vm.current.selected">
-      <md-radio-button ng-repeat="selection in vm.current.selections" value="{{$index}}" 
-         ng-click="vm.selected($index)" class="md-body-1 md-primary"
-         ng-class="{'md-warn': selection.isWrong}">{{selection.text}}</md-radio-button>
-    </md-radio-group>
-    <p class="md-body-1">{{vm.current.description}}</p>
+    <ui-gmap-google-map center='vm.mapOptions.center' zoom='vm.mapOptions.zoom' control="vm.mapControl"></ui-gmap-google-map>
   </div>
 </div>

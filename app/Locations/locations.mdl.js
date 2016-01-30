@@ -53,8 +53,8 @@
     /**
      * Location controller
      */
-    LocationController.$inject = ['data'];
-    function LocationController(data) {
+    LocationController.$inject = ['uiGmapIsReady', 'data'];
+    function LocationController(uiGmapIsReady, data) {
         var vm = this;
 
         function dataErrorCheck(data){
@@ -62,57 +62,40 @@
             return data;
         }
 
-        function selected(selectedIndex){
-            vm.current.selections[selectedIndex].isWrong = !vm.current.selections[selectedIndex].isAnswer;
-            vm.current.description = vm.current.selections[selectedIndex].description;
+        function getTextSearchQuery(){
+            return 'France, Bordeaux';
         }
-
-        function previous(){
-            if(vm.index > 0) {
-                vm.index -= 1;
-                showPrevNextButtons(); 
-            }         
-        }
-
-        function next(){
-            if(vm.index < vm.data.length - 1) {
-                vm.index += 1;
-                showPrevNextButtons();
-            }          
-        }
-
-        function showPrevNextButtons(){
-            vm.current = vm.data[vm.index]; 
-            vm.showPrevious = vm.index > 0; 
-            vm.showNext = vm.index < vm.data.length - 1; 
-        }
-
-        function isWrong(index){
-            var w = vm.current.selected === index &&
-                !vm.current.selections[index].isAnswer;
-                return w;
-        }
-
+        
         // controller activation
         (function () {
             vm.data = dataErrorCheck(data);
-            vm.index = 0;
-            vm.current = vm.data[vm.index];
-            vm.showResults = false;
-            vm.showPrevious = false;
-            vm.previous = previous;
-            vm.showNext = true;
-            vm.next = next;
-            vm.selected = selected;
-            vm.isWrong = isWrong;
-            vm.tags = ['France','Bordeaux'];
-            vm.tagsReadonly = true;
-            vm.level = {
-                filename: 'wset3',
-                name: 'WSET 3'
-            }
-            vm.tags = 'France'
+            vm.country = null;
+            vm.region = null;
+            vm.mapOptions = { center: { latitude: 42.2144699, longitude: 3.3151086 }, zoom: 8 };
+            vm.mapControl = {};
+
+            //data=!4m2!3m1!1s0x47f2043908f3d9b7:0x109ce34b30d2510
+            vm.isReady = uiGmapIsReady;
+            uiGmapIsReady.promise(1).then(function(instances) {
+                instances.forEach(function(inst) {
+                    vm.map = inst.map;
+                    vm.uuid = vm.map.uiGmap_id;
+                    vm.mapInstanceNumber = inst.instance; // Starts at 1.
+                    vm.places = google.maps.places;
+                    vm.service = new vm.places.PlacesService(vm.map);
+                    vm.service.textSearch({query: getTextSearchQuery()}, function(result, status){
+                        vm.mapOptions.center.latitude = result[0].geometry.location.lat();
+                        vm.mapOptions.center.longitude = result[0].geometry.location.lng();
+                        vm.mapControl.refresh({
+                            latitude: vm.mapOptions.center.latitude, 
+                            longitude: vm.mapOptions.center.longitude }); 
+                    });
+
+                });
+            });
+
             window.foo = vm;
+
         })();
     }
 
