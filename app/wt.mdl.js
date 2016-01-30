@@ -1,4 +1,5 @@
 ﻿angular.module('wt', [
 'wt.questions',
-'wt.variety'
+'wt.variety',
+'wt.locations'
 ]);
