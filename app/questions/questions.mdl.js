@@ -28,7 +28,11 @@
 	                    url: '/editor',
 	                    templateUrl: TEMPLATE_URL + 'editor/editor.html',
 	                    controller: 'wtQuestionsEditor',
-	                    controllerAs: "vm"
+	                    controllerAs: "vm",
+	                    resolve:
+	                    {
+	                        data: 'wt.questioneditor.controller.resolver'
+	                    }
 	                }
 	            }],
 	            dataUrl: BASE_PATH + '/app/questions/',

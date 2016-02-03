@@ -11,7 +11,8 @@
     function questionService($http, config) {
         var cache = [],
             publicApi = {
-                getQuestions: getQuestions
+                getQuestions: getQuestions,
+                getTags: getTags
             };
 
         function getQuestions(name, qnty) {
@@ -19,6 +20,12 @@
                 .then(function (data) {
                     var q = (qnty) ? data.slice(0, qnty) : data;
                     return createQuestions(shuffle(q), config.numberQuestionSelections);
+                });
+        }
+        function getTags() {
+            return $http.get(config.dataUrl + 'tags.json')
+                .then(function (result) {
+                    return result.data;
                 });
         }
 
