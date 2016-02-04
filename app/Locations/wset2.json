@@ -18,11 +18,17 @@
     },
     {
       "key": "FR",
-      "value": "France"
+      "value": "France",
+      "lat": 45.8779713,
+      "long": -6.7719261,
+      "zoom": 5
     },
     {
       "key": "DE",
-      "value": "Germany"
+      "value": "Germany",
+      "lat": 51.0850942,
+      "long": 5.9671258,
+      "zoom": 6
     },
     {
       "key": "IT",

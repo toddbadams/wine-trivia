@@ -7,8 +7,8 @@
 <md-content class="md-padding md-whiteframe-1dp" layout="row" layout-align="center center">
   <md-input-container flex>
         <label>Country</label>
-        <md-select ng-model="vm.country">
-          <md-option ng-repeat="item in vm.data.countries" value="{{item.key}}">
+        <md-select ng-model="vm.country" ng-change="vm.onCountryChange()">
+          <md-option ng-repeat="item in vm.data.countries" value="{{$index}}">
             {{item.value}}
           </md-option>
         </md-select>

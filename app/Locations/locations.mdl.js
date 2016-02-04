@@ -63,16 +63,51 @@
         }
 
         function getTextSearchQuery(){
-            return 'France, Bordeaux';
+            var result = vm.country;
+            return result;
         }
+
+        function onCountryChange(){
+            var index = parseInt(vm.country),
+                country = vm.data.countries[index];
+            vm.region = null;
+            vm.subregion = null;
+            vm.mapOptions.center.longitude = country.long;
+            vm.mapOptions.center.latitude = country.lat;
+            vm.mapOptions.zoom = country.zoom;
+            vm.mapControl.refresh({
+                            latitude: vm.mapOptions.center.latitude, 
+                            longitude: vm.mapOptions.center.longitude }); 
+        }
+
+        function onRegionChange(){
+            vm.subregion = null;
+            requestMapUpdate();
+        }
+
+        function onSubregionChange(){
+            requestMapUpdate();
+        }
+
+        function requestMapUpdate(){
+            vm.service.textSearch({query: getTextSearchQuery()}, updateMap);
+        }
+
+        function updateMap(result, status){
+ 
+        }
+
+
         
         // controller activation
         (function () {
             vm.data = dataErrorCheck(data);
             vm.country = null;
             vm.region = null;
-            vm.mapOptions = { center: { latitude: 42.2144699, longitude: 3.3151086 }, zoom: 8 };
+            vm.subregion = null;
+            vm.mapOptions = { center: { latitude: 37, longitude: 0 }, zoom: 4 };
             vm.mapControl = {};
+            vm.onCountryChange = onCountryChange;
 
             //data=!4m2!3m1!1s0x47f2043908f3d9b7:0x109ce34b30d2510
             vm.isReady = uiGmapIsReady;
@@ -83,13 +118,7 @@
                     vm.mapInstanceNumber = inst.instance; // Starts at 1.
                     vm.places = google.maps.places;
                     vm.service = new vm.places.PlacesService(vm.map);
-                    vm.service.textSearch({query: getTextSearchQuery()}, function(result, status){
-                        vm.mapOptions.center.latitude = result[0].geometry.location.lat();
-                        vm.mapOptions.center.longitude = result[0].geometry.location.lng();
-                        vm.mapControl.refresh({
-                            latitude: vm.mapOptions.center.latitude, 
-                            longitude: vm.mapOptions.center.longitude }); 
-                    });
+                    vm.service.textSearch({query: 'France'}, updateMap);
 
                 });
             });
