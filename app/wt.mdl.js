@@ -2,5 +2,6 @@
 'wt.questions',
 'wt.variety',
 'wt.locations',
-'uiGmapgoogle-maps'
+'uiGmapgoogle-maps',
+'wt.settings'
 ]);
