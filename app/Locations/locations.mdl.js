@@ -1,53 +1,52 @@
 ﻿(function() {
     'use strict';
     var
-        BASE_PATH = window.location.hostname === 'localhost' ? '' : '/wine-trivia',
-        TEMPLATE_URL = BASE_PATH + '/app/locations/';
-
-    angular.module('wt.locations', [
-            'ui.router'
-        ])
-        .constant('wt.locations.config', {
-            routes: [{
-                name: 'locations',
-                state: {
-                    url: '/locations',
-                    templateUrl: TEMPLATE_URL + 'locations.html',
-                    controller: 'wtLocations',
-                    controllerAs: "vm",
-                    resolve: {
-                        data: 'wt.locations.controller.resolver'
-                    }
+        TEMPLATE_PATH = 'app/locations/',
+        DATA_PATH = 'app/locations/',
+        ROUTES = [{
+            name: 'locations',
+            state: {
+                url: '/locations',
+                templateUrl: TEMPLATE_PATH + 'locations.html',
+                controller: 'wtLocations',
+                controllerAs: "vm",
+                resolve: {
+                    data: 'wtLocationsResolver'
                 }
-            }],
-            dataUrl: BASE_PATH + '/app/locations/',
-            locationsFileName: 'wset2'
+            }
+        }];
+
+    angular.module('wt.locations', ['ui.router', 'ngMaterial', 'uiGmapgoogle-maps', 'wt.config', 'wt.fileloader'])
+        .constant('wtLocationsConfig', {
+            routes: ROUTES,
+            dataPath: DATA_PATH
         })
         .config(moduleConfig)
-        .factory('wt.locations.controller.resolver', LocationControllerResolver)
-        .factory('locationService', locationService)
+        .factory('wtLocationsResolver', wtLocationsResolver)
         .controller('wtLocations', LocationController);
 
 
     /**
      * Module configuration
      */
-    moduleConfig.$inject = ['$stateProvider', 'wt.locations.config'];
+    moduleConfig.$inject = ['$stateProvider', 'wtConfig', 'wtLocationsConfig'];
 
-    function moduleConfig($stateProvider, config) {
-        config.routes.forEach(function(route) {
+    function moduleConfig($stateProvider, appConfig, moduleConfig) {
+        moduleConfig.routes.forEach(function(route) {
+            if (route.state.templateUrl) {
+                route.state.templateUrl = appConfig.basePath + route.state.templateUrl;
+            }
             $stateProvider.state(route.name, route.state);
         });
     }
 
-
     /**
      * Location controller data resolver
      */
-    LocationControllerResolver.$inject = ['locationService', 'wt.locations.config'];
+    wtLocationsResolver.$inject = ['wtLocationsConfig', 'wtJsonLoader'];
 
-    function LocationControllerResolver(locationService, config) {
-        return locationService.getLocations(config.locationsFileName, config.numberLocations);
+    function wtLocationsResolver(wtLocationsConfig, wtJsonLoader) {
+        return wtJsonLoader(wtLocationsConfig.dataPath);
     }
 
 
@@ -141,35 +140,6 @@
         })();
     }
 
-
-    /**
-     * Location service
-     */
-    locationService.$inject = ['$http', 'wt.locations.config'];
-
-    function locationService($http, config) {
-        var cache = [],
-            publicApi = {
-                getLocations: getLocations
-            };
-
-        function getLocations(name, qnty) {
-            return getLocationsFromJsonFile(name);
-        }
-
-        function getLocationsFromJsonFile(name) {
-            return $http.get(buildFilename(name))
-                .then(function(result) {
-                    return result.data;
-                });
-        }
-
-        function buildFilename(name) {
-            return config.dataUrl + name + '.json';
-        }
-
-        return publicApi;
-    }
 
 
 })();
