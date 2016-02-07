@@ -1,3 +1,6 @@
 ﻿angular.module('wt', [
-'wt.questions'
+'wt.questions',
+'wt.variety',
+'wt.locations',
+'uiGmapgoogle-maps'
 ]);
