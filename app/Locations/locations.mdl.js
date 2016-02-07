@@ -25,19 +25,13 @@
         .factory('wtLocationsResolver', wtLocationsResolver)
         .controller('wtLocations', LocationController);
 
-
     /**
      * Module configuration
      */
-    moduleConfig.$inject = ['$stateProvider', 'wtConfig', 'wtLocationsConfig'];
+    moduleConfig.$inject = ['wtRouteProvider', 'wtLocationsConfig'];
 
-    function moduleConfig($stateProvider, appConfig, moduleConfig) {
-        moduleConfig.routes.forEach(function(route) {
-            if (route.state.templateUrl) {
-                route.state.templateUrl = appConfig.basePath + route.state.templateUrl;
-            }
-            $stateProvider.state(route.name, route.state);
-        });
+    function moduleConfig(wtRoutes, moduleConfig) {
+        wtRoutes.$get().setRoutes(moduleConfig.routes);
     }
 
     /**

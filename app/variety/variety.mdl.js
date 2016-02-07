@@ -1,41 +1,35 @@
 ﻿(function() {
 	'use strict';
+	
 	var
-		BASE_PATH = window.location.hostname === 'localhost' ? '' : '/wine-trivia',
-		TEMPLATE_URL = BASE_PATH + '/app/variety/',
+		TEMPLATE_PATH = 'app/questions/',
+		DATA_PATH = 'app/questions/',
 		ROUTES = [{
 			name: 'variety',
 			state: {
-				url: '/variety',
-				templateUrl: TEMPLATE_URL + 'variety.html',
-				controller: 'wtVariety',
+				url: '/varieties',
+				templateUrl: TEMPLATE_PATH + 'variety.html',
+				controller: 'wtVarieties',
 				controllerAs: "vm"
 
 			}
 		}];
 
-	angular.module('wt.variety', [
-			'ui.router',
-			'ngMaterial'
-		])
-		.constant('wt.variety.config', {
+	angular.module('wt.varieties', ['ui.router', 'ngMaterial', 'wt.config', 'wt.fileloader'])
+		.constant('wtVarietiesConfig', {
 			routes: ROUTES
 		})
 		.config(moduleConfig)
-		.controller('wtVariety', VarietyController);
-
+		.controller('wtVarieties', VarietyController);
 
 	/**
 	 * Module configuration
 	 */
-	moduleConfig.$inject = ['$stateProvider', 'wt.variety.config'];
+	moduleConfig.$inject = ['wtRouteProvider', 'wtVarietiesConfig'];
 
-	function moduleConfig($stateProvider, config) {
-		config.routes.forEach(function(route) {
-			$stateProvider.state(route.name, route.state);
-		});
-	}
-
+    function moduleConfig(wtRoutes, moduleConfig) {
+        wtRoutes.$get().setRoutes(moduleConfig.routes);
+    }
 
 	/**
 	 * variety controller
@@ -74,6 +68,5 @@
 			};
 		})();
 	}
-
 
 })();
