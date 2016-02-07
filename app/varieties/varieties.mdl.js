@@ -40,7 +40,7 @@
 
 
 	/**
-	 * variety controller data resolver
+	 * Variety controller data resolver
 	 */
 	wtVarietiesResolver.$inject = ['wtJsonLoader', 'wtVarietiesConfig', 'wtLocationsResolver'];
 
@@ -99,11 +99,6 @@
 				this.isWhite = data.isWhite;
 				this.key = data.key;
 				this.value = data.value; // this is the name
-			},
-
-			VarietyLocation = function(data, LocationModel) {
-				if (!locationModel) return null;
-				var location = allLocations[data.key]
 			};
 
 		function addBlendVarieties(data) {
@@ -132,11 +127,23 @@
 			if (!locationKeys || !angular.isArray(locationKeys) || locationKeys.length === 0) return;
 			var varietyLocations = {};
 			locationKeys.forEach(function(key) {
-				var itemModel = new VarietyLocation(key, locations.regions[key]);
-				if (itemModel != null) {
-					varietyLocations[key] = itemModel;
+				if (locations[key]) {
+					varietyLocations[key] = angular.copy(locations[key]);
 				}
-
+			});
+			// create hashed object
+			var root = {};
+			locationKeys.forEach(function(itemKey, index, array) {
+				var curObj = angular.copy(varietyLocations[itemKey]),
+					parentKey = curObj.parentKey;
+				while (parentKey !== null) {
+					var parObj = angular.copy(locations[parentKey])
+					parObj.children = [];
+					parObj.children.push(curObj);
+					curObj = parObj;
+					parentKey = curObj.parentKey;
+				}
+				root = angular.extend(root,curObj);
 			});
 			return varietyLocations;
 		}
