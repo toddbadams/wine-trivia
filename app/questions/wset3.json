@@ -228,5 +228,45 @@
     "certifications": [
       "wset3"
     ]
-  }
+  },
+  {
+  "stem": "When selecting a grape variety the grape grower is concered with factors such as",
+  "alternates": [
+    {
+      "id": 1,
+      "text": "",
+      "description": ""
+    },
+    {
+      "id": 2,
+      "text": "",
+      "description": ""
+    },
+    {
+      "id": 3,
+      "text": "",
+      "description": ""
+    }
+  ],
+  "correct": [
+    {
+      "id": 8,
+      "text": "budding",
+      "description": " "
+    },
+    {
+      "id": 9,
+      "text": "ripening times",
+      "description": ""
+    },
+    {
+      "id": 10,
+      "text": "desease resistance",
+      "description": ""
+    }
+  ],
+  "tags": [
+    "The Vine"
+  ]
+}
 ]

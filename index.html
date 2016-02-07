@@ -5,30 +5,49 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
-    <meta http-equiv="Pragma" content="no-cache"/>
-    <meta http-equiv="Expires" content="0"/>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <title>Localhost</title>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:100italic,100,300italic,300,400italic,400,500italic,500,700italic,700,900italic,900" type="text/css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.2/angular-material.min.css"/>
-    </head>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:100italic,100,300italic,300,400italic,400,500italic,500,700italic,700,900italic,900" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.2/angular-material.min.css" />
+    <style>
+        .angular-google-map-container {
+            height: 400px;
+        }
+    </style>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHTLNUZui5uT34E99RbTvh-YeWAMFGBrw&libraries=places"></script>
+</head>
 <body>
 
     <div ui-view></div>
 
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.1.0/lodash.min.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-aria.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-animate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.2/angular-material.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.2.2/angular-local-storage.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-maps/2.3.1/angular-google-maps.min.js"></script>-->
 
-    <script src="app/questions/question.service.js"></script>
+    <!--<script src="app/questions/question.service.js"></script>
     <script src="app/questions/questions.ctrl.js"></script>
     <script src="app/questions/questions.mdl.js"></script>
     <script src="app/questions/editor/questioneditor.ctrl.js"></script>
     <script src="app/variety/variety.ctrl.js"></script>
     <script src="app/variety/variety.mdl.js"></script>
-    <script src="app/wt.mdl.js"></script>
+    <script src="app/locations/locations.mdl.js"></script>-->
+    <script src="app/settings/settings.mdl.js"></script>
+    <script>
+        angular.module('wt', [
+    //'wt.questions',
+    //'wt.variety',
+    //'wt.locations',
+    //'uiGmapgoogle-maps',
+    'wt.settings'
+        ]);
+    </script>
 </body>
 </html>

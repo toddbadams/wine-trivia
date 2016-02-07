@@ -6,13 +6,15 @@
     "chai": "~3.4.2",
     "sinon-1.17.2": "http://sinonjs.org/releases/sinon-1.17.2.js",
     "sinon-chai": "https://raw.githubusercontent.com/domenic/sinon-chai/master/lib/sinon-chai.js",
-    "simple-test": "https://github.com/toddbadams/simple-test.git"
+    "simple-test": "https://github.com/toddbadams/simple-test.git",
+    "angular-google-maps": "~2.3.1"
   },
   "dependencies": {
     "angular": "1.4.7",
     "angular-material": "~1.0.1",
     "angular-aria": "~1.4.8",
     "angular-animate": "~1.4.8",
-    "angular-ui-router": "ui-router#~0.2.15"
+    "angular-ui-router": "ui-router#~0.2.15",
+    "angular-local-storage": "^0.2.3"
   }
 }
