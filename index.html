@@ -17,7 +17,7 @@
             height: 400px;
         }
     </style>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHTLNUZui5uT34E99RbTvh-YeWAMFGBrw&libraries=places"></script>
+    <!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHTLNUZui5uT34E99RbTvh-YeWAMFGBrw&libraries=places"></script>-->
 </head>
 <body>
 
@@ -29,24 +29,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-animate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.2/angular-material.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.2.2/angular-local-storage.min.js"></script>
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-maps/2.3.1/angular-google-maps.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.2.2/angular-local-storage.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-maps/2.3.1/angular-google-maps.min.js"></script>-->
 
-    <!--<script src="app/questions/question.service.js"></script>
-    <script src="app/questions/questions.ctrl.js"></script>
+    <script src="app/appconfig/appconfig.mdl.js"></script>
+    <script src="app/fileloader/fileloader.mdl.js"></script>
     <script src="app/questions/questions.mdl.js"></script>
-    <script src="app/questions/editor/questioneditor.ctrl.js"></script>
-    <script src="app/variety/variety.ctrl.js"></script>
+    <!--<script src="app/variety/variety.ctrl.js"></script>
     <script src="app/variety/variety.mdl.js"></script>
-    <script src="app/locations/locations.mdl.js"></script>-->
-    <script src="app/settings/settings.mdl.js"></script>
+    <script src="app/locations/locations.mdl.js"></script>
+    <script src="app/settings/settings.mdl.js"></script>-->
     <script>
         angular.module('wt', [
-    //'wt.questions',
+            'wt.questions'
     //'wt.variety',
     //'wt.locations',
     //'uiGmapgoogle-maps',
-    'wt.settings'
+    //'wt.settings'
         ]);
     </script>
 </body>

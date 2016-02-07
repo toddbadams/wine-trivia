@@ -1,54 +1,43 @@
 ﻿(function() {
 	'use strict';
 	var
-		BASE_PATH = window.location.hostname === 'localhost' ? '' : '/wine-trivia',
-		TEMPLATE_URL = BASE_PATH + '/app/questions/',
+		TEMPLATE_PATH = 'app/questions/',
+		DATA_PATH = 'app/questions/',
 		ROUTES = [{
-				name: 'questions',
-				state: {
-					url: '/questions',
-					templateUrl: TEMPLATE_URL + 'questions.html',
-					controller: 'wtQuestions',
-					controllerAs: "vm",
-					resolve: {
-						data: 'wt.questions.controller.resolver'
-					}
+			name: 'questions',
+			state: {
+				url: '/questions',
+				templateUrl: TEMPLATE_PATH + 'questions.html',
+				controller: 'wtQuestions',
+				controllerAs: "vm",
+				resolve: {
+					data: 'wtQuestionsResolver'
 				}
-			}, {
-				name: 'editor',
-				state: {
-					url: '/editor',
-					templateUrl: TEMPLATE_URL + 'editor/editor.html',
-					controller: 'wtQuestionsEditor',
-					controllerAs: "vm"
-				}
-			}];
+			}
+		}];
 
-	angular.module('wt.questions', [
-<<<<<<< HEAD
-			'ui.router',
-            'ngMaterial'
-		])
-		.constant('wt.questions.config', {
+	angular.module('wt.questions', ['ui.router', 'ngMaterial', 'wt.config', 'wt.fileloader'])
+		.constant('wtQuestionsConfig', {
 			routes: ROUTES,
-			dataUrl: BASE_PATH + '/app/questions/',
-			questionsFileName: 'wset3',
-			numberQuestions: 4,
+			dataPath: DATA_PATH,
 			numberQuestionSelections: 4
 		})
 		.config(moduleConfig)
-		.factory('questionService', questionService)
-        .factory('wt.questions.controller.resolver', QuestionControllerResolver)
-        .controller('wtQuestions', QuestionController);
+		.factory('wtQuestionsDataService', wtQuestionsDataService)
+		.factory('wtQuestionsResolver', wtQuestionsResolver)
+		.controller('wtQuestions', QuestionController);
 
 
 	/**
 	 * Module configuration
 	 */
-	moduleConfig.$inject = ['$stateProvider', 'wt.questions.config'];
+	moduleConfig.$inject = ['$stateProvider', 'wtConfig', 'wtQuestionsConfig'];
 
-	function moduleConfig($stateProvider, config) {
-		config.routes.forEach(function(route) {
+	function moduleConfig($stateProvider, appConfig, moduleConfig) {
+		moduleConfig.routes.forEach(function(route) {
+			if (route.state.templateUrl) {
+				route.state.templateUrl = appConfig.basePath + route.state.templateUrl;
+			}
 			$stateProvider.state(route.name, route.state);
 		});
 	}
@@ -57,34 +46,24 @@
 	/**
 	 * Questions Data Service
 	 */
-	questionService.$inject = ['$http', 'wt.questions.config'];
+	wtQuestionsDataService.$inject = ['wtQuestionsConfig', 'wtJsonLoader'];
 
-	function questionService($http, config) {
-		var cache = [],
-			publicApi = {
-				getQuestions: getQuestions
-			};
-
-		function getQuestions(name, qnty) {
-			return getQuestionsFromJsonFile(name)
+	function wtQuestionsDataService(moduleConfig, jsonLoader) {
+		function getQuestions(qnty) {
+			return jsonLoader(moduleConfig.dataPath)
 				.then(function(data) {
+					if(!angular.isArray(data)){
+						throw new Error();
+					}
+					if (qnty > data.length) {
+						qnty = data.length;
+					}
 					var q = (qnty) ? data.slice(0, qnty) : data;
-					return createQuestions(shuffle(q), config.numberQuestionSelections);
+					return createQuestions(shuffle(q), moduleConfig.numberQuestionSelections);
 				});
 		}
 
-		function getQuestionsFromJsonFile(name) {
-			return $http.get(buildFilename(name))
-				.then(function(result) {
-					return result.data;
-				});
-		}
-
-		function buildFilename(name) {
-			return config.dataUrl + name + '.json';
-		}
-
-		return publicApi;
+		return getQuestions;
 	}
 
 
@@ -153,117 +132,80 @@
 		return selections;
 	}
 
-    /**
-     * Question controller data resolver
-     */
-    QuestionControllerResolver.$inject = ['questionService', 'wt.questions.config'];
-    function QuestionControllerResolver(questionService, config) {
-        return questionService.getQuestions(config.questionsFileName, config.numberQuestions);
-    }
-=======
-	        'wt.questions.controller',
-            'wt.questions.editor.controller'
-	])
-	.constant('wt.questions.config', {
-	            routes: [{
-	                name: 'questions',
-	                state: {
-	                    url: '/questions',
-	                    templateUrl: TEMPLATE_URL + 'questions.html',
-	                    controller: 'wtQuestions',
-	                    controllerAs: "vm" ,
-	                    resolve:
-	                    {
-	                        data: 'wt.questions.controller.resolver'
-	                    }
-	                }
-	            },
-	            {
-	                name: 'editor',
-	                state: {
-	                    url: '/editor',
-	                    templateUrl: TEMPLATE_URL + 'editor/editor.html',
-	                    controller: 'wtQuestionsEditor',
-	                    controllerAs: "vm",
-	                    resolve:
-	                    {
-	                        data: 'wt.questioneditor.controller.resolver'
-	                    }
-	                }
-	            }],
-	            dataUrl: BASE_PATH + '/app/questions/',
-	 			questionsFileName: 'wset3',
-	    		numberQuestions: 4,
-	    		numberQuestionSelections: 4
-	        })
-	        .config(moduleConfig);
->>>>>>> 54c8fa7a5e849b5bc25c064edf43a661ab50c748
+	/**
+	 * Question controller data resolver
+	 */
+	wtQuestionsResolver.$inject = ['wtQuestionsDataService'];
 
+	function wtQuestionsResolver(wtQuestionsDataService) {
+		return wtQuestionsDataService(10);
+	}
 
-    /**
-     * Question controller
-     */
-    QuestionController.$inject = ['data'];
-    function QuestionController(data) {
-        var vm = this;
+	/**
+	 * Question controller
+	 */
+	QuestionController.$inject = ['data'];
 
-        function dataErrorCheck(data){
-            // todo
-            return data;
-        }
+	function QuestionController(data) {
+		var vm = this;
 
-        function selected(selectedIndex){
-            vm.current.selections[selectedIndex].isWrong = !vm.current.selections[selectedIndex].isAnswer;
-            vm.current.description = vm.current.selections[selectedIndex].description;
-        }
+		function dataErrorCheck(data) {
+			// todo
+			return data;
+		}
 
-        function previous(){
-            if(vm.index > 0) {
-                vm.index -= 1;
-                showPrevNextButtons(); 
-            }         
-        }
+		function selected(selectedIndex) {
+			vm.current.selections[selectedIndex].isWrong = !vm.current.selections[selectedIndex].isAnswer;
+			vm.current.description = vm.current.selections[selectedIndex].description;
+		}
 
-        function next(){
-            if(vm.index < vm.data.length - 1) {
-                vm.index += 1;
-                showPrevNextButtons();
-            }          
-        }
+		function previous() {
+			if (vm.index > 0) {
+				vm.index -= 1;
+				showPrevNextButtons();
+			}
+		}
 
-        function showPrevNextButtons(){
-            vm.current = vm.data[vm.index]; 
-            vm.showPrevious = vm.index > 0; 
-            vm.showNext = vm.index < vm.data.length - 1; 
-        }
+		function next() {
+			if (vm.index < vm.data.length - 1) {
+				vm.index += 1;
+				showPrevNextButtons();
+			}
+		}
 
-        function isWrong(index){
-            var w = vm.current.selected === index &&
-                !vm.current.selections[index].isAnswer;
-                return w;
-        }
+		function showPrevNextButtons() {
+			vm.current = vm.data[vm.index];
+			vm.showPrevious = vm.index > 0;
+			vm.showNext = vm.index < vm.data.length - 1;
+		}
 
-        // controller activation
-        (function () {
-            vm.data = dataErrorCheck(data);
-            vm.index = 0;
-            vm.current = vm.data[vm.index];
-            vm.showResults = false;
-            vm.showPrevious = false;
-            vm.previous = previous;
-            vm.showNext = true;
-            vm.next = next;
-            vm.selected = selected;
-            vm.isWrong = isWrong;
-            vm.tags = ['France','Bordeaux'];
-            vm.tagsReadonly = true;
-            vm.level = {
-                filename: 'wset3',
-                name: 'WSET 3'
-            }
-            vm.tags = 'France'
-            window.foo = vm;
-        })();
-    }
+		function isWrong(index) {
+			var w = vm.current.selected === index &&
+				!vm.current.selections[index].isAnswer;
+			return w;
+		}
+
+		// controller activation
+		(function() {
+			vm.data = dataErrorCheck(data);
+			vm.index = 0;
+			vm.current = vm.data[vm.index];
+			vm.showResults = false;
+			vm.showPrevious = false;
+			vm.previous = previous;
+			vm.showNext = true;
+			vm.next = next;
+			vm.selected = selected;
+			vm.isWrong = isWrong;
+			vm.tags = ['France', 'Bordeaux'];
+			vm.tagsReadonly = true;
+			vm.level = {
+				filename: 'wset3',
+				name: 'WSET 3'
+			}
+			vm.tags = 'France'
+			window.foo = vm;
+		})();
+	}
 
 })();
