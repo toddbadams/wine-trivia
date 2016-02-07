@@ -25,6 +25,7 @@
 			}];
 
 	angular.module('wt.questions', [
+<<<<<<< HEAD
 			'ui.router',
             'ngMaterial'
 		])
@@ -159,6 +160,44 @@
     function QuestionControllerResolver(questionService, config) {
         return questionService.getQuestions(config.questionsFileName, config.numberQuestions);
     }
+=======
+	        'wt.questions.controller',
+            'wt.questions.editor.controller'
+	])
+	.constant('wt.questions.config', {
+	            routes: [{
+	                name: 'questions',
+	                state: {
+	                    url: '/questions',
+	                    templateUrl: TEMPLATE_URL + 'questions.html',
+	                    controller: 'wtQuestions',
+	                    controllerAs: "vm" ,
+	                    resolve:
+	                    {
+	                        data: 'wt.questions.controller.resolver'
+	                    }
+	                }
+	            },
+	            {
+	                name: 'editor',
+	                state: {
+	                    url: '/editor',
+	                    templateUrl: TEMPLATE_URL + 'editor/editor.html',
+	                    controller: 'wtQuestionsEditor',
+	                    controllerAs: "vm",
+	                    resolve:
+	                    {
+	                        data: 'wt.questioneditor.controller.resolver'
+	                    }
+	                }
+	            }],
+	            dataUrl: BASE_PATH + '/app/questions/',
+	 			questionsFileName: 'wset3',
+	    		numberQuestions: 4,
+	    		numberQuestionSelections: 4
+	        })
+	        .config(moduleConfig);
+>>>>>>> 54c8fa7a5e849b5bc25c064edf43a661ab50c748
 
 
     /**

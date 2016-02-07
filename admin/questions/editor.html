@@ -1,7 +1,33 @@
 ﻿<md-content>
 
-
-
+    <div layout="row">
+        <md-input-container class="md-block" flex-25>
+            <label>Id</label>
+            <input ng-model="vm.data.id" ng-blur="vm.ngChange()">
+        </md-input-container>
+        <md-input-container class="md-block" flex>
+            <label>Stem</label>
+            <input ng-model="vm.data.stem" ng-blur="vm.ngChange()">
+        </md-input-container>
+    </div>
+    <div layout="row">
+        <md-chips ng-model="vm.selectedTabs" md-autocomplete-snap
+                  md-require-match="true">
+            <md-autocomplete md-selected-item="vm.selectedItem"
+                             md-search-text="vm.searchText"
+                             md-items="item in vm.querySearch(vm.searchText)"
+                             md-item-text="item.name"
+                             placeholder="Search for a tag">
+                <span md-highlight-text="vm.searchText">{{item}}</span>
+            </md-autocomplete>
+            <!--<md-chip-template>
+                <span>
+                    <strong>{{$chip.name}}</strong>
+                    <em>({{$chip.type}})</em>
+                </span>
+            </md-chip-template>-->
+        </md-chips>
+    </div>
     <md-tabs md-dynamic-height md-border-bottom>
         <md-tab label="Correct">
             <md-content class="md-padding">
@@ -10,15 +36,15 @@
                         <md-button ng-click="vm.addCorrect()">Add</md-button>
                     </div>
                     <md-list>
-                        <md-list-item  ng-repeat="row in vm.data.correct">
+                        <md-list-item ng-repeat="row in vm.data.correct">
                             <div layout="row">
                                 <md-input-container flex="25">
                                     <label>Text</label>
-                                    <input ng-model="row.text">
+                                    <input ng-model="row.text" ng-blur="vm.ngChange()">
                                 </md-input-container>
                                 <md-input-container flex>
                                     <label>Description</label>
-                                    <input ng-model="row.description">
+                                    <input ng-model="row.description" ng-blur="vm.ngChange()">
                                 </md-input-container>
                             </div>
                         </md-list-item>
@@ -37,11 +63,11 @@
                             <div layout="row">
                                 <md-input-container flex="25">
                                     <label>Text</label>
-                                    <input ng-model="row.text">
+                                    <input ng-model="row.text" ng-blur="vm.ngChange()">
                                 </md-input-container>
                                 <md-input-container flex>
                                     <label>Description</label>
-                                    <input ng-model="row.description">
+                                    <input ng-model="row.description" ng-blur="vm.ngChange()">
                                 </md-input-container>
                             </div>
                         </md-list-item>
@@ -50,4 +76,7 @@
             </md-content>
         </md-tab>
     </md-tabs>
+
+    <md-divider></md-divider>
+    <p>{{vm.text}}</p>
 </md-content>
