@@ -14,7 +14,8 @@
                     data: 'wtLocationsResolver'
                 }
             }
-        }];
+        }],
+        locationsCache = null;
 
     angular.module('wt.locations', ['ui.router', 'ngMaterial', 'uiGmapgoogle-maps', 'wt.config', 'wt.fileloader'])
         .constant('wtLocationsConfig', {
@@ -40,7 +41,10 @@
     wtLocationsResolver.$inject = ['wtLocationsConfig', 'wtJsonLoader'];
 
     function wtLocationsResolver(wtLocationsConfig, wtJsonLoader) {
-        return wtJsonLoader(wtLocationsConfig.dataPath);
+        if (locationsCache === null) {
+            locationsCache = wtJsonLoader(wtLocationsConfig.dataPath);
+        }
+        return locationsCache;
     }
 
 
