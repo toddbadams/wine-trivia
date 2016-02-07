@@ -7,7 +7,7 @@
     angular.module('wt.settings', [
     ])
         .value('wt.settings', {
-            certificaiton: 'wset3',
+            level: 'wset3',
             numberExamQuestions: 4
         })
         .config(moduleConfig)
