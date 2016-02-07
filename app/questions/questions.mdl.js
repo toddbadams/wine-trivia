@@ -16,14 +16,13 @@
 			}
 		}];
 
-	angular.module('wt.questions', ['ui.router', 'ngMaterial', 'wt.config', 'wt.fileloader'])
+	angular.module('wt.questions', ['ui.router', 'ngMaterial', 'wt.config', 'wt.fileloader', 'wt.routes'])
 		.constant('wtQuestionsConfig', {
 			routes: ROUTES,
 			dataPath: DATA_PATH,
 			numberQuestionSelections: 4
 		})
 		.config(moduleConfig)
-		.factory('wtQuestionsDataService', wtQuestionsDataService)
 		.factory('wtQuestionsResolver', wtQuestionsResolver)
 		.controller('wtQuestions', QuestionController);
 
@@ -31,41 +30,11 @@
 	/**
 	 * Module configuration
 	 */
-	moduleConfig.$inject = ['$stateProvider', 'wtConfig', 'wtQuestionsConfig'];
+	moduleConfig.$inject = ['wtRouteProvider', 'wtQuestionsConfig'];
 
-	function moduleConfig($stateProvider, appConfig, moduleConfig) {
-		moduleConfig.routes.forEach(function(route) {
-			if (route.state.templateUrl) {
-				route.state.templateUrl = appConfig.basePath + route.state.templateUrl;
-			}
-			$stateProvider.state(route.name, route.state);
-		});
+	function moduleConfig(wtRoutes, moduleConfig) {
+		wtRoutes.$get().setRoutes(moduleConfig.routes);
 	}
-
-
-	/**
-	 * Questions Data Service
-	 */
-	wtQuestionsDataService.$inject = ['wtQuestionsConfig', 'wtJsonLoader'];
-
-	function wtQuestionsDataService(moduleConfig, jsonLoader) {
-		function getQuestions(qnty) {
-			return jsonLoader(moduleConfig.dataPath)
-				.then(function(data) {
-					if(!angular.isArray(data)){
-						throw new Error();
-					}
-					if (qnty > data.length) {
-						qnty = data.length;
-					}
-					var q = (qnty) ? data.slice(0, qnty) : data;
-					return createQuestions(shuffle(q), moduleConfig.numberQuestionSelections);
-				});
-		}
-
-		return getQuestions;
-	}
-
 
 	// PRIVATE METHODS
 	var Question = function(data, numberQuestionSelections) {
@@ -135,10 +104,21 @@
 	/**
 	 * Question controller data resolver
 	 */
-	wtQuestionsResolver.$inject = ['wtQuestionsDataService'];
+	wtQuestionsResolver.$inject = ['wtJsonLoader', 'wtQuestionsConfig'];
 
-	function wtQuestionsResolver(wtQuestionsDataService) {
-		return wtQuestionsDataService(10);
+	function wtQuestionsResolver(wtJsonLoader, moduleConfig) {
+		var qnty = 10;
+		return wtJsonLoader(moduleConfig.dataPath)
+				.then(function(data) {
+					if(!angular.isArray(data)){
+						throw new Error();
+					}
+					if (qnty > data.length) {
+						qnty = data.length;
+					}
+					var q = (qnty) ? data.slice(0, qnty) : data;
+					return createQuestions(shuffle(q), moduleConfig.numberQuestionSelections);
+				});
 	}
 
 	/**

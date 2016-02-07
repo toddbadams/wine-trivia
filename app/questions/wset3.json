@@ -234,35 +234,35 @@
   "alternates": [
     {
       "id": 1,
-      "text": "",
-      "description": ""
+      "text": "species",
+      "description": "All grape varieties are of the same variety, Vitis vinefera, and it is not a factor is selecting a grape variety."
     },
     {
       "id": 2,
-      "text": "",
-      "description": ""
+      "text": "grafting",
+      "description": "Grafting is a technique used to join a rootstock to a variety, and it is not a factor is selecting a grape variety."
     },
     {
       "id": 3,
-      "text": "",
-      "description": ""
+      "text": "pernanent wood",
+      "description": "All grape varieties have permanent wood, and it is not a factor is selecting a grape variety."
     }
   ],
   "correct": [
     {
       "id": 8,
       "text": "budding",
-      "description": " "
+      "description": "The grape starts its annual growth cycle in the spring with bud break. In the Northern Hemisphere, this stage begins around March while in the Southern Hemisphere it begins around September when daily temperatures begin to surpass 10 °C (50 °F). The grape variety is selected based on budding temperature and the location of the vineyard."
     },
     {
       "id": 9,
       "text": "ripening times",
-      "description": ""
+      "description": "The ripening process and normally takes place around 40–50 days after fruit set. In the Northern Hemisphere this will be around the end of July and into August and between the end of January into February for the Southern Hemisphere. The grape variety is selected based on ripening time and the location of the vineyard."
     },
     {
       "id": 10,
       "text": "desease resistance",
-      "description": ""
+      "description": "The grape variety is selected based on resistance to desease in the location of the vineyard."
     }
   ],
   "tags": [
