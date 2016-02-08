@@ -228,43 +228,77 @@
     "certifications": [
       "wset3"
     ]
+}, {  "stem": "When selecting a grape variety the grape grower is concered with factors such as",
+  "alternates": [{
+    "id": 1,
+    "text": "species",
+    "description": "All grape varieties are of the same variety, Vitis vinefera, and it is not a factor is selecting a grape variety."
+  }, {
+    "id": 2,
+    "text": "grafting",
+    "description": "Grafting is a technique used to join a rootstock to a variety, and it is not a factor is selecting a grape variety."
+  }, {
+    "id": 3,
+    "text": "pernanent wood",
+    "description": "All grape varieties have permanent wood, and it is not a factor is selecting a grape variety."
+  }],
+  "correct": [{
+    "id": 8,
+    "text": "budding",
+    "description": "The grape starts its annual growth cycle in the spring with bud break. In the Northern Hemisphere, this stage begins around March while in the Southern Hemisphere it begins around September when daily temperatures begin to surpass 10 °C (50 °F). The grape variety is selected based on budding temperature and the location of the vineyard."
+  }, {
+    "id": 9,
+    "text": "ripening times",
+    "description": "The ripening process and normally takes place around 40–50 days after fruit set. In the Northern Hemisphere this will be around the end of July and into August and between the end of January into February for the Southern Hemisphere. The grape variety is selected based on ripening time and the location of the vineyard."
+  }, {
+    "id": 10,
+    "text": "desease resistance",
+    "description": "The grape variety is selected based on resistance to desease in the location of the vineyard."
+  }],
+  "tags": [
+    "The Vine"
+  ]
+}, {  "stem": "A grower uses a cutting technique to preserve the unique qualities of a grape variety.  A cutting is ",
+  "alternates": [{
+    "id": 1,
+    "text": "when a vine's parents come from two different species.",
+    "description": "This is known as a hybrid and does not preserve the unique qualities of a grape variety."
+  }, {
+    "id": 2,
+    "text": "the process of cross fertilization.",
+    "description": "Cross fertilization is when the pollen from the male part of the flower is used to transfer  to the flower of another vine and does not preserve the unique qualities of a grape variety."
+  }, {
+    "id": 3,
+    "text": "a cane that is bent down with a section buried in the ground.",
+    "description": "This technique is known as layering, and is used by growers to preserve the unique qualities of a grape variety."
+  }],
+  "correct": {
+    "id": 8,
+    "text": "section of vine shoot that is planted and then grows a new plant.",
+    "description": "This technique is widely used by commercial nurseries to preserve the unique qualities of a grape variety."
   },
-  {
-  "stem": "When selecting a grape variety the grape grower is concered with factors such as",
-  "alternates": [
-    {
-      "id": 1,
-      "text": "species",
-      "description": "All grape varieties are of the same variety, Vitis vinefera, and it is not a factor is selecting a grape variety."
-    },
-    {
-      "id": 2,
-      "text": "grafting",
-      "description": "Grafting is a technique used to join a rootstock to a variety, and it is not a factor is selecting a grape variety."
-    },
-    {
-      "id": 3,
-      "text": "pernanent wood",
-      "description": "All grape varieties have permanent wood, and it is not a factor is selecting a grape variety."
-    }
-  ],
-  "correct": [
-    {
-      "id": 8,
-      "text": "budding",
-      "description": "The grape starts its annual growth cycle in the spring with bud break. In the Northern Hemisphere, this stage begins around March while in the Southern Hemisphere it begins around September when daily temperatures begin to surpass 10 °C (50 °F). The grape variety is selected based on budding temperature and the location of the vineyard."
-    },
-    {
-      "id": 9,
-      "text": "ripening times",
-      "description": "The ripening process and normally takes place around 40–50 days after fruit set. In the Northern Hemisphere this will be around the end of July and into August and between the end of January into February for the Southern Hemisphere. The grape variety is selected based on ripening time and the location of the vineyard."
-    },
-    {
-      "id": 10,
-      "text": "desease resistance",
-      "description": "The grape variety is selected based on resistance to desease in the location of the vineyard."
-    }
-  ],
+  "tags": [
+    "The Vine"
+  ]
+}, {  "stem": "A grower uses a layering technique to preserve the unique qualities of a grape variety.  A layering is ",
+  "alternates": [{
+    "id": 1,
+    "text": "when a vine's parents come from two different species.",
+    "description": "This is known as a hybrid and does not preserve the unique qualities of a grape variety."
+  }, {
+    "id": 2,
+    "text": "the process of cross fertilization.",
+    "description": "Cross fertilization is when the pollen from the male part of the flower is used to transfer  to the flower of another vine and does not preserve the unique qualities of a grape variety."
+  }, {
+    "id": 3,
+    "text": "section of vine shoot that is planted and then grows a new plant.",
+    "description": "This technique is widely used by commercial nurseries to preserve the unique qualities of a grape variety."
+  }],
+  "correct": {
+    "id": 4,
+    "text": "a cane that is bent down with a section buried in the ground.",
+    "description": "This technique is known as layering, and is used by growers to preserve the unique qualities of a grape variety."
+  },
   "tags": [
     "The Vine"
   ]
