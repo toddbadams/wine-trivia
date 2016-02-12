@@ -20,7 +20,23 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHTLNUZui5uT34E99RbTvh-YeWAMFGBrw&libraries=places"></script>
 </head>
 <body>
-
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+                <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+            </md-button>
+            <h2>
+                <span>Toolbar with Icon Buttons</span>
+            </h2>
+            <span flex></span>
+            <md-button class="md-icon-button" aria-label="Favorite">
+                <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="More">
+                <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
     <div ui-view></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.1.0/lodash.min.js"></script>
@@ -40,6 +56,7 @@
     <script src="app/locations/locations.mdl.js"></script>
     <script src="app/varieties/varieties.mdl.js"></script>
     <script src="app/theme/theme.mdl.js"></script>
+    <script src="app/home/home.mdl.js"></script>
     
     <!--<script src="app/settings/settings.mdl.js"></script>-->
     <script>
@@ -47,7 +64,8 @@
             'wt.questions',
             'wt.locations',
           'wt.varieties',
-          'wt.theme'
+         // 'wt.theme',
+          'wt.home'
     //'wt.variety',
     //'wt.locations',
     //,
