@@ -1,15 +1,29 @@
 ﻿<md-toolbar>
-  <div class="md-toolbar-tools">
-    <md-button class="md-icon-button" aria-label="Previous" ng-click="vm.previous()" ng-show="vm.showPrevious">
-        <md-icon md-svg-icon="app/img/icons/previous.svg"></md-icon>
-    </md-button>
-    <h1 class="md-display-1" flex style="text-align: center;">
-      <span>{{vm.index+1}} of {{vm.data.length}}</span>
-    </h1>
-    <md-button class="md-icon-button" aria-label="Next" ng-click="vm.next()" ng-show="vm.showNext">
-        <md-icon md-svg-icon="app/img/icons/next.svg"></md-icon>
-    </md-button>
-  </div>
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings">
+            <md-icon md-svg-icon="app/img/icons/menu.svg"></md-icon>
+        </md-button>
+        <h2>
+            <span>Questions</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="More">
+            <md-icon md-svg-icon="app/img/icons/more_vert.svg"></md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Previous" ng-click="vm.previous()" ng-show="vm.showPrevious">
+            <md-icon md-svg-icon="app/img/icons/previous.svg"></md-icon>
+        </md-button>
+        <h1 class="md-display-1" flex style="text-align: center;">
+            <span>{{vm.index+1}} of {{vm.data.length}}</span>
+        </h1>
+        <md-button class="md-icon-button" aria-label="Next" ng-click="vm.next()" ng-show="vm.showNext">
+            <md-icon md-svg-icon="app/img/icons/next.svg"></md-icon>
+        </md-button>
+    </div>
 </md-toolbar>
 
 <md-content class="md-padding md-whiteframe-1dp" layout="row" layout-align="center center">
@@ -21,11 +35,15 @@
 <div layout="row" layout-padding>
   <div flex >
     <p class="md-body-1">{{vm.current.stem}}</p>
-    <md-radio-group ng-model="vm.current.selected">
-      <md-radio-button ng-repeat="selection in vm.current.selections" value="{{$index}}" 
-         ng-click="vm.selected($index)" class="md-body-1 md-primary"
-         ng-class="{'md-warn': selection.isWrong}">{{selection.text}}</md-radio-button>
-    </md-radio-group>
+      <md-radio-group ng-model="vm.current.selected">
+          <md-list>
+              <md-list-item ng-repeat="selection in vm.current.selections">
+                  <md-radio-button value="{{$index}}"
+                                   ng-click="vm.selected($index)" class="md-body-1 md-primary"
+                                   ng-class="{'md-warn': selection.isWrong}">{{selection.text}}</md-radio-button>
+              </md-list-item>
+          </md-list>
+      </md-radio-group>
     <p class="md-body-1">{{vm.current.description}}</p>
   </div>
 </div>
