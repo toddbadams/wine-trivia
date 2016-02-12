@@ -21,7 +21,7 @@
 </head>
 <body>
 
-    <div ui-view ></div>
+    <div ui-view></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.1.0/lodash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
@@ -39,21 +39,20 @@
     <script src="app/questions/questions.mdl.js"></script>
     <script src="app/locations/locations.mdl.js"></script>
     <script src="app/varieties/varieties.mdl.js"></script>
-
+    <script src="app/theme/theme.mdl.js"></script>
+    
     <!--<script src="app/settings/settings.mdl.js"></script>-->
     <script>
         angular.module('wt', [
             'wt.questions',
             'wt.locations',
-            'wt.varieties'
+          'wt.varieties',
+          'wt.theme'
+    //'wt.variety',
+    //'wt.locations',
+    //,
     //'wt.settings'
-        ])
-        .config(function ($mdThemingProvider) {
-                $mdThemingProvider.theme('default')
-                    .primaryPalette('purple')
-                    .accentPalette('green');
-                   // .dark();
-            });
+        ]);
     </script>
 </body>
 </html>
