@@ -13,7 +13,7 @@
                 resolve: {
                     data: 'wtLocationsResolver'
                 },
-                params:{
+                data:{
                     menu:{
                         name: 'Wine Regions'
                     }

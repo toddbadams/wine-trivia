@@ -14,7 +14,7 @@
 	//			resolve: {
 	//				data: 'wtWinesResolver'
 	//			},
-                params:{
+                data:{
                     menu:{
                         name: 'Wines'
                     }

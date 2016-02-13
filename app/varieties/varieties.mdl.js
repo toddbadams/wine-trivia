@@ -15,7 +15,7 @@
 					data: 'wtVarietiesResolver',
 					locations: 'wtLocationsResolver'
 				},
-                params:{
+                data:{
                     menu:{
                         name: 'Grape Varieties'
                     }
