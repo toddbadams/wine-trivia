@@ -1,7 +1,8 @@
 (function() {
 	'use strict';
 
-	angular.module('wt.routes', ['wt.config'])
+	angular.module('wt.routes', ['ui.router', 'wt.config'])
+		.factory('wtRoutes', wtRoutesService)
 		.provider('wtRoute', wtRouteProvider);
 
 
@@ -32,7 +33,44 @@
 
 			return publicApi;
 		}
+	}
 
+	wtRoutesService.$inject = ['$state'];
+	function wtRoutesService($state){
+		var publicApi = {
+			getMenuItems: getMenuItems
+		},
+		menuItems = (function(){
+
+			var MenuItem = function(state){
+				this.name = state.data.menu.name;
+				this.stateName = state.name;
+			}
+			MenuItem.prototype.go = function(){
+				$state.go(this.stateName);
+			}
+
+			function createMenuItems(routes){
+				if(!angular.isArray(routes) || routes.length<1){
+					return [];
+				}
+
+				var results = [];
+				routes.forEach(function(item){
+					if(item && item.data && item.data.menu){
+						results.push(new MenuItem(item));
+					}
+				});
+				return results;
+			}
+
+			return createMenuItems;
+		})();
+
+		function getMenuItems(){
+			return menuItems($state.get());
+		}
+		return publicApi
 	}
 
 })();

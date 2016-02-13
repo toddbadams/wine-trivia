@@ -12,11 +12,17 @@
                 controllerAs: "vm",
                 resolve: {
                     data: 'wtLocationsResolver'
+                },
+                data:{
+                    menu:{
+                        name: 'Wine Regions'
+                    }
                 }
             }
-        }];
+        }],
+        locationsCache = null;
 
-    angular.module('wt.locations', ['ui.router', 'ngMaterial', 'uiGmapgoogle-maps', 'wt.config', 'wt.fileloader'])
+    angular.module('wt.locations', ['ngMaterial', 'wt.routes', 'wt.config', 'wt.fileloader'])
         .constant('wtLocationsConfig', {
             routes: ROUTES,
             dataPath: DATA_PATH
@@ -40,7 +46,13 @@
     wtLocationsResolver.$inject = ['wtLocationsConfig', 'wtJsonLoader'];
 
     function wtLocationsResolver(wtLocationsConfig, wtJsonLoader) {
-        return wtJsonLoader(wtLocationsConfig.dataPath);
+        if (locationsCache === null) {
+            locationsCache = wtJsonLoader(wtLocationsConfig.dataPath)
+                .then(function(data) {
+                    return createLocations(data);
+                });
+        }
+        return locationsCache;
     }
 
 
@@ -135,5 +147,56 @@
     }
 
 
+    var createLocations = (function() {
+
+        var Location = function(data) {
+            this.key = data.key;
+            this.parentKey = parentKey(this.key);
+            this.childKey = childKey(this.key);
+            this.value = data.value; // The location name
+            if (data.description) {
+                this.description = data.description;
+            }
+            if (angular.isNumber(data.lat) &&
+                angular.isNumber(data.long) &&
+                angular.isNumber(data.zoom)) {
+                this.lat = data.lat;
+                this.lon = data.lon;
+                this.zoom = data.zoom;
+            }
+        };
+
+        /**
+         * @param(key) is in the format 'FR-BUR-MAC'
+         * @return and array of keys such as ['FR','BUR','MAC']
+         */
+        function parentKey(key) {
+            if (!key) return [];
+            var arr = key.split('-'),
+                parentKey = null;
+            arr.pop();
+            arr.forEach(function(item, index, array) {
+                parentKey = index === 0 ? item : parentKey + '-' + item;
+            })
+            return parentKey;
+        }
+
+        function childKey(key) {
+            var lastIndexOf = key.lastIndexOf('-');
+            return lastIndexOf > -1 ? key.substr(lastIndexOf + 1) : key;
+        }
+
+        function createLocationsHash(data) {
+            if (!data || !angular.isArray(data) || data.length === 0) return;
+            var obj = {};
+            data.forEach(function(item) {
+                var itemModel = new Location(item);
+                obj[itemModel.key] = itemModel;
+            });
+            return obj;
+        }
+
+        return createLocationsHash;
+    })();
 
 })();
