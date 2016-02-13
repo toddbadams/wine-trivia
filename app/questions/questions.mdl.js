@@ -12,11 +12,16 @@
 				controllerAs: "vm",
 				resolve: {
 					data: 'wtQuestionsResolver'
+				},
+				params:{
+					menu:{
+						name: 'Study Questions'
+					}
 				}
 			}
 		}];
 
-	angular.module('wt.questions', ['ui.router', 'ngMaterial', 'wt.config', 'wt.fileloader', 'wt.routes'])
+	angular.module('wt.questions', ['ngMaterial', 'wt.routes', 'wt.config', 'wt.fileloader', 'wt.routes'])
 		.constant('wtQuestionsConfig', {
 			routes: ROUTES,
 			dataPath: DATA_PATH,
