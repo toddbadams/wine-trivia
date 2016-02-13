@@ -12,12 +12,17 @@
                 controllerAs: "vm",
                 resolve: {
                     data: 'wtLocationsResolver'
+                },
+                params:{
+                    menu:{
+                        name: 'Wine Regions'
+                    }
                 }
             }
         }],
         locationsCache = null;
 
-    angular.module('wt.locations', ['ui.router', 'ngMaterial', 'uiGmapgoogle-maps', 'wt.config', 'wt.fileloader'])
+    angular.module('wt.locations', ['ngMaterial', 'wt.routes', 'wt.config', 'wt.fileloader'])
         .constant('wtLocationsConfig', {
             routes: ROUTES,
             dataPath: DATA_PATH

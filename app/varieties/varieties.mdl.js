@@ -14,11 +14,16 @@
 				resolve: {
 					data: 'wtVarietiesResolver',
 					locations: 'wtLocationsResolver'
-				}
+				},
+                params:{
+                    menu:{
+                        name: 'Grape Varieties'
+                    }
+                }
 			}
 		}];
 
-	angular.module('wt.varieties', ['ui.router', 'ngMaterial',
+	angular.module('wt.varieties', ['ngMaterial', 'wt.routes',
 			'wt.config', 'wt.fileloader', 'wt.locations'
 		])
 		.constant('wtVarietiesConfig', {

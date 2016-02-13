@@ -8,31 +8,33 @@
 			name: 'wines',
 			state: {
 				url: '/wines',
-				templateUrl: TEMPLATE_PATH + 'variety.html',
-				controller: 'wtwines',
+				templateUrl: TEMPLATE_PATH + 'wine.html',
+				controller: 'wtWines',
 				controllerAs: "vm",
-				resolve: {
-					data: 'wtwinesResolver',
-					locations: 'wtLocationsResolver'
-				}
+	//			resolve: {
+	//				data: 'wtWinesResolver'
+	//			},
+                params:{
+                    menu:{
+                        name: 'Wines'
+                    }
+                }
 			}
 		}];
 
-	angular.module('wt.wines', ['ui.router', 'ngMaterial',
-			'wt.config', 'wt.fileloader', 'wt.locations'
-		])
-		.constant('wtwinesConfig', {
+	angular.module('wt.wines', ['ngMaterial', 'wt.routes', 'wt.config', 'wt.fileloader'])
+		.constant('wtWinesConfig', {
 			routes: ROUTES,
 			dataPath: DATA_PATH,
 		})
 		.config(moduleConfig)
-		.factory('wtwinesResolver', wtwinesResolver)
-		.controller('wtwines', VarietyController);
+		//.factory('wtWinesResolver', wtWinesResolver)
+		.controller('wtWines', WineController);
 
 	/**
 	 * Module configuration
 	 */
-	moduleConfig.$inject = ['wtRouteProvider', 'wtwinesConfig'];
+	moduleConfig.$inject = ['wtRouteProvider', 'wtWinesConfig'];
 
 	function moduleConfig(wtRoutes, moduleConfig) {
 		wtRoutes.$get().setRoutes(moduleConfig.routes);
@@ -40,26 +42,27 @@
 
 
 	/**
-	 * Variety controller data resolver
+	 * Wine controller data resolver
 	 */
-	wtwinesResolver.$inject = ['wtJsonLoader', 'wtwinesConfig', 'wtLocationsResolver'];
+	wtWinesResolver.$inject = []; // 'wtJsonLoader', 'wtWinesConfig']; //, 'wtLocationsResolver'];
 
-	function wtwinesResolver(wtJsonLoader, moduleConfig, wtLocationsResolver) {
-		return wtLocationsResolver.then(function(locations) {
-			return wtJsonLoader(moduleConfig.dataPath)
-				.then(function(data) {
-					data.wines = createwines(data.wines, locations);
-					return data;
-				});
-		});
+	function wtWinesResolver(wtJsonLoader, moduleConfig, wtLocationsResolver) {
+		return [];
+	//	return wtLocationsResolver.then(function(locations) {
+//			return wtJsonLoader(moduleConfig.dataPath)
+//				.then(function(data) {
+//					data.wines = createwines(data.wines, locations);
+//					return data;
+//				});
+//		});
 	}
 
 	/**
-	 * variety controller
+	 * wine controller
 	 */
-	VarietyController.$inject = ['data', 'locations'];
+	WineController.$inject = []; //'data']; //, 'locations'];
 
-	function VarietyController(data, locations) {
+	function WineController(data, locations) {
 		var vm = this;
 
 		// controller activation
@@ -67,7 +70,7 @@
 			vm.countries = locations.countries;
 			vm.regions = locations.regions;
 			vm.wines = data.wines;
-			vm.variety = vm.wines['CHA'];
+			vm.wine = vm.wines['CHA'];
 			vm.wines = data.wines;
 
 			vm.selected = [];
@@ -79,14 +82,14 @@
 			vm.exists = function(item, list) {
 				return list.indexOf(item.key) > -1;
 			};
-			window.foo = vm.variety;
+			window.foo = vm.wine;
 		})();
 	}
 
 
 	// PRIVATE METHODS
 	var createwines = (function() {
-		var Variety = function(data, locations) {
+		var Wine = function(data, locations) {
 				this.isWhite = data.color === 'WH'; // else it's red
 				this.key = data.key;
 				this.value = data.value; // this is the name
@@ -95,7 +98,7 @@
 			},
 
 
-			BlendVariety = function(data) { // data is of type Variety
+			BlendWine = function(data) { // data is of type Wine
 				this.isWhite = data.isWhite;
 				this.key = data.key;
 				this.value = data.value; // this is the name
@@ -110,12 +113,12 @@
 			return data;
 		}
 
-		function createBlendwines(currentVariety, allwines) {
-			if (!currentVariety.blendKeys || !angular.isArray(currentVariety.blendKeys) || currentVariety.blendKeys.length === 0) return;
+		function createBlendwines(currentWine, allwines) {
+			if (!currentWine.blendKeys || !angular.isArray(currentWine.blendKeys) || currentWine.blendKeys.length === 0) return;
 			var blends = {};
-			currentVariety.blendKeys.forEach(function(blendKey) {
+			currentWine.blendKeys.forEach(function(blendKey) {
 				var blend = allwines[blendKey],
-					blendModel = blend ? new BlendVariety(blend) : null;
+					blendModel = blend ? new BlendWine(blend) : null;
 				if (blendModel) {
 					blends[blendModel.key] = blendModel;
 				}
@@ -125,16 +128,16 @@
 
 		function createLocationsHash(locationKeys, locations) {
 			if (!locationKeys || !angular.isArray(locationKeys) || locationKeys.length === 0) return;
-			var varietyLocations = {};
+			var wineLocations = {};
 			locationKeys.forEach(function(key) {
 				if (locations[key]) {
-					varietyLocations[key] = angular.copy(locations[key]);
+					wineLocations[key] = angular.copy(locations[key]);
 				}
 			});
 			// create hashed object
 			var root = {};
 			locationKeys.forEach(function(itemKey, index, array) {
-				var curObj = angular.copy(varietyLocations[itemKey]),
+				var curObj = angular.copy(wineLocations[itemKey]),
 					parentKey = curObj.parentKey;
 				while (parentKey !== null) {
 					var parObj = angular.copy(locations[parentKey])
@@ -145,14 +148,14 @@
 				}
 				root = angular.extend(root,curObj);
 			});
-			return varietyLocations;
+			return wineLocations;
 		}
 
 		function createwinesHash(data, locations) {
 			if (!data || !angular.isArray(data) || data.length === 0) return;
 			var obj = {};
 			data.forEach(function(item) {
-				var itemModel = new Variety(item, locations);
+				var itemModel = new Wine(item, locations);
 				obj[itemModel.key] = itemModel;
 			});
 			addBlendwines(obj);

@@ -21,7 +21,7 @@
 			}
 		}];
 
-	angular.module('wt.questions', ['ngMaterial', 'wt.routes', 'wt.config', 'wt.fileloader', 'wt.routes'])
+	angular.module('wt.questions', ['ngMaterial', 'wt.routes', 'wt.config', 'wt.fileloader'])
 		.constant('wtQuestionsConfig', {
 			routes: ROUTES,
 			dataPath: DATA_PATH,

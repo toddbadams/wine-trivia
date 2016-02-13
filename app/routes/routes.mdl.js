@@ -43,7 +43,11 @@
 		menuItems = (function(){
 
 			var MenuItem = function(data){
-				this.name = data.name;
+				this.name = data.params.menu.name;
+				this.stateName = data.name;
+			}
+			MenuItem.prototype.go = function(){
+				$state.go(this.stateName);
 			}
 
 			function createMenuItems(routes){
@@ -54,7 +58,7 @@
 				var results = [];
 				routes.forEach(function(item){
 					if(item && item.params && item.params.menu){
-						results.push(new MenuItem(item.params.menu));
+						results.push(new MenuItem(item));
 					}
 				});
 				return results;

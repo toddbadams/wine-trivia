@@ -28,7 +28,7 @@
         </md-button>
         <md-menu-content width="4">
           <md-menu-item ng-repeat="item in vm.menuItems">
-            <md-button>
+            <md-button ng-click="item.go()">
               {{item.name}}
             </md-button>
           </md-menu-item>
@@ -66,9 +66,10 @@
     <script>
         angular.module('wt', [
             'wt.questions',
-            'wt.layout'
-         //   'wt.locations',
-         // 'wt.varieties',
+            'wt.layout',
+            'wt.locations',
+            'wt.varieties'
+            //'wt.wines'
          // 'wt.theme',
          // 'wt.home'
     //'wt.variety',
