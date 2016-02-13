@@ -11,16 +11,27 @@
                 controller: 'wtLocations',
                 controllerAs: "vm",
                 resolve: {
-                    data: 'wtLocationsResolver'
+                    locations: 'wtLocationsResolver'
                 },
-                data:{
-                    menu:{
+                data: {
+                    menu: {
                         name: 'Wine Regions'
                     }
                 }
             }
+        }, {
+            name: 'locationDetail',
+            state: {
+                url: '/locations/:locationKey',
+                templateUrl: TEMPLATE_PATH + 'locationdetail.html',
+                controller: 'wtLocationDetails',
+                controllerAs: "vm",
+                resolve: {
+                    locations: 'wtLocationsResolver'
+                }
+            }
         }],
-        locationsCache = null;
+        locations = null;
 
     angular.module('wt.locations', ['ngMaterial', 'wt.routes', 'wt.config', 'wt.fileloader'])
         .constant('wtLocationsConfig', {
@@ -29,7 +40,8 @@
         })
         .config(moduleConfig)
         .factory('wtLocationsResolver', wtLocationsResolver)
-        .controller('wtLocations', LocationController);
+        .controller('wtLocations', LocationController)
+        .controller('wtLocationDetails', LocationDetailController);
 
     /**
      * Module configuration
@@ -46,106 +58,75 @@
     wtLocationsResolver.$inject = ['wtLocationsConfig', 'wtJsonLoader'];
 
     function wtLocationsResolver(wtLocationsConfig, wtJsonLoader) {
-        if (locationsCache === null) {
-            locationsCache = wtJsonLoader(wtLocationsConfig.dataPath)
+        if (locations === null) {
+            return wtJsonLoader(wtLocationsConfig.dataPath)
                 .then(function(data) {
-                    return createLocations(data);
+                    locations = createLocations(data);
+                    return locations;
                 });
         }
-        return locationsCache;
+        return locations;
     }
 
 
     /**
      * Location controller
      */
-    LocationController.$inject = ['uiGmapIsReady', 'data'];
+    LocationController.$inject = ['locations'];
 
-    function LocationController(uiGmapIsReady, data) {
+    function LocationController(locations) {
         var vm = this;
-
-        function dataErrorCheck(data) {
-            // todo
-            return data;
-        }
-
-        function getTextSearchQuery() {
-            var result = vm.country;
-            return result;
-        }
-
-        function onCountryChange() {
-            var index = parseInt(vm.country),
-                country = vm.data.countries[index];
-            vm.region = null;
-            vm.subregion = null;
-            vm.mapOptions.center.longitude = country.long;
-            vm.mapOptions.center.latitude = country.lat;
-            vm.mapOptions.zoom = country.zoom;
-            vm.mapControl.refresh({
-                latitude: vm.mapOptions.center.latitude,
-                longitude: vm.mapOptions.center.longitude
-            });
-        }
-
-        function onRegionChange() {
-            vm.subregion = null;
-            requestMapUpdate();
-        }
-
-        function onSubregionChange() {
-            requestMapUpdate();
-        }
-
-        function requestMapUpdate() {
-            vm.service.textSearch({
-                query: getTextSearchQuery()
-            }, updateMap);
-        }
-
-        function updateMap(result, status) {
-
-        }
-
-
 
         // controller activation
         (function() {
-            vm.data = dataErrorCheck(data);
-            vm.country = null;
-            vm.region = null;
-            vm.subregion = null;
-            vm.mapOptions = {
-                center: {
-                    latitude: 37,
-                    longitude: 0
-                },
-                zoom: 4
-            };
-            vm.mapControl = {};
-            vm.onCountryChange = onCountryChange;
-
-            //data=!4m2!3m1!1s0x47f2043908f3d9b7:0x109ce34b30d2510
-            vm.isReady = uiGmapIsReady;
-            uiGmapIsReady.promise(1).then(function(instances) {
-                instances.forEach(function(inst) {
-                    vm.map = inst.map;
-                    vm.uuid = vm.map.uiGmap_id;
-                    vm.mapInstanceNumber = inst.instance; // Starts at 1.
-                    vm.places = google.maps.places;
-                    vm.service = new vm.places.PlacesService(vm.map);
-                    vm.service.textSearch({
-                        query: 'France'
-                    }, updateMap);
-
-                });
-            });
-
-            window.foo = vm;
+            vm.locations = rootLocations(locations);
 
         })();
     }
+    /**
+     * Location detail controller
+     */
+    LocationDetailController.$inject = ['$stateParams', 'locations'];
 
+    function LocationDetailController($stateParams, locations) {
+        var vm = this,
+            locationKey = $stateParams.locationKey;
+
+        // controller activation
+        (function() {
+            vm.locations = locations;
+            vm.current = locations[locationKey];
+            vm.parent = vm.current.parentKey ? vm.locations[vm.current.parentKey] : null;
+            vm.children = children(vm.locations, vm.current.key);
+        })();
+    }
+
+    function children(locations,key){
+        if(!angular.isObject(locations)) return null;
+
+        var results = [];
+        angular.forEach(locations,function(item){
+            if(item.key.startsWith(key) &&
+                item.key !== key &&
+                (item.key.match(/-/g) || []).length === (key.match(/-/g) || []).length +1){
+                results.push(item);
+            }
+        });
+        return results.length>0 ? results : null;
+    }
+
+
+    function rootLocations(locations){
+        if(!angular.isObject(locations)) return null;
+
+        var results = [];
+        angular.forEach(locations,function(item){
+            if((item.key.match(/-/g) || []).length === 0){
+                results.push(item);
+            }
+        });
+        return results.length>0 ? results : null;
+    }
 
     var createLocations = (function() {
 
@@ -188,12 +169,12 @@
 
         function createLocationsHash(data) {
             if (!data || !angular.isArray(data) || data.length === 0) return;
-            var obj = {};
+            var result = {};
             data.forEach(function(item) {
                 var itemModel = new Location(item);
-                obj[itemModel.key] = itemModel;
+                result[itemModel.key] = itemModel;
             });
-            return obj;
+            return result;
         }
 
         return createLocationsHash;

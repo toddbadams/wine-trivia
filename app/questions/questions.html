@@ -1,23 +1,21 @@
-﻿
-
-    <md-content  >
-<md-card flex>
-    <md-card-title>
-        <md-card-title-text>{{vm.current.stem}}</md-card-title-text>
-    </md-card-title>
-    <md-card-content>
-        <md-radio-group ng-model="vm.current.selected">
-            <md-list>
-                <md-list-item ng-repeat="selection in vm.current.selections">
-                    <md-radio-button value="{{$index}}"
-                                     ng-click="vm.selected($index)" class="md-body-1 md-primary"
-                                     ng-class="{'md-warn': selection.isWrong}">{{selection.text}}</md-radio-button>
-                </md-list-item>
-            </md-list>
-        </md-radio-group>
-        <p class="md-body-1">{{vm.current.description}}</p>
-    </md-card-content>
-</md-card>
+﻿<md-content  >
+    <md-card flex>
+        <md-card-title>
+            <md-card-title-text>{{vm.current.stem}}</md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <md-radio-group ng-model="vm.current.selected">
+                <md-list>
+                    <md-list-item ng-repeat="selection in vm.current.selections">
+                        <md-radio-button value="{{$index}}"
+                                         ng-click="vm.selected($index)" class="md-body-1 md-primary"
+                                         ng-class="{'md-warn': selection.isWrong}">{{selection.text}}</md-radio-button>
+                    </md-list-item>
+                </md-list>
+            </md-radio-group>
+            <p class="md-body-1">{{vm.current.description}}</p>
+        </md-card-content>
+    </md-card>
 </md-content>
 <md-bottom-sheet class="md-grid" layout="row">
     <md-button class="md-icon-button" aria-label="Previous" ng-click="vm.previous()" ng-show="vm.showPrevious">

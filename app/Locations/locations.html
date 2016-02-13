@@ -1,30 +1,5 @@
-﻿<md-toolbar>
-  <h1 class="md-subhead" flex style="text-align: center;">
-      wine producing countries and regions
-    </h1>
-</md-toolbar>
-
-<md-content class="md-padding md-whiteframe-1dp" layout="row" layout-align="center center">
-  <md-input-container flex>
-        <label>Country</label>
-        <md-select ng-model="vm.country" ng-change="vm.onCountryChange()">
-          <md-option ng-repeat="item in vm.data.countries" value="{{$index}}">
-            {{item.value}}
-          </md-option>
-        </md-select>
-  </md-input-container>
-  <md-input-container flex>
-        <label>Region</label>
-        <md-select ng-model="vm.region">
-          <md-option ng-repeat="item in vm.data.regions[vm.data.country]" value="{{item.key}}">
-            {{item.value}}
-          </md-option>
-        </md-select>
-  </md-input-container>
-</md-content>
-
-<div layout="row" layout-padding>
-  <div flex >
-    <ui-gmap-google-map center='vm.mapOptions.center' zoom='vm.mapOptions.zoom' control="vm.mapControl"></ui-gmap-google-map>
-  </div>
-</div>
+﻿<md-grid-list md-cols="4" md-row-height="32px" md-gutter="4px">
+  <md-grid-tile ng-repeat="item in vm.locations">
+    <md-button md-no-ink class="md-primary" ui-sref="locationDetail({ locationKey: item.key })" flex>{{ item.value }} </md-button>
+  </md-grid-tile>
+</md-grid-list>
