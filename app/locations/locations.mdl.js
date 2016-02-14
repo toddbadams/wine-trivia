@@ -39,6 +39,7 @@
             dataPath: DATA_PATH
         })
         .config(moduleConfig)
+        .filter('Countries', rootLocations)
         .factory('wtLocationsResolver', wtLocationsResolver)
         .controller('wtLocations', LocationController)
         .controller('wtLocationDetails', LocationDetailController);
@@ -61,7 +62,7 @@
         if (locations === null) {
             return wtJsonLoader(wtLocationsConfig.dataPath)
                 .then(function(data) {
-                    locations = createLocations(data);
+                    locations = new Locations(data);
                     return locations;
                 });
         }
@@ -101,34 +102,34 @@
         })();
     }
 
-    function children(locations,key){
-        if(!angular.isObject(locations)) return null;
+    function children(locations, key) {
+        if (!angular.isObject(locations)) return null;
 
         var results = [];
-        angular.forEach(locations,function(item){
-            if(item.key.startsWith(key) &&
+        angular.forEach(locations, function(item) {
+            if (item.key.startsWith(key) &&
                 item.key !== key &&
-                (item.key.match(/-/g) || []).length === (key.match(/-/g) || []).length +1){
+                (item.key.match(/-/g) || []).length === (key.match(/-/g) || []).length + 1) {
                 results.push(item);
             }
         });
-        return results.length>0 ? results : null;
+        return results.length > 0 ? results : null;
     }
 
 
-    function rootLocations(locations){
-        if(!angular.isObject(locations)) return null;
+    function rootLocations(locations) {
+        if (!angular.isObject(locations)) return null;
 
         var results = [];
-        angular.forEach(locations,function(item){
-            if((item.key.match(/-/g) || []).length === 0){
+        angular.forEach(locations, function(item) {
+            if ((item.key.match(/-/g) || []).length === 0) {
                 results.push(item);
             }
         });
-        return results.length>0 ? results : null;
+        return results.length > 0 ? results : null;
     }
 
-    var createLocations = (function() {
+    var Locations = (function() {
 
         var Location = function(data) {
             this.key = data.key;
@@ -145,6 +146,11 @@
                 this.lon = data.lon;
                 this.zoom = data.zoom;
             }
+        },
+        Locations = function(data){
+            this.array = data;
+            this.hash = createLocationsHash(data);
+            this.countries = rootLocations(data);
         };
 
         /**
@@ -177,7 +183,9 @@
             return result;
         }
 
-        return createLocationsHash;
+
+
+        return Locations;
     })();
 
 })();

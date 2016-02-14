@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html ng-app="wt.varietyeditor" lang="en">
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>WT Variety Editor</title>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:100italic,100,300italic,300,400italic,400,500italic,500,700italic,700,900italic,900" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.2/angular-material.min.css" />
+</head>
+<body ng-controller="wtVarietyEditor as vm">
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <span>Variety Editory</span>
+          <span flex></span>
+          <a ng-href="{{vm.download}}" download="varieties.json" ng-click="vm.updateDownload()">Download</a>
+        </div>
+      </md-toolbar>
+    <md-content layout="row">
+        <md-list flex="25" style="background-color: #fafafa;">
+            <md-list-item ng-repeat="item in vm.varieties">
+                <md-button ng-click="vm.select(item)" flex>{{ item.value }} </md-button>
+            </md-list-item>
+        </md-list>
+        <div layout="column" flex>
+            <md-card>
+                <md-card-header>
+                    <md-card-header-text class="md-subhead">Details</md-card-header-text>
+                </md-card-header>
+                <div  layout="row">
+                    <md-input-container>
+                        <label>Key</label>
+                        <input ng-model="vm.current.key">
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Name</label>
+                        <input ng-model="vm.current.value">
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Pronunciation</label>
+                        <input ng-model="vm.current.pronounce">
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Color</label>
+                        <md-select ng-model="vm.current.color">
+                          <md-option value="WH">White</md-option>
+                          <md-option value="RD">Red</md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Origin</label>
+                        <md-select ng-model="vm.current.origin">
+                          <md-option ng-repeat="country in vm.locations.countries" value="{{country.key}}">{{country.value}}</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+                <md-input-container>
+                    <label>Description</label>
+                    <textarea ng-model="vm.current.description"></textarea>
+                </md-input-container>
+            </md-card>
+            <div layout="row">
+                <md-card ng-repeat="region in vm.current.regions">
+                    <md-card-header>
+                        <md-card-header-text class="md-subhead">{{ region.key }}</md-card-header-text>
+                    </md-card-header>
+                </md-card>
+            </div>
+
+        </div>
+    </md-content>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-aria.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="https://cdn.gitcdn.xyz/cdn/angular/bower-material/v1.0.5/angular-material.js"></script>
+
+    <script src="/admin/variety/varietyeditor.mdl.js"></script>
+    <script src="/app/appconfig/appconfig.mdl.js"></script>
+    <script src="/app/locations/locations.mdl.js"></script>
+    <script src="/app/routes/routes.mdl.js"></script>
+    <script src="/app/fileloader/fileloader.mdl.js"></script>
+</body>
+</html>
