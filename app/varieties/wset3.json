@@ -32,10 +32,39 @@
   "value": "Sauvignon Blanc",
   "color": "WH",
   "regions": [{
+    "key": "FR-LOI",
+    "isPremium": true,
+    "tasting": {
+      "appearance": {
+        "intensity": 113,
+        "color": 225
+      },
+      "nose": {
+        "intensity": 455,
+        "aroma": [
+            ["green apple", "asparagus", "wet stone"],
+            [],
+            []
+        ]
+      },
+      "palate": {
+        "sweetness": 116,
+        "acidity": 555,
+        "body": 115,
+        "intensity": 455,
+        "finish": 155,
+        "flavours": [
+            ["green apple", "asparagus", "wet stone"],
+            [],
+            []
+        ]
+      }
+    }
+  },{
     "key": "FR-LOI-SAN",
     "isPremium": true
   }, {
-    "key": "FR-LOI.POU",
+    "key": "FR-LOI-POU",
     "isPremium": true
   }, {
     "key": "FR-BOR",

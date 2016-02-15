@@ -2,11 +2,30 @@
 	'use strict'
 
 	var
-		TEMPLATE_PATH = 'app/varieties/',
-		DATA_PATH = '/app/varieties/';
+		TEMPLATE_PATH = '/admin/variety/',
+		DATA_PATH = '/app/varieties/',
+		TASTING = {
+			appearance : {
+				color: ["pale", "medium", "deep"],
+				intensity: ["lemon-green", "lemon", "gold", "amber", "brown"]
+			},
+			NOSE: {
+				intensity: ["light", "medium-", "medium", "medium+", "pronounced"]				
+			},
+			palate: {
+				sweetness: ["dry", "off-dry", "medium-dry", "medium-sweet", "sweet", "luscious"],
+				acidity: ["low", "medium-", "medium", "medium+", "high"],
+				alcohol: ["low", "medium-", "medium", "medium+", "high"],
+				body: ["low", "medium-", "medium", "medium+", "full"],
+				tanin: ["low", "medium-", "medium", "medium+", "high"],
+				finish: ["short", "medium-", "medium", "medium+", "long"],
+				intensity: ["low", "medium-", "medium", "medium+", "pronounced"]	
+			}
+		};
 
 	angular.module('wt.varietyeditor', ['ngMaterial', 'wt.fileloader', 'wt.locations'])
 		.controller('wtVarietyEditor', wtVarietyEditor)
+		.directive('wtTastingEditor', wtTastingEditor)
 		.filter('orderArryBy', function() {
 			return function(input, attr) {
 				if (!angular.isArray(input)) return input;
@@ -24,18 +43,18 @@
 			}
 		]);
 
-	wtVarietyEditor.$inject = ['$filter','wtJsonLoader', 'wtLocationsResolver'];
+	wtVarietyEditor.$inject = ['$filter', 'wtJsonLoader', 'wtLocationsResolver'];
 
 	function wtVarietyEditor($filter, wtJsonLoader, wtLocationsResolver) {
 		var vm = this;
 
 		function postDataLoad(data) {
-			vm.varieties = $filter('orderArryBy')(data,'value');
+			vm.varieties = $filter('orderArryBy')(data, 'value');
 			vm.current = data[0];
 			updateDownload();
 		}
 
-		function postLocations(data){
+		function postLocations(data) {
 			vm.locations = data;
 		}
 
@@ -61,5 +80,27 @@
 			wtJsonLoader(DATA_PATH).then(postDataLoad);
 			wtLocationsResolver.then(postLocations);
 		}());
+	}
+
+	wtTastingEditor.$inject = [];
+
+	function wtTastingEditor() {
+
+		return {
+			restrict: 'E',
+    		require: 'ngModel',
+    		link: link,
+				templateUrl: TEMPLATE_PATH + 'tastingEditor.html'
+		}
+
+		function link(scope, element, attrs, ngModel){
+			var vm=scope;
+
+			// directive activation
+			(function(){
+				vm.tasting = TASTING;
+			})();
+		}
+
 	}
 })();

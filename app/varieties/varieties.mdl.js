@@ -96,7 +96,8 @@
 				this.key = data.key;
 				this.value = data.value; // this is the name
 				this.blendKeys = data.blends;
-				this.premiumLocations = createLocationsHash(data.premiumLocations, locations)
+				this.regions = createLocationsHash(data.premiumLocations, locations),
+				this.tasting = data.tasting;
 			},
 
 

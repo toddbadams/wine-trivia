@@ -68,6 +68,7 @@
                 <md-card ng-repeat="region in vm.current.regions">
                     <md-card-header>
                         <md-card-header-text class="md-subhead">{{ region.key }}</md-card-header-text>
+                        <wt-tasting-editor ng-model = "region.tasting"></wt-tasting-editor>
                     </md-card-header>
                 </md-card>
             </div>
