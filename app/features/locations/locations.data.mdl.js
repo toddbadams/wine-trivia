@@ -82,6 +82,15 @@
                 if (data.description) {
                     this.description = data.description;
                 }
+                if(data.soil){
+                    this.soil = data.soil;
+                }
+                if(data.notes){
+                    this.notes = data.notes;
+                }
+                if(data.varieties){
+                    this.varieties = data.varieties;
+                }
                 if (angular.isNumber(data.lat) &&
                     angular.isNumber(data.long) &&
                     angular.isNumber(data.zoom)) {

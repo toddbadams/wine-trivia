@@ -1,142 +1,165 @@
 [{
-    "key": "AR",
-    "value": "Argentina"
-  }, {
-    "key": "AU",
-    "value": "Australia"
-  }, {
-    "key": "AT",
-    "value": "Austria"
-  }, {
-    "key": "CL",
-    "value": "Chile"
-  }, {
-    "key": "FR",
-    "value": "France",
-    "lat": 45.8779713,
-    "lon": -6.7719261,
-    "zoom": 5
-  }, {
-    "key": "DE",
-    "value": "Germany",
-    "lat": 51.0850942,
-    "lon": 5.9671258,
-    "zoom": 6
-  }, {
-    "key": "IT",
-    "value": "Italy"
-  }, {
-    "key": "NZ",
-    "value": "New Zealand"
-  }, {
-    "key": "PT",
-    "value": "Portugal"
-  }, {
-    "key": "ES",
-    "value": "Spain"
-  }, {
-    "key": "ZA",
-    "value": "South Africa"
-  },
+        "key": "AR",
+        "value": "Argentina"
+    }, {
+        "key": "AU",
+        "value": "Australia"
+    }, {
+        "key": "AT",
+        "value": "Austria"
+    }, {
+        "key": "CL",
+        "value": "Chile"
+    }, {
+        "key": "FR",
+        "value": "France",
+        "lat": 45.8779713,
+        "lon": -6.7719261,
+        "zoom": 5
+    }, {
+        "key": "DE",
+        "value": "Germany",
+        "lat": 51.0850942,
+        "lon": 5.9671258,
+        "zoom": 6
+    }, {
+        "key": "IT",
+        "value": "Italy"
+    }, {
+        "key": "NZ",
+        "value": "New Zealand"
+    }, {
+        "key": "PT",
+        "value": "Portugal"
+    }, {
+        "key": "ES",
+        "value": "Spain"
+    }, {
+        "key": "ZA",
+        "value": "South Africa"
+    },
 
-  {
-    "key": "FR-BUR",
-    "value": "Burgundy"
-  }, {
-    "key": "FR-BUR-CHA",
-    "value": "Chablis"
-  }, {
-    "key": "FR-BUR-PUL",
-    "value": "Puligny-Montrachet"
-  }, {
-    "key": "FR-BUR-MEU",
-    "value": "Meursault"
-  }, {
-    "key": "FR-BUR-MAC",
-    "value": "Mâcon"
-  }, {
-    "key": "FR-BUR-POU",
-    "value": "Pouilly-Fuissé"
-  }, {
-    "key": "FR-BUR-GEV",
-    "value": "Gevrey-Chambertin"
-  }, {
-    "key": "FR-BUR-NUI",
-    "value": "Nuits-Saint-Georges"
-  }, {
-    "key": "FR-BUR-BEA",
-    "value": "Beaune"
-  }, {
-    "key": "FR-BUR-POM",
-    "value": "Pommard"
-  }, {
-    "key": "FR-LOI",
-    "value": "Loire"
-  }, {
-    "key": "FR-LOI-SAN",
-    "value": "Sancerre"
-  }, {
-    "key": "FR-LOI-POU",
-    "value": "Pouilly-Fumé"
-  }, {
-    "key": "FR-BOR",
-    "value": "Bordeaux"
-  }, {
-    "key": "FR-BOR-MED",
-    "value": "Médoc"
-  }, {
-    "key": "FR-BOR-HAU",
-    "value": "Haut-Médoc"
-  }, {
-    "key": "FR-BOR-PAU",
-    "value": "Pauillac,"
-  }, {
-    "key": "FR-BOR-MAR",
-    "value": "Margaux"
-  }, {
-    "key": "FR-BOR-GRA",
-    "value": "Graves"
-  }, {
-    "key": "FR-BOR-PES",
-    "value": "Pessac-Léognan"
-  }, {
-    "key": "FR-BOR-SAI",
-    "value": "Saint-Émilion"
-  }, {
-    "key": "FR-BOR-POM",
-    "value": "Pomerol"
-  }, {
-    "key": "FR-PAY",
-    "value": "Pays d’Oc"
-  }, {
-    "key": "FR-ALS",
-    "value": "Alsace"
-  }, {
-    "key": "FR-NRH",
-    "value": "Northern Rhône"
-  }, {
-    "key": "FR-NRH-CRO",
-    "value": "Crozes-Hermitage"
-  }, {
-    "key": "FR-NRH-HER",
-    "value": "Hermitage"
-  }, {
-    "key": "FR-NRH-COT",
-    "value": "Côte-Rôtie"
-  }, {
-    "key": "FR-SRH",
-    "value": "Southern Rhône"
-  }, {
-    "key": "FR-SRH-COT",
-    "value": "Côtes du Rhône AOC",
-    "description": "Côtes du Rhône is a wine-growing Appellation d'Origine Contrôlée (AOC) for the Rhône wine region of France, which may be used throughout the region, also in those areas which are covered by other AOCs"
-  }, {
-    "key": "FR-SRH-COT-VIL",
-    "value": "Côtes du Rhône Villages AOC",
-    "description": "Further up the scale from the Côtes du Rhône AOC the Côtes du Rhône-Villages AOC is produced by 95 authorized communes in the departments of the Ardèche, the Drôme, the Gard, and the Vaucluse."
-  }, {
-    "key": "FR-SRH-CHA",
-    "value": "Châteauneuf-du-Pape",
-    "description": "Châteauneuf-du-Pape is a French wine Appellation d'origine contrôlée (AOC) located around the village of Châteauneuf-du-Pape in the Rhône wine region in southeastern France. "
-  }
+    {
+        "key": "FR-BUR",
+        "value": "Burgundy"
+    }, {
+        "key": "FR-BUR-CHA",
+        "value": "Chablis"
+    }, {
+        "key": "FR-BUR-PUL",
+        "value": "Puligny-Montrachet"
+    }, {
+        "key": "FR-BUR-MEU",
+        "value": "Meursault"
+    }, {
+        "key": "FR-BUR-MAC",
+        "value": "Mâcon"
+    }, {
+        "key": "FR-BUR-POU",
+        "value": "Pouilly-Fuissé"
+    }, {
+        "key": "FR-BUR-GEV",
+        "value": "Gevrey-Chambertin"
+    }, {
+        "key": "FR-BUR-NUI",
+        "value": "Nuits-Saint-Georges"
+    }, {
+        "key": "FR-BUR-BEA",
+        "value": "Beaune"
+    }, {
+        "key": "FR-BUR-POM",
+        "value": "Pommard"
+    }, {
+        "key": "FR-LOI",
+        "value": "Loire"
+    }, {
+        "key": "FR-LOI-SAN",
+        "value": "Sancerre"
+    }, {
+        "key": "FR-LOI-POU",
+        "value": "Pouilly-Fumé"
+    }, {
+        "key": "FR-BOR",
+        "value": "Bordeaux"
+    }, {
+        "key": "FR-BOR-MED",
+        "value": "Médoc AOC",
+        "soil": "predominatly clay, but with outcrops of gravel.",
+        "notes": ["These wines tend to have a higher portion of Merlot than Haut-Médoc AOC."]
+    }, {
+        "key": "FR-BOR-HAU",
+        "value": "Haut-Médoc AOC",
+        "notes": ["These wines tend to be more higly rated than Médoc AOC.",
+        "These wines have a high percentage of Cabernet Sauvignon.",
+        "These wines generally have flavours and aromas of blackcurrent, and cedar.",
+        "These wines can have grippy tannins when young, and often have a long ageing potential."]
+    }, {
+        "key": "FR-BOR-HAU-PAU",
+        "value": "Pauillac AOC"
+    }, {
+        "key": "FR-BOR-HAU-MAR",
+        "value": "Margaux AOC"
+    }, {
+        "key": "FR-BOR-HAU-JUL",
+        "value": "Saint-Julien AOC"
+    }, {
+        "key": "FR-BOR-HAU-EST",
+        "value": "Saint-Estèphe AOC"
+    }, {
+        "key": "FR-BOR-GRA",
+        "value": "Graves"
+    }, {
+        "key": "FR-BOR-PES",
+        "value": "Pessac-Léognan"
+    }, {
+        "key": "FR-BOR-SAI",
+        "value": "Saint-Émilion"
+    }, {
+        "key": "FR-BOR-POM",
+        "value": "Pomerol"
+    }, {
+        "key": "FR-PAY",
+        "value": "Pays d’Oc"
+    }, {
+        "key": "FR-ALS",
+        "value": "Alsace AOC",
+        "notes": ["Alsace has a cool to moderate continential climate.",
+        "The best vineyards are located on the steepest slopes with east and sout-east aspects.",
+        "On the slopes; harvesting is by hand, rows are oriented toward the sun, vines are trained low to capture radiated heat.",
+        "The lesser vineyards are located on the plains and used for Crémant d'Alsace.",
+        "On the plains the vines are trained high to minimize sprint frosts."],
+        "varieties": ["PIN","GEW","MUC","RIE"]
+    }, {
+        "key": "FR-ALS-GCR",
+        "value": "Alsace Grand Cru AOC",
+        "notes": [],
+        "varieties": ["PIN","GEW","MUC","RIE"]
+    }, {
+        "key": "FR-NRH",
+        "value": "Northern Rhône"
+    }, {
+        "key": "FR-NRH-CRO",
+        "value": "Crozes-Hermitage"
+    }, {
+        "key": "FR-NRH-HER",
+        "value": "Hermitage"
+    }, {
+        "key": "FR-NRH-COT",
+        "value": "Côte-Rôtie"
+    }, {
+        "key": "FR-SRH",
+        "value": "Southern Rhône"
+    }, {
+        "key": "FR-SRH-COT",
+        "value": "Côtes du Rhône AOC",
+        "description": "Côtes du Rhône is a wine-growing Appellation d'Origine Contrôlée (AOC) for the Rhône wine region of France, which may be used throughout the region, also in those areas which are covered by other AOCs"
+    }, {
+        "key": "FR-SRH-COT-VIL",
+        "value": "Côtes du Rhône Villages AOC",
+        "description": "Further up the scale from the Côtes du Rhône AOC the Côtes du Rhône-Villages AOC is produced by 95 authorized communes in the departments of the Ardèche, the Drôme, the Gard, and the Vaucluse."
+    }, {
+        "key": "FR-SRH-CHA",
+        "value": "Châteauneuf-du-Pape",
+        "description": "Châteauneuf-du-Pape is a French wine Appellation d'origine contrôlée (AOC) located around the village of Châteauneuf-du-Pape in the Rhône wine region in southeastern France. "
+    }
 ]
