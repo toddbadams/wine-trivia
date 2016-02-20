@@ -7,14 +7,14 @@
     "sinon-1.17.2": "http://sinonjs.org/releases/sinon-1.17.2.js",
     "sinon-chai": "https://raw.githubusercontent.com/domenic/sinon-chai/master/lib/sinon-chai.js",
     "simple-test": "https://github.com/toddbadams/simple-test.git",
-    "angular-google-maps": "~2.3.1"
+    "angular-mocks": "^1.5.0"
   },
   "dependencies": {
-    "angular": "1.4.7",
-    "angular-material": "~1.0.1",
-    "angular-aria": "~1.4.8",
-    "angular-animate": "~1.4.8",
-    "angular-ui-router": "ui-router#~0.2.15",
+    "angular": "^1.5.0",
+    "angular-material": "^1.0.5",
+    "angular-aria": "^1.5.0",
+    "angular-animate": "^1.5.0",
+    "angular-ui-router": "ui-router#^0.2.18",
     "angular-local-storage": "^0.2.3"
   }
 }

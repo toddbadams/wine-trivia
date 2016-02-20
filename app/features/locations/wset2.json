@@ -1,0 +1,204 @@
+{
+  "countries": [
+    {
+      "key": "AR",
+      "value": "Argentina"
+    },
+    {
+      "key": "AU",
+      "value": "Australia"
+    },
+    {
+      "key": "AT",
+      "value": "Austria"
+    },
+    {
+      "key": "CL",
+      "value": "Chile"
+    },
+    {
+      "key": "FR",
+      "value": "France",
+      "lat": 45.8779713,
+      "long": -6.7719261,
+      "zoom": 5
+    },
+    {
+      "key": "DE",
+      "value": "Germany",
+      "lat": 51.0850942,
+      "long": 5.9671258,
+      "zoom": 6
+    },
+    {
+      "key": "IT",
+      "value": "Italy"
+    },
+    {
+      "key": "NZ",
+      "value": "New Zealand"
+    },
+    {
+      "key": "PT",
+      "value": "Portugal"
+    },
+    {
+      "key": "ES",
+      "value": "Spain"
+    },
+    {
+      "key": "ZA",
+      "value": "South Africa"
+    }
+  ],
+  "regions": {
+    "AR": [],
+    "AU": [],
+    "AT": [],
+    "CL": [],
+    "FR": [
+      {
+        "key": "FR-BUR",
+        "value": "Burgundy"
+      },
+      {
+        "key": "FR-BUR-CHA",
+        "value": "Chablis"
+      },
+      {
+        "key": "FR-BUR-PUL",
+        "value": "Puligny-Montrachet"
+      },
+      {
+        "key": "FR-BUR-MEU",
+        "value": "Meursault"
+      },
+      {
+        "key": "FR-BUR-MAC",
+        "value": "Mâcon"
+      },
+      {
+        "key": "FR-BUR-POU",
+        "value": "Pouilly-Fuissé"
+      },
+      {
+        "key": "FR-BUR-GEV",
+        "value": "Gevrey-Chambertin"
+      },
+      {
+        "key": "FR-BUR-NUI",
+        "value": "Nuits-Saint-Georges"
+      },
+      {
+        "key": "FR-BUR-BEA",
+        "value": "Beaune"
+      },
+      {
+        "key": "FR-BUR-POM",
+        "value": "Pommard"
+      },
+      {
+        "key": "FR-LOI",
+        "value": "Loire"
+      },
+      {
+        "key": "FR-LOI-SAN",
+        "value": "Sancerre"
+      },
+      {
+        "key": "FR-LOI-POU",
+        "value": "Pouilly-Fumé"
+      },
+      {
+        "key": "FR-BOR",
+        "value": "Bordeaux:"
+      },
+      {
+        "key": "FR-BOR-MED",
+        "value": "Médoc"
+      },
+      {
+        "key": "FR-BOR-HAU",
+        "value": "Haut-Médoc"
+      },
+      {
+        "key": "FR-BOR-PAU",
+        "value": "Pauillac,"
+      },
+      {
+        "key": "FR-BOR-MAR",
+        "value": "Margaux"
+      },
+      {
+        "key": "FR-BOR-GRA",
+        "value": "Graves"
+      },
+      {
+        "key": "FR-BOR-PES",
+        "value": "Pessac-Léognan"
+      },
+      {
+        "key": "FR-BOR-SAI",
+        "value": "Saint-Émilion"
+      },
+      {
+        "key": "FR-BOR-POM",
+        "value": "Pomerol,"
+      },
+      {
+        "key": "FR-PAY",
+        "value": "Pays d’Oc"
+      },
+      {
+        "key": "FR-ALS",
+        "value": "Alsace"
+      },
+      {
+        "key": "FR-NRH",
+        "value": "Northern Rhône"
+      },
+      {
+        "key": "FR-NRH-CRO",
+        "value": "Crozes-Hermitage"
+      },
+      {
+        "key": "FR-NRH-HER",
+        "value": "Hermitage"
+      },
+      {
+        "key": "FR-NRH-COT",
+        "value": "Côte-Rôtie"
+      },
+      {
+        "key": "FR-SRH",
+        "value": "Southern Rhône"
+      },
+      {
+        "key": "FR-SRH-COT",
+        "value": "Côtes du Rhône"
+      },
+      {
+        "key": "FR-SRH-VIL",
+        "value": "Côtes du Rhône Villages (+name add one per named village)"
+      },
+      {
+        "key": "FR-SRH-CHA",
+        "value": "Châteauneuf-du-Pape"
+      }
+    ],
+    "DE": [],
+    "IT": [],
+    "PT": [],
+    "ES": [],
+    "US": [
+      {
+        "key": "US-CAL",
+        "value": "California"
+      },
+      {
+        "key": "US-CAL-SON",
+        "value": "Sonoma"
+      }
+    ]
+  }
+}

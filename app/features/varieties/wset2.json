@@ -1,0 +1,230 @@
+{
+  "varieties": [
+    {
+      "key": "CHE",
+      "value": "Chardonnay",
+      "color": "WH",
+      "countries": [
+        "FR"
+      ],
+      "regions": {
+        "premium": ["FR-BUR","FR-BUR-CHA","FR-BUR-PUL","FR-BUR-MER","FR-BUR-MAC","FR-BUR-POU"],
+        "bulk": ["FR-PAY"]
+      },
+      "blends": ["SEM"]
+    },
+    {
+      "key": "SAU",
+      "value": "Sauvignon Blanc",
+      "color": "WH",
+      "countries": [
+        "FR"
+      ],
+      "regions": {
+        "premium": ["FR-LOI-SAN","FR-LOI.POU","FR-BOR"],
+        "bulk": []
+      },
+      "blends": ["SEM"]
+    },
+    {
+      "key": "RIE",
+      "value": "Riesling",
+      "color": "WH",
+      "countries": [
+        "FR"
+      ],
+      "regions": {
+        "premium": ["FR-ALS"],
+        "bulk": []
+      }
+    },
+    {
+      "key": "PIN",
+      "value": "Pinot Noir",
+      "color": "BK",
+      "countries": [
+        "FR"
+      ],
+      "regions": {
+        "premium": ["FR-BUR","FR-BUR-GEV","FR-BUR-NUI","FR-BUR-BEA","FR-BUR-POM"],
+        "bulk": []
+      }
+    },
+    {
+      "key": "CAB",
+      "value": "Cabernet Sauvignon",
+      "color": "BK",
+      "countries": [
+        "FR"
+      ],
+      "regions": {
+        "premium": ["FR-BOR","FR-BOR-MED","FR-BOR-HAU","FR-BOR-PAU","FR-BOR-MAR","FR-BOR-GRA","FR-BOR-PES","FR-BOR-SAI","FR-BOR-POM"],
+        "bulk": []
+      }
+    },
+    {
+      "key": "MER",
+      "value": "Merlot",
+      "color": "BK",
+      "countries": [
+        "FR"
+      ],
+      "regions": {
+        "premium": ["FR-BOR","FR-BOR-MED","FR-BOR-HAU","FR-BOR-PAU","FR-BOR-MAR","FR-BOR-GRA","FR-BOR-PES","FR-BOR-SAI","FR-BOR-POM"],
+        "bulk": []
+      }
+    },
+    {
+      "key": "SYR",
+      "value": "Syrah/Shiraz",
+      "color": "BK",
+      "countries": [
+        "FR"
+      ],
+      "regions": {
+        "premium": ["FR-NRH","FR-NRH-CRO","FR-NRH-HER","FR-NRH-COT","FR-SRH","FR-SRH-COT","FR-SRH-VIL","FR-SRH-CHA"],
+        "bulk": []
+      }
+    },
+    {
+      "key": "GRE",
+      "value": "Grenache/Garnacha",
+      "color": "BK",
+      "countries": [
+        "FR"
+      ],
+      "regions": {
+        "premium": ["FR-NRH","FR-NRH-CRO","FR-NRH-HER","FR-NRH-COT","FR-SRH","FR-SRH-COT","FR-SRH-VIL","FR-SRH-CHA"],
+        "bulk": []
+      }
+    },
+    {
+      "key": "CHE",
+      "value": "Chenin Blanc",
+      "color": "WH",
+      "countries": [
+        "FR"
+      ],
+      "regions": {
+        "premium": [],
+        "bulk": []
+      }
+    },
+    {
+      "key": "PIN",
+      "value": "Pinot Gris",
+      "color": "WH",
+      "countries": [
+        "FR"
+      ],
+      "regions": {
+        "premium": [],
+        "bulk": []
+      }
+    },
+    {
+      "key": "GEW",
+      "value": "Gewurztraminer,",
+      "color": "WH",
+      "countries": [
+        "FR"
+      ],
+      "regions": {
+        "premium": [],
+        "bulk": []
+      }
+    },
+    {
+      "key": "VOI",
+      "value": "Viognier",
+      "color": "WH",
+      "countries": [
+        "FR"
+      ],
+      "regions": {
+        "premium": [],
+        "bulk": []
+      }
+    },
+    {
+      "key": "GAM",
+      "value": "Gamay",
+      "color": "BK",
+      "countries": [
+        "FR"
+      ],
+      "regions": {
+        "premium": [],
+        "bulk": []
+      }
+    }
+  ],
+  "wines": [
+    {
+      "key": "MUS",
+      "value": "Muscadet",
+      "countries": [
+        "FR"
+      ],
+      "regions": {
+        "premium": ["FR-LOI"],
+        "bulk": []
+      }
+    },
+    {
+      "key": "VOU",
+      "value": "Vouvray",
+      "countries": [
+        "FR"
+      ],
+      "regions": {
+        "premium": ["FR-LOI"],
+        "bulk": []
+      }
+    },
+    {
+      "key": "ALS",
+      "value": "Alsace",
+      "countries": [
+        "FR"
+      ],
+      "regions": {
+        "premium": ["FR-ALS"],
+        "bulk": []
+      }
+    },
+    {
+      "key": "BEA",
+      "value": "Beaujolais",
+      "countries": [
+        "FR"
+      ],
+      "regions": {
+        "premium": ["FR-BEA"],
+        "bulk": []
+      }
+    },
+    {
+      "key": "BVI",
+      "value": "Beaujolais Villages",
+      "countries": [
+        "FR"
+      ],
+      "regions": {
+        "premium": ["FR-BEA"],
+        "bulk": []
+      }
+    },
+    {
+      "key": "FLE",
+      "value": "Fleurie",
+      "countries": [
+        "FR"
+      ],
+      "regions": {
+        "premium": ["FR-BEA"],
+        "bulk": []
+      }
+    }
+  ]
+}

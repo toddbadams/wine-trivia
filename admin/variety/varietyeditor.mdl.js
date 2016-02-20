@@ -5,12 +5,12 @@
 		TEMPLATE_PATH = '/admin/variety/',
 		DATA_PATH = '/app/varieties/',
 		TASTING = {
-			appearance : {
-				color: ["pale", "medium", "deep"],
-				intensity: ["lemon-green", "lemon", "gold", "amber", "brown"]
+			appearance: {
+				intensity: ["pale", "medium", "deep"],
+				color: ["lemon-green", "lemon", "gold", "amber", "brown"]
 			},
 			NOSE: {
-				intensity: ["light", "medium-", "medium", "medium+", "pronounced"]				
+				intensity: ["light", "medium-", "medium", "medium+", "pronounced"]
 			},
 			palate: {
 				sweetness: ["dry", "off-dry", "medium-dry", "medium-sweet", "sweet", "luscious"],
@@ -19,7 +19,7 @@
 				body: ["low", "medium-", "medium", "medium+", "full"],
 				tanin: ["low", "medium-", "medium", "medium+", "high"],
 				finish: ["short", "medium-", "medium", "medium+", "long"],
-				intensity: ["low", "medium-", "medium", "medium+", "pronounced"]	
+				intensity: ["low", "medium-", "medium", "medium+", "pronounced"]
 			}
 		};
 
@@ -41,7 +41,8 @@
 			function($compileProvider) {
 				$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension|blob):/);
 			}
-		]);
+		])
+		.directive('range', range);
 
 	wtVarietyEditor.$inject = ['$filter', 'wtJsonLoader', 'wtLocationsResolver'];
 
@@ -79,6 +80,12 @@
 			vm.updateDownload = updateDownload;
 			wtJsonLoader(DATA_PATH).then(postDataLoad);
 			wtLocationsResolver.then(postLocations);
+
+
+			// todo
+			vm.lower = 2;
+			vm.upper = 3;
+			vm.max = 5;
 		}());
 	}
 
@@ -88,19 +95,54 @@
 
 		return {
 			restrict: 'E',
-    		require: 'ngModel',
-    		link: link,
-				templateUrl: TEMPLATE_PATH + 'tastingEditor.html'
+			require: 'ngModel',
+			controller: controller,
+			controllerAs: 'vm',
+			bindToController: {
+				ngModel: '='
+			},
+			link: link,
+			templateUrl: TEMPLATE_PATH + 'tastingEditor.html'
 		}
 
-		function link(scope, element, attrs, ngModel){
-			var vm=scope;
+		function controller() {
+			var vm = this;
 
 			// directive activation
-			(function(){
+			(function() {
 				vm.tasting = TASTING;
+				vm.lower = 1; 
+				vm.upper=3;
+				vm.max=5;
+				vm.min=1;
+				window.foo = vm;
 			})();
 		}
 
+		function link(scope, element, attrs, ngModel) {
+
+		}
+
+	}
+
+
+	function range() {
+		return {
+			restrict: "E",
+			bindToController: {
+				max: '=',
+				lowerValue: "=",
+				upperValue: "="
+			},
+			scope: true,
+			templateUrl: TEMPLATE_PATH + 'range.html',
+			controller: controller,
+			controllerAs: 'vm'
+		}
+		function controller(){
+			var vm = this;
+			vm.selections = [1,2,3,4,5];
+			window.foo = vm;
+		}
 	}
 })();

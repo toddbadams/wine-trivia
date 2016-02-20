@@ -1,10 +1,15 @@
 <div layout="column">
-<div  layout="column">
-	<md-input-container>
-  <md-select ng-model="region.tasting.appearance.intensity" placeholder="Intensity">
-    <md-option ng-value="$index" ng-repeat="opt in tastings.appearance.intensity">{{ opt }}</md-option>
-  </md-select>
-</md-input-container>
-</div>
-
+	<h3 class="md-subhead">Appearance</h3>
+	<div  layout="row">
+		<md-input-container>
+  			<md-select ng-model="region.tasting.appearance.intensity" placeholder="Intensity">
+    			<md-option ng-value="$index" ng-repeat="opt in vm.tasting.appearance.intensity">{{ opt }}</md-option>
+  			</md-select>
+		</md-input-container>
+		<md-input-container>
+  			<md-select ng-model="region.tasting.appearance.intensity" placeholder="Color">
+    			<md-option ng-value="$index" ng-repeat="opt in vm.tasting.appearance.color">{{ opt }}</md-option>
+  			</md-select>
+		</md-input-container>
+	</div>
 </div>

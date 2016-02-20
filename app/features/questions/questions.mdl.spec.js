@@ -1,0 +1,77 @@
+(function() {
+
+	var
+		tag = 'adb875bf-0a1e-4696-b235-a01756d51b28',
+		$stateParamsStub = {
+			tag: tag
+		},
+		tagsStub = {},
+		questionsStub = [{
+  "id": 1001,
+  "stem": "Which one of the Appellation d'origine contrôlée (AOC) regions in the Côte Chalonnaise subregion of Burgundy produce Aligoté-based wines?",
+  "alternates": [{
+    "id": 1,
+    "text": "Brouilly",
+    "description": "The largest Cru in Beaujolais, situated around Mont Brouilly and contains within its boundaries the sub-district of Côte de Brouilly. Whites from the region, which make up only 1% of its production, are made mostly with Chardonnay grapes though Aligoté is also permitted until 2024 (on condition the vines were planted before 2004)"
+  }, {
+    "id": 2,
+    "text": "Rully",
+    "description": "The Appellation d'origine contrôlée (AOC) Rully is produced in the communes of Rully and Chagny in the Côte Chalonnaise subregion of Burgundy. Rully may be used for red and white wine with respectively Pinot noir and Chardonnay as the main grape variety."
+  }, {
+    "id": 3,
+    "text": "Mercurey",
+    "description": "The Appellation d'origine contrôlée (AOC) Mercurey is produced in the communes of Mercurey and Saint-Martin-sous-Montaigu in the Côte Chalonnaise subregion of Burgundy. Mercurey may be used for red and white wine with respectively Pinot noir and Chardonnay."
+  }, {
+    "id": 4,
+    "text": "Givry",
+    "description": "The Appellation d'origine contrôlée (AOC) Givry is produced in the communes of Givry, Dracy-le-Fort and Jambles in the Côte Chalonnaise subregion of Burgundy. Givry may be used for red and white wine with respectively Pinot noir and Chardonnay as the main grape variety."
+  }, {
+    "id": 5,
+    "text": "Montagny",
+    "description": "The Appellation d'origine contrôlée (AOC) Montagny is produced in the communes of Montagny-lès-Buxy, Buxy, Saint-Vallerin and Jully-lès-Buxy in the Côte Chalonnaise subregion of Burgundy. Montagny may be used for white wine with Chardonnay as the main grape variety."
+  }],
+  "correct": {
+    "id": 6,
+    "text": "Bouzeron",
+    "description": "Bouzeron is an appellation d'origine contrôlée (AOC) for white wine produced in the French communes of Bouzeron and Chassey-le-Camp in the Côte Chalonnaise subregion of Burgundy.[1] Bouzeron wine is produced from the grape variety Aligoté, and Bouzeron AOC is therefore the only communal-level Burgundy appellation for Aligoté-based wines."
+  },
+  "tags": [
+    "France",
+    "Burgundy"
+  ],
+  "certifications": [
+    "wset3"
+  ]
+}];
+	
+
+	_T.createModuleTest('wt.questions')
+		.describe(function() {
+			var moduleTest = this;
+
+		//	moduleTest
+		//		.createControllerTest('wtQuestions')
+		//		.injectService({
+		//			name: 'tags',
+		//			value: {}
+		//		})
+		//		.injectService({
+		//			name: '$stateParams',
+		//			value: $stateParamsStub
+		//		})
+		//		.describe(function() {
+//
+//				});
+
+
+			moduleTest
+				.createControllerTest('wtQuestionTags')
+				.injectService({
+					name: 'data',
+					value: {}
+				})
+				.describe(function() {
+
+				});
+		});
+})();

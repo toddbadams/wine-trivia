@@ -1,0 +1,317 @@
+[{
+  "key": "CHA",
+  "value": "Chardonnay",
+  "color": "WH",
+  "description": "Chardonnay is a green-skinned grape variety used to make white wine. It originated in the Burgundy wine region of eastern France but is now grown wherever wine is produced.",
+  "pronounce": "shar-dun-nay",
+  "regions": [{
+    "key": "FR-BUR-CHA",
+    "isPremium": true,
+    "primary": ["green apple", "lemon", "lime", "quince"],
+    "secondary": [],
+    "tertiary": ["honey"]
+  }, {
+    "key": "FR-BUR-PUL",
+    "isPremium": true
+  }, {
+    "key": "FR-BUR-MER",
+    "isPremium": true
+  }, {
+    "key": "FR-BUR-MAC",
+    "isPremium": true
+  }, {
+    "key": "FR-BUR-POU",
+    "isPremium": true
+  }, {
+    "key": "FR-PAY",
+    "isPremium": false
+  }],
+  "blends": ["SEM"]
+}, {
+  "key": "SAU",
+  "value": "Sauvignon Blanc",
+  "color": "WH",
+  "regions": [{
+    "key": "FR-LOI",
+    "isPremium": true,
+    "tasting": {
+      "appearance": {
+        "intensity": 113,
+        "color": 225
+      },
+      "nose": {
+        "intensity": 455,
+        "aroma": [
+            ["green apple", "asparagus", "wet stone"],
+            [],
+            []
+        ]
+      },
+      "palate": {
+        "sweetness": 116,
+        "acidity": 555,
+        "body": 115,
+        "intensity": 455,
+        "finish": 155,
+        "flavours": [
+            ["green apple", "asparagus", "wet stone"],
+            [],
+            []
+        ]
+      }
+    }
+  },{
+    "key": "FR-LOI-SAN",
+    "isPremium": true
+  }, {
+    "key": "FR-LOI-POU",
+    "isPremium": true
+  }, {
+    "key": "FR-BOR",
+    "isPremium": true
+  }],
+  "blends": ["SEM"],
+  "pronounce": "saw-veen-yon blank"
+}, {
+  "key": "RIE",
+  "value": "Riesling",
+  "color": "WH",
+  "regions": [{
+    "key": "FR-ALS",
+    "isPremium": true
+  }],
+  "description": "Riesling is a white grape variety which originated in the Rhine region of Germany. Riesling is an aromatic grape variety displaying flowery, almost perfumed, aromas as well as high acidity. It is used to make dry, semi-sweet, sweet, and sparkling white wines. Riesling wines are usually varietally pure and are seldom oaked."
+}, {
+  "key": "PIN",
+  "value": "Pinot Noir",
+  "color": "RD",
+  "countries": {
+    "premium": ["FR"],
+    "bulk": ["FR"]
+  },
+  "regions": [{
+    "key": "FR-BUR",
+    "isPremium": true
+  }, {
+    "key": "FR-BUR-GEV",
+    "isPremium": true
+  }, {
+    "key": "FR-BUR-NUI",
+    "isPremium": true
+  }, {
+    "key": "FR-BUR-BEA",
+    "isPremium": true
+  }, {
+    "key": "FR-BUR-POM",
+    "isPremium": true
+  }],
+  "pronounce": "pee-no-nwar"
+}, {
+  "key": "CAB",
+  "value": "Cabernet Sauvignon",
+  "color": "RD",
+  "countries": {
+    "premium": ["FR"],
+    "bulk": ["FR"]
+  },
+  "blends": ["MER"],
+  "regions": [{
+    "key": "FR-BOR",
+    "isPremium": true
+  }, {
+    "key": "FR-BOR-MED",
+    "isPremium": true
+  }, {
+    "key": "FR-BOR-HAU",
+    "isPremium": true
+  }, {
+    "key": "FR-BOR-PAU",
+    "isPremium": true
+  }, {
+    "key": "FR-BOR-MAR",
+    "isPremium": true
+  }, {
+    "key": "FR-BOR-GRA",
+    "isPremium": true
+  }, {
+    "key": "FR-BOR-PES",
+    "isPremium": true
+  }, {
+    "key": "FR-BOR-SAI",
+    "isPremium": true
+  }, {
+    "key": "FR-BOR-POM",
+    "isPremium": true
+  }],
+  "pronounce": "cab-err-nay saw-veen-yon"
+}, {
+  "key": "MER",
+  "value": "Merlot",
+  "color": "RD",
+  "countries": {
+    "premium": ["FR"],
+    "bulk": ["FR"]
+  },
+  "regions": [{
+    "key": "FR-BOR",
+    "isPremium": true
+  }, {
+    "key": "FR-BOR-MED",
+    "isPremium": true
+  }, {
+    "key": "FR-BOR-HAU",
+    "isPremium": true
+  }, {
+    "key": "FR-BOR-PAU",
+    "isPremium": true
+  }, {
+    "key": "FR-BOR-MAR",
+    "isPremium": true
+  }, {
+    "key": "FR-BOR-GRA",
+    "isPremium": true
+  }, {
+    "key": "FR-BOR-PES",
+    "isPremium": true
+  }, {
+    "key": "FR-BOR-SAI",
+    "isPremium": true
+  }, {
+    "key": "FR-BOR-POM",
+    "isPremium": true
+  }],
+  "pronounce": "murr-low"
+}, {
+  "key": "SYR",
+  "value": "Syrah/Shiraz",
+  "color": "RD",
+  "countries": {
+    "premium": ["FR"],
+    "bulk": ["FR"]
+  },
+  "regions": [{
+    "key": "FR-NRH",
+    "isPremium": true
+  }, {
+    "key": "FR-NRH-CRO",
+    "isPremium": true
+  }, {
+    "key": "FR-NRH-HER",
+    "isPremium": true
+  }, {
+    "key": "FR-NRH-COT",
+    "isPremium": true
+  }, {
+    "key": "FR-SRH",
+    "isPremium": true
+  }, {
+    "key": "FR-SRH-COT",
+    "isPremium": true
+  }, {
+    "key": "FR-SRH-VIL",
+    "isPremium": true
+  }, {
+    "key": "FR-SRH-CHA",
+    "isPremium": true
+  }],
+  "pronounce": "sear-ah"
+}, {
+  "key": "GRE",
+  "value": "Grenache/Garnacha",
+  "color": "RD",
+  "countries": {
+    "premium": ["FR"],
+    "bulk": ["FR"]
+  },
+  "regions": [{
+    "key": "FR-NRH",
+    "isPremium": true
+  }, {
+    "key": "FR-NRH-CRO",
+    "isPremium": true
+  }, {
+    "key": "FR-NRH-HER",
+    "isPremium": true
+  }, {
+    "key": "FR-NRH-COT",
+    "isPremium": true
+  }, {
+    "key": "FR-SRH",
+    "isPremium": true
+  }, {
+    "key": "FR-SRH-COT",
+    "isPremium": true
+  }, {
+    "key": "FR-SRH-VIL",
+    "isPremium": true
+  }, {
+    "key": "FR-SRH-CHA",
+    "isPremium": true
+  }],
+  "pronounce": "grenn-nash"
+}, {
+  "key": "CHE",
+  "value": "Chenin Blanc",
+  "color": "WH",
+  "regions": []
+}, {
+  "key": "PIN",
+  "value": "Pinot Gris",
+  "color": "WH",
+  "regions": [],
+  "pronounce": "pee-no gree"
+}, {
+  "key": "GEW",
+  "value": "Gewurztraminer,",
+  "color": "WH",
+  "regions": []
+}, {
+  "key": "VOI",
+  "value": "Viognier",
+  "color": "RD",
+  "regions": []
+}, {
+  "key": "GAM",
+  "value": "Gamay",
+  "color": "RD",
+  "regions": [],
+  "description": "Gamay is a purple-colored grape variety used to make red wines, most notably grown in Beaujolais and in the Loire Valley around Tours.[1] Its full name is Gamay Noir à Jus Blanc. It is a very old cultivar, mentioned as long ago as the 15th century. It has been often cultivated because it makes for abundant production; however, it can produce wines of distinction when planted on acidic soils, which help to soften the grape's naturally high acidity.",
+  "pronounce": "gam-may"
+}, {
+  "key": "SEM",
+  "value": "Sémillon",
+  "color": "WH",
+  "regions": [],
+  "pronounce": "sem-ee-yawn"
+}, {
+  "key": "GRU",
+  "value": "Grüner Veltliner",
+  "color": "WH",
+  "regions": [],
+  "description": "Grüner Veltliner (Green Veltliner) is a variety of white wine grape variety grown primarily in Austria, Slovakia, and the Czech Republic. The leaves of the grape vine are five-lobed with bunches that are long but compact, and deep green grapes that ripen in mid-late October in the Northern Hemisphere."
+}, {
+  "key": "CFR",
+  "value": "Cabernet Franc",
+  "color": "RD",
+  "regions": [],
+  "description": "Cabernet Franc is one of the major black grape varieties worldwide. It is principally grown for blending with Cabernet Sauvignon and Merlot in the Bordeaux style, but can also be vinified alone, as in the Loire's Chinon. In addition to being used in blends and produced as a varietal in Canada and the United States, it is made into ice wine in those regions.",
+  "pronounce": "cab-err-nay fronk"
+}, {
+  "key": "MUS",
+  "value": "Muscadelle",
+  "color": "WH",
+  "regions": [],
+  "description": "Muscadelle is a white wine grape variety. It has a simple aroma of grape juice and raisins like grapes of the Muscat family of grapes, but it is unrelated."
+}, {
+  "key": "MUC",
+  "value": "Muscat",
+  "color": "WH",
+  "regions": [],
+  "description": ""
+}, {
+  "key": "MEL",
+  "value": "Melon Blanc",
+  "color": "WH",
+  "regions": [],
+  "description": ""
+}]

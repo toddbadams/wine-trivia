@@ -1,11 +1,25 @@
-﻿(function () {
+﻿(function() {
     'use strict';
     var
-    BASE_PATH = window.location.hostname === 'localhost' ? '' : '/wine-trivia',
-    TEMPLATE_URL = BASE_PATH + '/app/settings/';
+        TEMPLATE_PATH = 'app/settings/',
+        DATA_PATH = 'app/settings/',
+        ROUTES = [{
+            name: 'settings',
+            state: {
+                url: '/settings',
+                templateUrl: TEMPLATE_PATH + 'settings.html',
+                controller: 'wtSettings',
+                controllerAs: "vm"
+            }
+        }],
+        tags = null,
+        questionsData = null;
 
-    angular.module('wt.settings', [
-    ])
+    angular.module('wt.settings', ['ngMaterial', 'wt.routes', 'wt.config', 'wt.fileloader'])
+        .constant('wtSettingsConfig', {
+            routes: ROUTES,
+            dataPath: DATA_PATH
+        })
         .value('wt.settings', {
             level: 'wset3',
             numberExamQuestions: 4
@@ -14,41 +28,36 @@
         .run(moduleRun)
         .controller('wtSettings', SettingsController);
 
-
     /**
      * Module configuration
      */
-    moduleConfig.$inject = ['$stateProvider', 'localStorageServiceProvider', 'wt.variety.config'];
-    function moduleConfig($stateProvider, localStorageServiceProvider, config) {
-        localStorageServiceProvider.setPrefix('wt');
-        config.routes.forEach(function (route) {
-            $stateProvider.state('settings', {
-                url: '/settings',
-                templateUrl: TEMPLATE_URL + 'settings.html',
-                controller: 'wtSettings',
-                controllerAs: "vm"
-            });
-        });
+    moduleConfig.$inject = ['wtRouteProvider', 'wtSettingsConfig'];
+
+    function moduleConfig(wtRoutes, moduleConfig) {
+        wtRoutes.$get().setRoutes(moduleConfig.routes);
+        //        localStorageServiceProvider.setPrefix('wt');
     }
 
-    moduleRun.$inject = ['localStorageService', 'wt.settings'];
-    function moduleRun(localStorageService, settings) {
-        if (!localStorageService.isSupported) return;
+    moduleRun.$inject = []; //'localStorageService', 'wt.settings'];
 
-        settings = angular.extend(settings, localStorageService.get('settings'));
-        localStorageService.set('settings', settings);
+    function moduleRun(localStorageService, settings) {
+     //   if (!localStorageService.isSupported) return;
+
+//        settings = angular.extend(settings, localStorageService.get('settings'));
+  //      localStorageService.set('settings', settings);
     }
 
     /**
      * Settings controller
      */
-    SettingsController.$inject = ['wt.settings'];
-    function SettingsController(settings) {
+    SettingsController.$inject = [];
+
+    function SettingsController() {
         var vm = this;
 
         // controller activation
-        (function () {
-            vm.settings = settings;
+        (function() {
+            vm.settings = {};
         })();
     }
 

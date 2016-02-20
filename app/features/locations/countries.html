@@ -1,0 +1,5 @@
+﻿<md-grid-list md-cols="4" md-row-height="32px" md-gutter="4px">
+  <md-grid-tile ng-repeat="country in vm.countries">
+    <md-button md-no-ink class="md-primary" ui-sref="locationDetail({ locationKey: country.key })" flex>{{ country.value }} </md-button>
+  </md-grid-tile>
+</md-grid-list>

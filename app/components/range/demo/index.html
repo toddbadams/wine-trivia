@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html ng-app="wt" lang="en">
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>WT</title>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:100italic,100,300italic,300,400italic,400,500italic,500,700italic,700,900italic,900" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.2/angular-material.min.css" />
+    <style>
+        .angular-google-map-container {
+            height: 400px;
+        }
+    </style>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHTLNUZui5uT34E99RbTvh-YeWAMFGBrw&libraries=places"></script>
+</head>
+<body ng-controller="wtLayout as vm">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <md-menu>
+        <md-button aria-label="Open menu" class="md-icon-button" ng-click="vm.openMenu($mdOpenMenu, $event)">
+          <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+        </md-button>
+        <md-menu-content width="4">
+          <md-menu-item ng-repeat="item in vm.menuItems">
+            <md-button ng-click="item.go()">
+              {{item.name}}
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+      <h2><span>Wine Tudor</span></h2>
+      <span flex=""></span>
+    </div>
+  </md-toolbar>
+
+
+    <div ui-view class="md-padding" layout="column" ></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.1.0/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-aria.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-animate.min.js"></script>
+    <script src="https://cdn.gitcdn.xyz/cdn/angular/bower-material/v1.0.5/angular-material.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="app/vendors/angular-simple-logger.light.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.2.2/angular-local-storage.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-maps/2.3.1/angular-google-maps.min.js"></script>
+
+    <script src="app/appconfig/appconfig.mdl.js"></script>
+    <script src="app/fileloader/fileloader.mdl.js"></script>
+    <script src="app/routes/routes.mdl.js"></script>
+    <script src="app/questions/questions.mdl.js"></script>
+    <script src="app/locations/locations.mdl.js"></script>
+    <script src="app/varieties/varieties.mdl.js"></script>
+    <script src="app/theme/theme.mdl.js"></script>
+    <script src="app/home/home.mdl.js"></script> 
+    <script src="app/layout/layout.mdl.js"></script>
+    
+    <!--<script src="app/settings/settings.mdl.js"></script>-->
+    <script>
+        angular.module('wt', [
+            'wt.questions',
+            'wt.layout',
+            'wt.locations'
+           // 'wt.varieties'
+            //'wt.wines'
+         // 'wt.theme',
+         // 'wt.home'
+    //'wt.variety',
+    //'wt.locations',
+    //,
+    //'wt.settings'
+        ]);
+    </script>
+</body>
+</html>

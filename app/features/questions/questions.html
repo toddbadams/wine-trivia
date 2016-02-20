@@ -1,0 +1,30 @@
+﻿<md-content  >
+    <md-card flex>
+        <md-card-title>
+            <md-card-title-text>{{vm.current.stem}}</md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <md-radio-group ng-model="vm.current.selected">
+                <md-list>
+                    <md-list-item ng-repeat="selection in vm.current.selections">
+                        <md-radio-button value="{{$index}}"
+                                         ng-click="vm.selected($index)" class="md-body-1 md-primary"
+                                         ng-class="{'md-warn': selection.isWrong}">{{selection.text}}</md-radio-button>
+                    </md-list-item>
+                </md-list>
+            </md-radio-group>
+            <p class="md-body-1">{{vm.current.description}}</p>
+        </md-card-content>
+    </md-card>
+</md-content>
+<md-bottom-sheet class="md-grid" layout="row">
+    <md-button class="md-icon-button" aria-label="Previous" ng-click="vm.previous()" ng-show="vm.showPrevious">
+        <md-icon md-svg-icon="img/icons/previous.svg"></md-icon>
+    </md-button>
+    <span flex style="text-align: center;">
+        <span>{{vm.index+1}} of {{vm.questions.length}}</span>
+    </span>
+    <md-button class="md-icon-button" aria-label="Next" ng-click="vm.next()" ng-show="vm.showNext">
+        <md-icon md-svg-icon="img/icons/next.svg"></md-icon>
+    </md-button>
+</md-bottom-sheet>

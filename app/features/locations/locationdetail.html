@@ -1,0 +1,24 @@
+﻿<md-content  >
+    <md-card flex>
+        <md-card-title>
+            <md-card-title-text>
+            	<span class="md-headline">{{vm.current.value}}</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <p>{{vm.current.description}}</p>
+            <div ng-if="vm.parent">
+            	<h3 class="md-subhead">{{vm.current.value}} is a Subregion of</h3>
+            	<p><md-button md-no-ink class="md-primary" ui-sref="locationDetail({ locationKey: vm.parent.key })" flex>{{ vm.parent.value }}</md-button></p>
+            </div>
+            <div ng-if="vm.children">
+            	<h3 class="md-subhead">Regions within {{vm.current.value}}</h3>
+            	<md-grid-list md-cols="4" md-row-height="32px" md-gutter="4px">
+			      <md-grid-tile ng-repeat="item in vm.children">
+			          <md-button md-no-ink class="md-primary" ui-sref="locationDetail({ locationKey: item.key })" flex>{{ item.value }} </md-button>
+			      </md-grid-tile>
+			    </md-grid-list>
+            </div>
+        </md-card-content>
+    </md-card>
+</md-content>

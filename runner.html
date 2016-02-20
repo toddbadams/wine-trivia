@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Angular Unit Test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bower_components/mocha/mocha.css" />
+    <link href="/bower_components/simple-test/simple-test.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="mocha"></div>
+    <!-- JS test frameworks -->
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-aria/angular-aria.js"></script>
+    <script src="/bower_components/angular-messages/angular-messages.js"></script>
+    <script src="/bower_components/angular-material/angular-material.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/mocha/mocha.js"></script>
+    <script src="/bower_components/chai/chai.js"></script>
+    <script src="/bower_components/sinon-1.17.2/index.js"></script>
+    <script>
+    // mocha setup
+    mocha.setup('bdd');
+    mocha.traceIgnores = ['mocha.js', 'chai.js', 'angular.js'];
+    // chai setup
+    window.expect = chai.expect;
+    window.AssertionError = chai.AssertionError;
+    chai.should();
+    </script>
+    <script src="/bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="/bower_components/sinon-chai/index.js"></script>
+    <script src="/bower_components/simple-test/simple-test.js"></script>
+
+
+    <script type="text/javascript" src="/components/range/src/range.mdl.js"></script>
+    <script type="text/javascript" src="/components/range/src/range.mdl.spec.js"></script>
+    <script type="text/javascript" src="/app/appconfig.mdl.js"></script>
+
+    <script type="text/javascript" src="/app/services/fileloader/fileloader.mdl.js"></script>
+    <script type="text/javascript" src="/app/services/routes/routes.mdl.js"></script>
+    <script type="text/javascript" src="/app/services/routes/routes.mdl.spec.js"></script>
+
+    <script type="text/javascript" src="/app/home/home.mdl.js"></script>
+    <script type="text/javascript" src="/app/home/home.mdl.spec.js"></script>
+    <script type="text/javascript" src="/app/layout/layout.mdl.js"></script>
+    <script type="text/javascript" src="/app/layout/layout.mdl.spec.js"></script>
+    <script type="text/javascript" src="/app/settings/settings.mdl.js"></script>
+    <script type="text/javascript" src="/app/settings/settings.mdl.spec.js"></script>
+    
+    <script type="text/javascript" src="/app/features/locations/locations.data.mdl.js"></script>
+    <script type="text/javascript" src="/app/features/locations/locations.data.mdl.spec.js"></script>
+    <script type="text/javascript" src="/app/features/locations/locations.mdl.js"></script>
+    <script type="text/javascript" src="/app/features/locations/locations.mdl.spec.js"></script>
+    <script type="text/javascript" src="/app/features/questions/questions.mdl.js"></script>
+    <script type="text/javascript" src="/app/features/questions/questions.mdl.spec.js"></script>
+    <script type="text/javascript" src="/app/features/varieties/varieties.mdl.js"></script>
+    <script type="text/javascript" src="/app/features/varieties/varieties.mdl.spec.js"></script>
+    <script>
+    _T.run();
+    </script>
+</body>
+
+</html>
