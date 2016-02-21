@@ -250,4 +250,113 @@
   "tags": [
     "The Vine"
   ]
-}]
+},
+{
+  "stem": "Alsace AOC located in France is in a _______ climate classification.",
+  "alternates": [{
+    "id": 1,
+    "text": "cool continential",
+    "description": "Alsace has a cool to moderate continential climate."
+  }, {
+    "id": 2,
+    "text": "warm to hot mediterranean",
+    "description": "Alsace has a cool to moderate continential climate."
+  }, {
+    "id": 3,
+    "text": "moderate to warm maritime",
+    "description": "Alsace has a cool to moderate continential climate."
+  }, {
+    "id": 4,
+    "text": "hot mediterranean",
+    "description": "Alsace has a cool to moderate continential climate."
+  }],
+  "correct": {
+    "id": 5,
+    "text": "cool to moderate continential",
+    "description": "Alsace has a cool to moderate continential climate."
+  },
+  "tags": [
+    "Alsace",
+    "France"
+  ]
+},
+{
+  "stem": "The best vineyards in Alsace AOC are located on the _______.",
+  "alternates": [{
+    "id": 1,
+    "text": "Rhine.",
+    "description": "The grapes on the plains between the Vosges foothills and the Rhine are of lesser vineyards, and used for the production of Cremant d'Alsace."
+  }, {
+    "id": 2,
+    "text": "plains and on the steep slopes of the Vosges.",
+    "description": "The grapes on the plains between the Vosges foothills and the Rhine are of lesser vineyards, and used for the production of Cremant d'Alsace."
+  }, {
+    "id": 3,
+    "text": "plains between the Vosges foothills and the Rhine.",
+    "description": "The grapes on the plains between the Vosges foothills and the Rhine are of lesser vineyards, and used for the production of Cremant d'Alsace."
+  }],
+  "correct": {
+    "id": 5,
+    "text": "steepest slopes with east and south-east aspects",
+    "description": "On the steep slopes the vies are trained low to benefit from radiated heat and the rows are oriented to maximize exposure to the sun."
+  },
+  "tags": [
+    "Alsace",
+    "France"
+  ]
+},
+{
+  "stem": "_____ wines produced in Alsace AOC have higest ripeness level of the two late harvest wines.",
+  "alternates": [{
+    "id": 1,
+    "text": "Vendange Tardive (VT)",
+    "description": "Vendange Tardive means late harvet, and have a lower minimum ripeness level."
+  }, {
+    "id": 2,
+    "text": "Kabinett",
+    "description": "Kabinett wines are dry to medium sweet wines produced in Germany."
+  }, {
+    "id": 3,
+    "text": "Eiswein",
+    "description": "Eiswein wines are sweet wines produced in Germany."
+  }],
+  "correct": {
+    "id": 5,
+    "text": "Selection de Grains Nobles (SGN)",
+    "description": "SGN wines have minimum ripeness levels set higher than VT, and are usually acheived with noble rot."
+  },
+  "tags": [
+    "Alsace",
+    "France"
+  ]
+},
+{
+  "stem": "Which of the following is not considered a noble grape in Alsace France?",
+  "alternates": [{
+    "id": 1,
+    "text": "Riesling",
+    "description": "Riesling is considered to be a noble grape in Alsace."
+  }, {
+    "id": 2,
+    "text": "Gewurztraminer",
+    "description": "Gewurztraminer is considered to be a noble grape in Alsace."
+  }, {
+    "id": 3,
+    "text": "Pinot Gris",
+    "description": "Pinot Gris is considered to be a noble grape in Alsace."
+  }, {
+    "id": 4,
+    "text": "Muscat",
+    "description": "Muscat is considered to be a noble grape in Alsace."
+  }],
+  "correct": {
+    "id": 5,
+    "text": "Pinot Noir",
+    "description": "Pinot Noir grown in Alsace, however is not considered to be a noble grape."
+  },
+  "tags": [
+    "Alsace",
+    "France"
+  ]
+}
+]
