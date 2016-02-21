@@ -51,6 +51,7 @@
             this.selections = createSelections(data, NUMBER_QUESTION_SELECTIONS);
             this.selected = -1;
             this.tags = data.tags;
+            this.raw = angular.copy(data);
         },
 
         QuestionSelection = function(alternate, isAnswer) {
