@@ -21,7 +21,6 @@
 			"zoom": 99
 		},
 		locationsStub = [parentLocation, childLocation],
-		wtJsonLoaderResponse = sinon.stub().returnsPromise(),
 		wtJsonLoaderStub = sinon.stub().returnsPromise();
 
 	_T.createModuleTest('wt.locations.data')

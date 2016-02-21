@@ -43,20 +43,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
 
     <script src="app/appconfig.mdl.js"></script>
+
     <script src="app/services/fileloader/fileloader.mdl.js"></script>
+    <script src="app/services/resolver/resolver.mdl.js"></script>
     <script src="app/services/routes/routes.mdl.js"></script>
-    <script src="app/features/questions/questions.mdl.js"></script>
+    <script src="app/services/shuffle/shuffle.mdl.js"></script>
+
     <script src="app/features/locations/locations.data.mdl.js"></script>
     <script src="app/features/locations/locations.mdl.js"></script>
-    <script src="app/features/varieties/varieties.mdl.js"></script>
-    <script src="app/theme/theme.mdl.js"></script>
+
+    <script src="app/features/questions/questions.data.mdl.js"></script>
+    <script src="app/features/questions/knowledgeareas.mdl.js"></script>
+    <script src="app/features/questions/questions.filters.mdl.js"></script>
+    <script src="app/features/questions/questions.mdl.js"></script>
+
     <script src="app/home/home.mdl.js"></script>
     <script src="app/layout/layout.mdl.js"></script>
     <script>
     angular.module('wt', [
         'wt.questions',
         'wt.layout',
-        'wt.locations'
+        'wt.locations',
+        'wt.knowledgeAreas'
         // 'wt.varieties'
         //'wt.wines'
         // 'wt.theme',

@@ -8,10 +8,22 @@
         <md-card-content>
             <md-list>
                 <md-list-item ng-if="vm.current.description">{{vm.current.description}}</md-list-item>
-                <md-list-item ng-if="vm.current.soil">The soil is {{vm.current.soil}}</md-list-item>
-                <div ng-if="vm.current.notes">
+                <div ng-if="vm.current.notes || vm.current.soil">
+                    <h3 class="md-title">Key Facts</h3>
+                    <md-list-item ng-if="vm.current.soil">The soil is {{vm.current.soil}}</md-list-item>
                     <md-list-item ng-repeat="note in vm.current.notes">{{note}}</md-list-item>
                 </div>
+                <div ng-if="vm.current.late">
+                    <h3 class="md-title">Late Harvest Wines</h3>
+                    <md-list-item ng-repeat="late in vm.current.late">
+                        <p>{{late.value}} ({{late.key}})</p>
+                        <ul>
+                        <li ng-repeat="note in late.notes">{{note}}</li>
+                        </ul>
+                </div>
+                    </md-list-item>
+                </div>
+                <h3 class="md-title">Subregions</h3>
                 <md-list-item ng-if="vm.parent">{{vm.current.value}} is a Subregion of&nbsp;<a md-no-ink class="md-primary" ui-sref="locationDetail({ locationKey: vm.parent.key })" flex>{{ vm.parent.value }}</a></md-list-item>
                 <md-list-item ng-if="vm.children">
                     <p>Regions within {{vm.current.value}}</p>

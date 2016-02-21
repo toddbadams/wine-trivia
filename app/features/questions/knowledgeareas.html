@@ -2,7 +2,7 @@
   <md-list-item>
      <md-button md-no-ink class="md-primary" ui-sref="questions({ tag: 'all' })" flex>All knowledge areas</md-button>
   </md-list-item>
-  <md-list-item ng-repeat="item in vm.tags">
+  <md-list-item ng-repeat="item in vm.areas">
      <md-button md-no-ink class="md-primary" ui-sref="questions({ tag: item })" flex>{{ item }} </md-button>
   </md-list-item>
 </md-list>

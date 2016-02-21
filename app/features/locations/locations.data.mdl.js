@@ -79,18 +79,11 @@
                 this.parentKey = parentKey(this.key);
                 this.childKey = childKey(this.key);
                 this.value = data.value; // The location name
-                if (data.description) {
-                    this.description = data.description;
-                }
-                if(data.soil){
-                    this.soil = data.soil;
-                }
-                if(data.notes){
-                    this.notes = data.notes;
-                }
-                if(data.varieties){
-                    this.varieties = data.varieties;
-                }
+                this.description = data.description || null;
+                this.soil = data.soil || null;
+                this.notes = data.notes || null;
+                this.varieties = data.varieties || null;
+                this.late = data.late || null;
                 if (angular.isNumber(data.lat) &&
                     angular.isNumber(data.long) &&
                     angular.isNumber(data.zoom)) {
@@ -140,7 +133,7 @@
         return Locations;
     })();
 
-    function asPromise($q, data){
+    function asPromise($q, data) {
         var deferred = $q.defer();
         $q.resolve(data);
         return deferred.promise;

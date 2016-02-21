@@ -90,9 +90,10 @@
         "key": "FR-BOR-HAU",
         "value": "Haut-Médoc AOC",
         "notes": ["These wines tend to be more higly rated than Médoc AOC.",
-        "These wines have a high percentage of Cabernet Sauvignon.",
-        "These wines generally have flavours and aromas of blackcurrent, and cedar.",
-        "These wines can have grippy tannins when young, and often have a long ageing potential."]
+            "These wines have a high percentage of Cabernet Sauvignon.",
+            "These wines generally have flavours and aromas of blackcurrent, and cedar.",
+            "These wines can have grippy tannins when young, and often have a long ageing potential."
+        ]
     }, {
         "key": "FR-BOR-HAU-PAU",
         "value": "Pauillac AOC"
@@ -124,16 +125,29 @@
         "key": "FR-ALS",
         "value": "Alsace AOC",
         "notes": ["Alsace has a cool to moderate continential climate.",
-        "The best vineyards are located on the steepest slopes with east and sout-east aspects.",
-        "On the slopes; harvesting is by hand, rows are oriented toward the sun, vines are trained low to capture radiated heat.",
-        "The lesser vineyards are located on the plains and used for Crémant d'Alsace.",
-        "On the plains the vines are trained high to minimize sprint frosts."],
-        "varieties": ["PIN","GEW","MUC","RIE"]
+            "The best vineyards are located on the steepest slopes with east and sout-east aspects.",
+            "On the slopes; harvesting is by hand, rows are oriented toward the sun, vines are trained low to capture radiated heat.",
+            "The lesser vineyards are located on the plains and used for Crémant d'Alsace.",
+            "On the plains the vines are trained high to minimize sprint frosts."
+        ],
+        "varieties": ["PIN", "GEW", "MUC", "RIE"],
+        "late": [{
+            "key": "VT",
+            "value": "Vendange tardive",
+            "notes": ["Vendange tardive means late harvets.", "These wines can only be made from one of the four noble varieties.",
+            "These wines have a minimum sugar ripness, and may have some noble rot."]
+        },{
+            "key": "SGN",
+            "value": "Sélection de Grains Nobles",
+            "notes": ["These wines can only be made from one of the four noble varieties.",
+            "These wines have a minimum sugar ripness higher than VT, and have noble rot.",
+            "These wines are not produced every years and are produced in small quantities."]
+        }]
     }, {
         "key": "FR-ALS-GCR",
         "value": "Alsace Grand Cru AOC",
         "notes": [],
-        "varieties": ["PIN","GEW","MUC","RIE"]
+        "varieties": ["PIN", "GEW", "MUC", "RIE"]
     }, {
         "key": "FR-NRH",
         "value": "Northern Rhône"
