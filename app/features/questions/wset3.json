@@ -358,5 +358,260 @@
     "Alsace",
     "France"
   ]
+},
+{
+  "stem": "Bordeaux is in a _______ climate classification.",
+  "alternates": [{
+    "id": 1,
+    "text": "cool continential",
+    "description": "Bordeaux has a moderate maritime climate."
+  }, {
+    "id": 2,
+    "text": "warm to hot mediterranean",
+    "description": "Bordeaux has a moderate maritime climate."
+  }, {
+    "id": 3,
+    "text": "moderate to warm maritime",
+    "description": "Bordeaux has a moderate maritime climate."
+  }, {
+    "id": 4,
+    "text": "hot mediterranean",
+    "description": "Bordeaux has a moderate maritime climate."
+  }],
+  "correct": {
+    "id": 5,
+    "text": "moderate maritime",
+    "description": "Bordeaux has a moderate maritime climate."
+  },
+  "tags": [
+    "Bordeaux",
+    "France"
+  ]
+},
+{
+  "stem": "Chablis is in a _______ climate classification.",
+  "alternates": [{
+    "id": 1,
+    "text": "moderate maritime",
+    "description": "Chablis has a  cool continential climate."
+  }, {
+    "id": 2,
+    "text": "warm to hot mediterranean",
+    "description": "Chablis has a cool continential climate."
+  }, {
+    "id": 3,
+    "text": "moderate to warm maritime",
+    "description": "Chablis has a cool continential climate."
+  }, {
+    "id": 4,
+    "text": "hot mediterranean",
+    "description": "Chablis has a cool continential climate."
+  }],
+  "correct": {
+    "id": 5,
+    "text": "cool continential",
+    "description": "Chablis has a cool continential climate."
+  },
+  "tags": [
+    "Burgundy",
+    "France"
+  ]
+},
+{
+  "stem": "Southern Burgundy is in a _______ climate classification.",
+  "alternates": [{
+    "id": 1,
+    "text": "moderate maritime",
+    "description": "Southern Burgundy has a moderate continential climate."
+  }, {
+    "id": 2,
+    "text": "warm to hot mediterranean",
+    "description": "Southern Burgundy has a moderate continential climate."
+  }, {
+    "id": 3,
+    "text": "moderate to warm maritime",
+    "description": "Southern Burgundy has a moderate continential climate."
+  }, {
+    "id": 4,
+    "text": "hot mediterranean",
+    "description": "Southern Burgundy has a moderate continential climate."
+  }, {
+    "id": 5,
+    "text": "cool continential",
+    "description": "Southern Burgundy has a moderate continential climate."
+  }],
+  "correct": {
+    "id": 6,
+    "text": "moderate continential",
+    "description": "Southern Burgundy has a moderate continential climate."
+  },
+  "tags": [
+    "Burgundy",
+    "France"
+  ]
+},
+{
+  "stem": "The Central Vineyards of the Loire Valley are in a _______ climate classification.",
+  "alternates": [{
+    "id": 1,
+    "text": "moderate maritime",
+    "description": "The Central Vineyards of the Loire Valley have a cool continential climate."
+  }, {
+    "id": 2,
+    "text": "warm to hot mediterranean",
+    "description": "The Central Vineyards of the Loire Valley have a cool continential climate."
+  }, {
+    "id": 3,
+    "text": "moderate to warm maritime",
+    "description": "The Central Vineyards of the Loire Valley have a cool continential climate."
+  }, {
+    "id": 4,
+    "text": "hot mediterranean",
+    "description": "The Central Vineyards of the Loire Valley have a cool continential climate."
+  }, {
+    "id": 5,
+    "text": "moderate continential",
+    "description": "The Central Vineyards of the Loire Valley have a cool continential climate."
+  }],
+  "correct": {
+    "id": 6,
+    "text": "cool continential",
+    "description": "The Central Vineyards of the Loire Valley have a cool continential climate."
+  },
+  "tags": [
+    "Loire Valley",
+    "France"
+  ]
+},
+{
+  "stem": "The Northern Rhône is in a _______ climate classification.",
+  "alternates": [{
+    "id": 1,
+    "text": "moderate maritime",
+    "description": "The Northern Rhône has a moderate continential climate."
+  }, {
+    "id": 2,
+    "text": "warm to hot mediterranean",
+    "description": "The Northern Rhône has a moderate continential climate."
+  }, {
+    "id": 3,
+    "text": "moderate to warm maritime",
+    "description": "The Northern Rhône has a moderate continential climate."
+  }, {
+    "id": 4,
+    "text": "hot mediterranean",
+    "description": "The Northern Rhône has a moderate continential climate."
+  }, {
+    "id": 5,
+    "text": "cool continential",
+    "description": "The Northern Rhône has a moderate continential climate."
+  }],
+  "correct": {
+    "id": 6,
+    "text": "moderate continential",
+    "description": "The Northern Rhône has a moderate continential climate."
+  },
+  "tags": [
+    "Northern Rhône",
+    "France"
+  ]
+},
+{
+  "stem": "The Southern Rhône is in a _______ climate classification.",
+  "alternates": [{
+    "id": 1,
+    "text": "moderate maritime",
+    "description": "The Southern Rhône has a warm mediterranean climate."
+  }, {
+    "id": 2,
+    "text": "warm to hot continential",
+    "description": "The Southern Rhône has a warm mediterranean climate."
+  }, {
+    "id": 3,
+    "text": "moderate to warm maritime",
+    "description": "The Southern Rhône has a warm mediterranean climate."
+  }, {
+    "id": 4,
+    "text": "hot mediterranean",
+    "description": "The Southern Rhône has a warm mediterranean climate."
+  }, {
+    "id": 5,
+    "text": "cool continential",
+    "description": "The Southern Rhône has a warm mediterranean climate."
+  }],
+  "correct": {
+    "id": 6,
+    "text": "warm mediterranean",
+    "description": "The Southern Rhône has a warm mediterranean climate."
+  },
+  "tags": [
+    "Southern Rhône",
+    "France"
+  ]
+},
+{
+  "stem": "Southern France is in a _______ climate classification.",
+  "alternates": [{
+    "id": 1,
+    "text": "moderate maritime",
+    "description": "Southern France has a warm mediterranean climate."
+  }, {
+    "id": 2,
+    "text": "warm to hot continential",
+    "description": "Southern France has a warm mediterranean climate."
+  }, {
+    "id": 3,
+    "text": "moderate to warm maritime",
+    "description": "Southern France has a warm mediterranean climate."
+  }, {
+    "id": 4,
+    "text": "hot mediterranean",
+    "description": "Southern France has a warm mediterranean climate."
+  }, {
+    "id": 5,
+    "text": "cool continential",
+    "description": "Southern France has a warm mediterranean climate."
+  }],
+  "correct": {
+    "id": 6,
+    "text": "warm mediterranean",
+    "description": "Southern France has a warm mediterranean climate."
+  },
+  "tags": [
+    "Southern France",
+    "France"
+  ]
+},
+{
+  "stem": "Germany is in a _______ climate classification.",
+  "alternates": [{
+    "id": 1,
+    "text": "moderate maritime",
+    "description": "Germany has a cool continential climate."
+  }, {
+    "id": 2,
+    "text": "warm to hot continential",
+    "description": "Germany has a cool continential climate."
+  }, {
+    "id": 3,
+    "text": "moderate to warm maritime",
+    "description": "Germany has a cool continential climate."
+  }, {
+    "id": 4,
+    "text": "hot mediterranean",
+    "description": "Germany has a cool continential climate."
+  }, {
+    "id": 5,
+    "text": "moderate continential",
+    "description": "Germany has a cool continential climate."
+  }],
+  "correct": {
+    "id": 6,
+    "text": "cool continential",
+    "description": "Germany has a cool continential climate."
+  },
+  "tags": [
+    "Germany"
+  ]
 }
 ]
