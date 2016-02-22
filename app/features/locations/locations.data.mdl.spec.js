@@ -32,6 +32,26 @@
 			var moduleTest = this;
 
 			moduleTest
+				.createServiceTest('wtLocationsDataResolver')
+				.describe(function() {
+					var serviceTest = this,
+						result;
+
+					beforeEach(function() {
+						wtJsonLoaderStub.resolves(locationsStub);
+						serviceTest.angularService
+							.then(function(data) {
+								result = data;
+							});
+						moduleTest.$rootScope.$apply();
+					});
+
+					it('should return location data', function() {
+						result.should.be.equal(locationsStub);
+					})
+				});
+
+			moduleTest
 				.createServiceTest('wtLocationsHashResolver')
 				.describe(function() {
 					var serviceTest = this,

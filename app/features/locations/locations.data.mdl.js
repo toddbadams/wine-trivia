@@ -2,38 +2,49 @@
     'use strict';
     var
         DATA_PATH = 'app/features/locations/',
-        locations = null;
+        locations = null,
+        locationData = null,
+        countries = null;
 
-    angular.module('wt.locations.data', ['wt.config', 'wt.fileloader'])
+    angular.module('wt.locations.data', ['wt.config', 'wt.fileloader', 'wt.resolver'])
         .constant('wtLocationsDataConfig', {
             dataPath: DATA_PATH
         })
         .factory('wtLocationsHashResolver', wtLocationsHashResolver)
+        .factory('wtLocationsDataResolver', wtLocationsDataResolver)
         .factory('wtCountriesResolver', wtCountriesResolver);
 
     /**
      * Location controller data resolver
      */
-    wtLocationsHashResolver.$inject = ['$q', 'wtLocationsDataConfig', 'wtJsonLoader'];
+    wtLocationsHashResolver.$inject = ['$q', 'wtResolver', 'wtLocationsDataConfig', 'wtLocationsDataResolver'];
 
-    function wtLocationsHashResolver($q, wtLocationsDataConfig, wtJsonLoader) {
+    function wtLocationsHashResolver($q, wtResolver, wtLocationsDataConfig, wtLocationsDataResolver) {
+       // return wtResolver(wtLocationsDataResolver, locations, createLocations);
         var deferred = $q.defer();
         if (locations === null) {
-            wtJsonLoader(wtLocationsDataConfig.dataPath)
+           wtLocationsDataResolver
                 .then(function(data) {
-                    locations = new Locations(data);
+                    locations = createLocations(data);
                     deferred.resolve(locations.hash);
                 });
+        } else {
+                    deferred.resolve(locations.hash);
         }
         return deferred.promise;
+    }
+
+    function createLocations(data){
+        return new Locations(data);
     }
 
     /**
      * An array of country locations
      */
-    wtCountriesResolver.$inject = ['$q', 'wtLocationsHashResolver'];
+    wtCountriesResolver.$inject = ['$q', 'wtLocationsHashResolver', 'wtLocationsDataResolver'];
 
-    function wtCountriesResolver($q, wtLocationsHashResolver) {
+    function wtCountriesResolver($q, wtLocationsHashResolver, wtLocationsDataResolver) {
+       // return wtResolver(wtLocationsDataResolver, locations, createLocations);
         var deferred = $q.defer();
         if (locations === null) {
             wtLocationsHashResolver
@@ -44,6 +55,15 @@
             deferred.resolve(locations.countries);
         }
         return deferred.promise;
+    }
+
+   /**
+     * Location controller data resolver
+     */
+    wtLocationsDataResolver.$inject = ['wtResolver', 'wtLocationsDataConfig', 'wtJsonLoader'];
+
+    function wtLocationsDataResolver(wtResolver, wtLocationsDataConfig, wtJsonLoader) {
+        return wtResolver(wtJsonLoader(wtLocationsDataConfig.dataPath), locationData);
     }
 
     function children(locations, key) {
