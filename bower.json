@@ -7,7 +7,8 @@
     "sinon-1.17.2": "http://sinonjs.org/releases/sinon-1.17.2.js",
     "sinon-chai": "https://raw.githubusercontent.com/domenic/sinon-chai/master/lib/sinon-chai.js",
     "simple-test": "https://github.com/toddbadams/simple-test.git",
-    "angular-mocks": "^1.5.0"
+    "angular-mocks": "^1.5.0",
+    "chance": "^1.0.0"
   },
   "dependencies": {
     "angular": "^1.5.0",
