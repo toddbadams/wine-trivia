@@ -1,14 +1,14 @@
-﻿<md-content  >
-    <wt-question model="vm.current"></wt-question>
+﻿<md-content>
+    <wt-question model="vm.questions[vm.index]"></wt-question>
 </md-content>
 <md-bottom-sheet class="md-grid" layout="row">
-    <md-button class="md-icon-button" aria-label="Previous" ng-click="vm.previous()" ng-show="vm.showPrevious">
+    <md-button class="md-icon-button" aria-label="Previous" ng-click="vm.index=vm.index-1" ng-show="vm.index>0">
         <md-icon md-svg-icon="img/icons/previous.svg"></md-icon>
     </md-button>
     <span flex style="text-align: center;">
         <span>{{vm.index+1}} of {{vm.questions.length}}</span>
     </span>
-    <md-button class="md-icon-button" aria-label="Next" ng-click="vm.next()" ng-show="vm.showNext">
+    <md-button class="md-icon-button" aria-label="Next" ng-click="vm.index=vm.index+1" ng-show="vm.index<vm.questions.length-1">
         <md-icon md-svg-icon="img/icons/next.svg"></md-icon>
     </md-button>
 </md-bottom-sheet>

@@ -64,10 +64,10 @@ _T.createModuleTest('wt.questions.viewModelFactory')
                     it('should not contain questions models', function() {
                         vm.questions.length.should.equal(0);
                         vm.index.should.equal(-1);
-                    })
+                    });
                 });
 
-                describe('When Creating questions, the view model', function() {
+                describe('When creating questions, the view model', function() {
                     beforeEach(function() {
                         vm.createQuestions();
                     });
@@ -75,6 +75,11 @@ _T.createModuleTest('wt.questions.viewModelFactory')
                     it('should have the same number of questions as the data', function() {
                         vm.questions.length.should.equal(questionsStub.length);
                     });
+
+                    it('should set the current question to the first', function() {
+                        vm.index.should.be.equal(0);
+                    });
+
                 });
             });
     });

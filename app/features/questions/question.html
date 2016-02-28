@@ -1,15 +1,15 @@
 <md-card>
     <md-card-title>
-        <md-card-title-text>{{vm.model.stem}}</md-card-title-text>
+        <md-card-title-text>{{$ctrl.model.stem}}{{$$id}}</md-card-title-text>
     </md-card-title>
     <md-card-content>
-        <md-radio-group ng-model="vm.model.selected">
+        <md-radio-group ng-model="$ctrl.model.selectedIndex">
             <md-list>
-                <md-list-item ng-repeat="selection in vm.model.selections">
-                    <md-radio-button value="{{$index}}" ng-click="vm.selected($index)" class="md-body-1 md-primary" ng-class="{'md-warn': selection.isWrong}">{{selection.text}}</md-radio-button>
+                <md-list-item ng-repeat="selection in $ctrl.model.selections">
+                    <md-radio-button value="{{$index}}" ng-click="selection.select()" class="md-body-1 md-primary" ng-class="{'md-warn': !selection.isCorrect()}" area-label="{{selection.text}}">{{selection.text}}</md-radio-button>
                 </md-list-item>
             </md-list>
         </md-radio-group>
-        <p class="md-body-1">{{vm.model.description}}</p>
+        <p class="md-body-1">{{$ctrl.model.description}}</p>
     </md-card-content>
 </md-card>
