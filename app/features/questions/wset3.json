@@ -613,5 +613,155 @@
   "tags": [
     "Germany"
   ]
+},{
+  "stem": "When ____ vine training, the vines have relatively little permanent wood, and are spur-pruned or replacement cane-pruned.",
+  "alternates": [
+    {
+      "id": 1,
+      "text": "cordon",
+      "description": "Cordon trained vines have a trunk with one or more permanent horizontal arms (cordons).  Additionally head training typically are spur-pruned."
+    },
+    {
+      "id": 2,
+      "text": "spur",
+      "description": "Spur pruning is a vine prunning technique where short sections of one-year old wood are cut down to two or three buds, distributed along a cordon (cordon training) or around top of trunk (head training)."
+    },
+    {
+      "id": 3,
+      "text": "replacement cane ",
+      "description": "Replacement cane pruning is a vine prunning technique where longer sections of one-year old wood are cut down to eight (8) to twenty (20) buds.  One or two canes are retained during the prunning and tied horizontally along trellis. This technique is most often found on head-trained vines, where skilled labour selects and train the canes. This technique is also known as single or double Guyot."
+    }
+  ],
+  "correct": {
+    "id": 6,
+    "text": "head",
+    "description": "Head vine training has relatively little permanent wood compared to cordon training.  Additionally head training typically are spur-pruned or replacement cane-pruned."
+  },
+  "tags": [
+    "Human Factors in the Vineyard"
+  ]
+},{
+  "stem": "When ____ vine training, the vines have have a trunk with one or more permanent horizontal arms.",
+  "alternates": [
+    {
+      "id": 1,
+      "text": "head",
+      "description": "Head vine training has relatively little permanent wood compared to cordon training.  Additionally head training typically are spur-pruned or replacement cane-pruned."
+    },
+    {
+      "id": 2,
+      "text": "spur",
+      "description": "Spur pruning is a vine prunning technique where short sections of one-year old wood are cut down to two or three buds, distributed along a cordon (cordon training) or around top of trunk (head training)."
+    },
+    {
+      "id": 3,
+      "text": "replacement cane ",
+      "description": "Replacement cane pruning is a vine prunning technique where longer sections of one-year old wood are cut down to eight (8) to twenty (20) buds.  One or two canes are retained during the prunning and tied horizontally along trellis. This technique is most often found on head-trained vines, where skilled labour selects and train the canes. This technique is also known as single or double Guyot."
+    }
+  ],
+  "correct": {
+    "id": 4,
+    "text": "cordon",
+    "description": "Cordon trained vines have a trunk with one or more permanent horizontal arms (cordons).  Additionally head training typically are spur-pruned."
+  },
+  "tags": [
+    "Human Factors in the Vineyard"
+  ]
+},
+{
+  "stem": "When ____ pruning, short sections of one-year old wood are cut down to two or three buds, distributed along a cordon (cordon training) or around the top of trunk (head training).",
+  "alternates": [
+    {
+      "id": 1,
+      "text": "cordon",
+      "description": "Cordon trained vines have a trunk with one or more permanent horizontal arms (cordons).  Additionally head training typically are spur-pruned."
+    },
+    {
+      "id": 2,
+      "text": "head",
+      "description": "Head vine training has relatively little permanent wood compared to cordon training.  Additionally head training typically are spur-pruned or replacement cane-pruned."
+    },
+    {
+      "id": 3,
+      "text": "replacement cane ",
+      "description": "Replacement cane pruning is a vine prunning technique where longer sections of one-year old wood are cut down to eight (8) to twenty (20) buds.  One or two canes are retained during the prunning and tied horizontally along trellis. This technique is most often found on head-trained vines, where skilled labour selects and train the canes. This technique is also known as single or double Guyot."
+    }
+  ],
+  "correct": {
+    "id": 4,
+    "text": "spur",
+    "description": "Spur pruning is a vine prunning technique where short sections of one-year old wood are cut down to two or three buds, distributed along a cordon (cordon training) or around top of trunk (head training)."
+  },
+  "tags": [
+    "Human Factors in the Vineyard"
+  ]
+},
+{
+  "stem": "When ____ pruning, longer sections of one-year old wood are cut down to eight (8) to twenty (20) buds.",
+  "alternates": [
+    {
+      "id": 1,
+      "text": "cordon",
+      "description": "Cordon trained vines have a trunk with one or more permanent horizontal arms (cordons).  Additionally head training typically are spur-pruned."
+    },
+    {
+      "id": 2,
+      "text": "spur",
+      "description": "Spur pruning is a vine prunning technique where short sections of one-year old wood are cut down to two or three buds, distributed along a cordon (cordon training) or around top of trunk (head training)."
+    },
+    {
+      "id": 3,
+      "text": "head",
+      "description": "Head vine training has relatively little permanent wood compared to cordon training.  Additionally head training typically are spur-pruned or replacement cane-pruned."
+    }
+  ],
+  "correct": {
+    "id": 4,
+    "text": "replacement cane ",
+    "description": "Replacement cane pruning is a vine prunning technique where longer sections of one-year old wood are cut down to eight (8) to twenty (20) buds.  One or two canes are retained during the prunning and tied horizontally along trellis. This technique is most often found on head-trained vines, where skilled labour selects and train the canes. This technique is also known as single or double Guyot."
+  },
+  "tags": [
+    "Human Factors in the Vineyard"
+  ]
+},
+{
+  "stem": "Which one of the following is considered when a producer wants to establish a new vineyard.",
+  "alternates": [
+    {
+      "id": 1,
+      "text": "The site’s existing vegetation.",
+      "description": "The site’s existing vegetation is not considered, however the site will be cleared, test and fertilized to correct deficiencies in the soil."
+    },
+    {
+      "id": 2,
+      "text": "The length of time between planting and the first yield.",
+      "description": "Typically the the first yield is in the third year, and is not considered when selecting a site."
+    },
+    {
+      "id": 3,
+      "text": "The maximum age of the chosen variety.",
+      "description": "The vines are replaced every 30 to 50 years, and their lifespan is not considered when selecting a site.  Older vines have more concentrated flavours, but more susceptible to disease than younger vines, therefore the maximum age is balance between quality and profit."
+    }
+  ],
+  "correct": [
+    {
+      "id": 4,
+      "text": "The site’s average temperature, rainfall, and sunlight hours, soil fertility, and soil drainage.",
+      "description": "The site’s average temperature, rainfall, and sunlight hours, soil fertility, soil drainage are environmental conditions that ARE considered when a producer wants to establish a new vineyard."
+    },
+    {
+      "id": 5,
+      "text": "The site’s proximity to utilities, availability of workforce, site accessibility of machinery, and land cost.",
+      "description": "The site’s proximity to utilities, availability of workforce, site accessibility of machinery, and land cost ARE business considerations when a producer wants to establish a new vineyard."
+    },
+    {
+      "id": 6,
+      "text": "The site’s climatic conditions must suit the variety.",
+      "description": "The selection of the grape variety MUST suit the site’s climatic conditions.  Additionally there must be a customer demand for the variety, and in the EU there are legal restrictions on variety selection."
+    }
+  ],
+  "tags": [
+    "Human Factors in the Vineyard"
+  ]
 }
 ]

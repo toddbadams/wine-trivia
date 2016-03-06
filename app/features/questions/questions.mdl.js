@@ -30,26 +30,18 @@
             templateUrl: TEMPLATE_PATH + 'question.html'
         });
 
-
-    /**
-     * Module configuration
-     */
     moduleConfig.$inject = ['wtRouteProvider', 'wtQuestionsConfig'];
 
     function moduleConfig(wtRoutes, wtQuestionsConfig) {
         wtRoutes.$get().setRoutes(wtQuestionsConfig.routes);
     }
 
-    /**
-     * Questions controller
-     */
     wtQuestions.$inject = ['$stateParams', 'questions', 'wtQuestionsViewModelFactory'];
 
     function wtQuestions($stateParams, questions, modelFactory) {
-        var vm = modelFactory(questions);
-        vm.createQuestions($stateParams.tag)
-        window.foo = vm;
-        
+        var vm = modelFactory(questions)
+            .createQuestions($stateParams.tag);
+
         return vm;
     }
 

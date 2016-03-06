@@ -1,0 +1,29 @@
+[{
+    "location": "FR-LOI",
+    "variety": "SAU",
+    "appearance": {
+    	"type": "white",
+        "intensity": 113,
+        "color": 225
+    },
+    "nose": {
+        "intensity": 455,
+        "aroma": [
+            ["green apple", "asparagus", "wet stone"],
+            [],
+            []
+        ]
+    },
+    "palate": {
+        "sweetness": 116,
+        "acidity": 555,
+        "body": 115,
+        "intensity": 455,
+        "finish": 155,
+        "flavours": [
+            ["green apple", "asparagus", "wet stone"],
+            [],
+            []
+        ]
+    }
+}]
