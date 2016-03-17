@@ -1,0 +1,44 @@
+﻿<md-content layout="column">
+    <md-card>
+        <md-card-content>
+            <md-input-container class="md-block" flex>
+                <label>Stem</label>
+                <input ng-model="$ctrl.model.stem" ng-blur="vm.ngChange()">
+            </md-input-container>
+            <md-input-container class="md-block" flex>
+                <label>Tags</label>
+                <input ng-model="$ctrl.model.tagsString" ng-blur="vm.ngChange()">
+            </md-input-container>
+        </md-card-content>
+    </md-card>
+    <md-card>
+        <md-card-title>
+            <md-card-title-text class="md-title">Correct</md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <md-list>
+                <md-list-item ng-repeat="item in $ctrl.model.correct">
+                    <wt-question-selection-editor model="item" flex></wt-question-selection-editor>
+                </md-list-item>
+            </md-list>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="vm.addCorrect()">Add</md-button>
+        </md-card-actions>
+    </md-card>
+    <md-card>
+        <md-card-title>
+            <md-card-title-text class="md-title">Alternates</md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <md-list>
+                <md-list-item ng-repeat="item in $ctrl.model.alternates">
+                    <wt-question-selection-editor model="item" flex></wt-question-selection-editor>
+                </md-list-item>
+            </md-list>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="vm.addAlternate()">Add</md-button>
+        </md-card-actions>
+    </md-card>
+</md-content>

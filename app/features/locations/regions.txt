@@ -1,0 +1,78 @@
+key - FR-BOR
+name - Bordeaux
+law - AOC
+climate - moderate maritime
+facts - The 1855 classification is an official list of the best red wines of the Médoc and Graves and the best white wines of Sauternes.
+Chateaux within this classification are Cru Classé divided into five ranks
+Further classification Cru Bourgeois later introduced for other chateaux, awarded to specific vintages
+
+key - FR-BOR-COT
+name - Côtes de Bordeaux
+Facts - 
+A group of lesser-known red wine appellations, Blaye, Cadillac, Castillon, and Francs. 
+Merlot based for early drinking
+Excellent value for money
+Cotes de Bourg is similar style, but chose not to join
+
+key - FR-BOR-MED-HAU
+name -Bordeaux Supérieur
+
+key - FR-BOR-MED-HAU
+name -Entre Deux Mers AC 
+key - FR-BOR-MED
+name -Médoc AOC
+soil - predominantly clay, but with outcrops of gravel.
+facts - These wines tend to have a higher portion of Merlot than Haut-Médoc AOC.
+Chateaux within the 1855 classification are Cru Classé divided into five ranks
+Top rank consists of Châteaux Lafite Rothschild, Latour, Margaux, Mouton Rothschild
+
+key - FR-BOR-MED-HAU
+name -Haut MédocThese wines tend to be more highly rated than Médoc AOC.
+These wines have a high percentage of Cabernet Sauvignon.
+These wines generally have flavours and aromas of blackcurrant, and cedar.
+These wines can have grippy tannins when young, and often have a long ageing potential.
+
+key - FR-BOR-MED-HAU-EST
+name -Saint Estèphe
+key - FR-BOR-MED-HAU-PAU
+name -Pauillac
+classifications - 
+Château Lafite Rothschild, Les Grands Crus classés en 1855
+Château Latour, Les Grands Crus classés en 1855
+Château Mouton Rothschild, Les Grands Crus classés en 1855
+
+key - FR-BOR-MED-HAU-JUL
+name -Saint-Julien
+
+key - FR-BOR-MED-HAU-MAR
+name -Margaux 
+classifications - 
+Château Margaux, Les Grands Crus classés en 1855
+
+key - FR-BOR-GRAV
+name -Graves 
+law - AOC
+facts - The 1855 classification is an official list which includes the best red wines of the Grave.
+Chateaux within this classification are Cru Classé divided into five ranks
+Top rank consists of Château Haut-Brion
+
+name -Pessac-Léognan 
+key - FR-BOR-GRAV-PES
+law - AOC
+classifications - 
+Haut-Brion, Les Grands Crus classés en 1855
+
+name -Saint Emilion (Saint Emilion Saint Emilion Satellites Grand Cru) 
+law - AOC
+
+name -Pomerol 
+law - AOC
+
+name -Sauternes 
+law - AOC
+classifications - 
+Yquem, Les Grands Crus classés en 1855
+
+name -Barsac
+law - AOC
+

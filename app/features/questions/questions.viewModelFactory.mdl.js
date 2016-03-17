@@ -65,6 +65,7 @@
                 this.selectedIndex = -1;
                 this.stem = this.data.stem;
                 this.selections = [];
+                this.edit = new QuestionEditor(this.data);
                 for (i = 0; i < this.numberQuestionSelections; i += 1) {
                     var a = (i === this.correctIndex ? correct : alts[j++]);
                     this.selections.push(new QuestionSelection(a, this, i));
@@ -92,6 +93,32 @@
             QuestionSelection.prototype.isCorrect = function() {
                 return (this.parent.selectedIndex.toString() === this.parent.correctIndex.toString());
             }
+
+            var QuestionEditor = function(data) {
+                var self = this;
+                this.data = data;
+                this.stem = this.data.stem;
+                this.alternates = angular.copy(data.alternates).map(function(item, index){
+                    return new QuestionSelectionEditor(item, self, index);
+                }); 
+                this.correct = angular.isArray(this.data.correct) ?
+                        this.data.correct :
+                        [this.data.correct];
+                this.tagsString = this.data.tags.join(', ');
+                this.alternates 
+                return this;
+            };
+
+            var QuestionSelectionEditor = function(data, parent, index) {
+                this.data = data;
+                this.text = data.text;
+                this.description = data.description;
+                this.id = data.id;
+                this.index = index;
+                this.parent = parent;
+            };
+
+
 
 
             return QuestionsVm;

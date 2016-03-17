@@ -1,0 +1,14 @@
+<div layout="row" flex>
+    <md-input-container flex="none" style="width: 50px;">
+        <label>Id</label>
+        <input ng-model="$ctrl.model.id" type="number" ng-blur="$ctrl.model.ngChange()">
+    </md-input-container>
+    <md-input-container flex="25">
+        <label>Text</label>
+        <input ng-model="$ctrl.model.text" ng-blur="$ctrl.model.ngChange()">
+    </md-input-container>
+    <md-input-container flex>
+        <label>Description</label>
+        <input ng-model="$ctrl.model.description" ng-blur="$ctrl.model.ngChange()">
+    </md-input-container>
+</div>
